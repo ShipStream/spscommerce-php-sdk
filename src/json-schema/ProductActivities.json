@@ -1,0 +1,2080 @@
+{
+    "schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ProductActivities",
+    "$comment": "COPYRIGHT SPS COMMERCE, INC. ALL RIGHTS RESERVED 2020. SUPPLIED AS-IS WITH NO WARRANTIES.",
+    "definitions": {
+        "ProductActivity": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "Header"
+            ],
+            "properties": {
+                "Meta": {
+                    "type": "object",
+                    "description": "Contains internal SPS information",
+                    "additionalProperties": false,
+                    "required": [],
+                    "properties": {
+                        "SenderUniqueID": {
+                            "type": "string"
+                        },
+                        "SenderCompanyName": {
+                            "type": "string"
+                        },
+                        "ReceiverUniqueID": {
+                            "type": "string"
+                        },
+                        "ReceiverCompanyName": {
+                            "type": "string"
+                        },
+                        "IsDropShip": {
+                            "type": "boolean"
+                        },
+                        "InterchangeControlNumber": {
+                            "type": "string"
+                        },
+                        "GroupControlIdentifier": {
+                            "type": "string"
+                        },
+                        "GroupControlNumber": {
+                            "type": "string"
+                        },
+                        "DocumentControlIdentifier": {
+                            "type": "string"
+                        },
+                        "DocumentControlNumber": {
+                            "type": "string"
+                        },
+                        "InterchangeSenderID": {
+                            "type": "string"
+                        },
+                        "InterchangeReceiverID": {
+                            "type": "string"
+                        },
+                        "GroupSenderID": {
+                            "type": "string"
+                        },
+                        "GroupReceiverID": {
+                            "type": "string"
+                        },
+                        "BatchPart": {
+                            "type": "string"
+                        },
+                        "BatchTotal": {
+                            "type": "integer"
+                        },
+                        "BatchID": {
+                            "type": "string"
+                        },
+                        "Comments": {
+                            "type": "string"
+                        },
+                        "Validation": {
+                            "type": "string"
+                        },
+                        "OrderManagement": {
+                            "type": "string"
+                        },
+                        "Version": {
+                            "description": "XML Version number",
+                            "type": "string"
+                        }
+                    }
+                },
+                "Header": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "ReportHeader"
+                    ],
+                    "properties": {
+                        "ReportHeader": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                                "TradingPartnerId",
+                                "ReportStartDate"
+                            ],
+                            "properties": {
+                                "TradingPartnerId": {
+                                    "description": "Unique internal identifier defined by SPS Commerce which identifies the relationship",
+                                    "examples": [
+                                        "000ALLTESTID"
+                                    ],
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 15
+                                },
+                                "ReportStartDate": {
+                                    "type": "string",
+                                    "format": "date"
+                                },
+                                "ReportEndDate": {
+                                    "type": "string",
+                                    "format": "date"
+                                },
+                                "ActivityHandlingCode": {
+                                    "type": "string"
+                                },
+                                "Department": {
+                                    "description": "Name or number identifying an area wherein merchandise is categorized within a store",
+                                    "examples": [
+                                        "026"
+                                    ],
+                                    "type": "string"
+                                },
+                                "DepartmentDescription": {
+                                    "description": "Free form text to describe the name or number identifying an area wherein merchandise is categorized within a store",
+                                    "examples": [
+                                        "Electronics"
+                                    ],
+                                    "type": "string"
+                                },
+                                "Vendor": {
+                                    "description": "Number assigned by buyer that uniquely identifies the vendor",
+                                    "examples": [
+                                        "99999999"
+                                    ],
+                                    "type": "string"
+                                },
+                                "DocumentVersion": {
+                                    "description": "Used to communicate the version number of the current document",
+                                    "examples": [
+                                        "4"
+                                    ],
+                                    "type": "string"
+                                },
+                                "DocumentRevision": {
+                                    "description": "Used to communicate the revision number of the current document",
+                                    "examples": [
+                                        "2"
+                                    ],
+                                    "type": "string"
+                                },
+                                "TsetPurposeCode": {
+                                    "description": "Code identifying purpose or function of the transmission",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "PreassignedPurchaseOrderNumbers": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "StartPONumber": {
+                                        "type": "string"
+                                    },
+                                    "EndPONumber": {
+                                        "type": "string"
+                                    },
+                                    "LocationCodeQualifier": {
+                                        "description": "Code identifying the structure or format of the related location number[s]",
+                                        "type": "string"
+                                    },
+                                    "POLocationID": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "Dates": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "DateTimeQualifier": {
+                                        "description": "Code specifying the type of date",
+                                        "type": "string"
+                                    },
+                                    "Date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "Time": {
+                                        "description": "All standard XML formats are accepted.",
+                                        "examples": [
+                                            "16:13:03-05:00"
+                                        ],
+                                        "type": "string",
+                                        "format": "time"
+                                    },
+                                    "DateTimePeriod": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "Contacts": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "ContactTypeCode": {
+                                        "description": "Code identifying a type of contact",
+                                        "type": "string"
+                                    },
+                                    "ContactName": {
+                                        "description": "Free-form name",
+                                        "examples": [
+                                            "SPS Commerce"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "PrimaryPhone": {
+                                        "description": "Phone number of contact listed",
+                                        "examples": [
+                                            "866-245-8100"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "PrimaryFax": {
+                                        "description": "Fax number of contact listed",
+                                        "examples": [
+                                            "612-435-9401"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "PrimaryEmail": {
+                                        "description": "E-mail address for contact listed",
+                                        "examples": [
+                                            "info@spscommerce.com"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "AdditionalContactDetails": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "description": "This group should be used if the associated normalized fields already contain information.",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "ContactQual": {
+                                                    "type": "string"
+                                                },
+                                                "ContactID": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "ContactReference": {
+                                        "description": "Additional field to clarify a contact",
+                                        "examples": [
+                                            "ext: 451"
+                                        ],
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "Address": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "AddressTypeCode": {
+                                        "description": "Code identifying an organizational entity, a physical location, property, or an individual",
+                                        "type": "string"
+                                    },
+                                    "LocationCodeQualifier": {
+                                        "description": "Code identifying the structure or format of the related location number[s]",
+                                        "type": "string"
+                                    },
+                                    "AddressLocationNumber": {
+                                        "description": "Unique value assigned to identify a location",
+                                        "examples": [
+                                            "11111"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "AddressName": {
+                                        "description": "Primary free-form textual description of a location",
+                                        "examples": [
+                                            "SPS Commerce",
+                                            "The White House"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "AddressAlternateName": {
+                                        "description": "Additional free-form description of a location",
+                                        "examples": [
+                                            "ATTN: Marketing"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "AddressAlternateName2": {
+                                        "description": "Additional free-form description of a location",
+                                        "examples": [
+                                            "ATTN: John Doe"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "Address1": {
+                                        "description": "Address information",
+                                        "examples": [
+                                            "1600 Pennsylvania Ave NW",
+                                            "333 South 7th Street"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "Address2": {
+                                        "description": "Address information",
+                                        "examples": [
+                                            "ATTN: The President",
+                                            "Suite 1000"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "Address3": {
+                                        "description": "Address information",
+                                        "examples": [
+                                            "333 South Seventh Street Tower"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "Address4": {
+                                        "description": "Address information",
+                                        "examples": [
+                                            "10th Floor"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "City": {
+                                        "description": "Free-form text for city name",
+                                        "examples": [
+                                            "Minneapolis",
+                                            "Washington"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "State": {
+                                        "description": "Code[Standard State/Province] as defined by appropriate government agency",
+                                        "examples": [
+                                            "DC",
+                                            "MN"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "PostalCode": {
+                                        "description": "International postal zone excluding punctuation and blanks[Zip Code for United States]",
+                                        "examples": [
+                                            "20500",
+                                            "55402"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "Country": {
+                                        "description": "Human readable description identifying the country",
+                                        "examples": [
+                                            "US",
+                                            "USA"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "LocationID": {
+                                        "description": "Provides further description to the address information. This can be either text or an ID",
+                                        "examples": [
+                                            "555555",
+                                            "East Location, next to interstate"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "CountrySubDivision": {
+                                        "type": "string"
+                                    },
+                                    "AddressTaxIdNumber": {
+                                        "description": "Unique number assigned by the relevant tax authority to identify a party for use in relation to Value Added Tax[VAT]",
+                                        "examples": [
+                                            "999999"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "AddressTaxExemptNumber": {
+                                        "type": "string"
+                                    },
+                                    "References": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "ReferenceQual": {
+                                                    "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                    "type": "string"
+                                                },
+                                                "ReferenceID": {
+                                                    "type": "string"
+                                                },
+                                                "Description": {
+                                                    "description": "Free-form textual description to clarify the related data elements and their content",
+                                                    "examples": [
+                                                        "New products only. Do not reuse packaging"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Date": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "Time": {
+                                                    "description": "All standard XML formats are accepted.",
+                                                    "examples": [
+                                                        "16:13:03-05:00"
+                                                    ],
+                                                    "type": "string",
+                                                    "format": "time"
+                                                },
+                                                "ReferenceIDs": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "additionalProperties": false,
+                                                        "required": [],
+                                                        "properties": {
+                                                            "ReferenceQual": {
+                                                                "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                                "type": "string"
+                                                            },
+                                                            "ReferenceID": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Contacts": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "ContactTypeCode": {
+                                                    "description": "Code identifying a type of contact",
+                                                    "type": "string"
+                                                },
+                                                "ContactName": {
+                                                    "description": "Free-form name",
+                                                    "examples": [
+                                                        "SPS Commerce"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "PrimaryPhone": {
+                                                    "description": "Phone number of contact listed",
+                                                    "examples": [
+                                                        "866-245-8100"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "PrimaryFax": {
+                                                    "description": "Fax number of contact listed",
+                                                    "examples": [
+                                                        "612-435-9401"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "PrimaryEmail": {
+                                                    "description": "E-mail address for contact listed",
+                                                    "examples": [
+                                                        "info@spscommerce.com"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "AdditionalContactDetails": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "description": "This group should be used if the associated normalized fields already contain information.",
+                                                        "additionalProperties": false,
+                                                        "required": [],
+                                                        "properties": {
+                                                            "ContactQual": {
+                                                                "type": "string"
+                                                            },
+                                                            "ContactID": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "ContactReference": {
+                                                    "description": "Additional field to clarify a contact",
+                                                    "examples": [
+                                                        "ext: 451"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Dates": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "DateTimeQualifier": {
+                                                    "description": "Code specifying the type of date",
+                                                    "type": "string"
+                                                },
+                                                "Date": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "Time": {
+                                                    "description": "All standard XML formats are accepted.",
+                                                    "examples": [
+                                                        "16:13:03-05:00"
+                                                    ],
+                                                    "type": "string",
+                                                    "format": "time"
+                                                },
+                                                "DateTimePeriod": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "References": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "ReferenceQual": {
+                                        "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                        "type": "string"
+                                    },
+                                    "ReferenceID": {
+                                        "type": "string"
+                                    },
+                                    "Description": {
+                                        "description": "Free-form textual description to clarify the related data elements and their content",
+                                        "examples": [
+                                            "New products only. Do not reuse packaging"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "Date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "Time": {
+                                        "description": "All standard XML formats are accepted.",
+                                        "examples": [
+                                            "16:13:03-05:00"
+                                        ],
+                                        "type": "string",
+                                        "format": "time"
+                                    },
+                                    "ReferenceIDs": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "ReferenceQual": {
+                                                    "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                    "type": "string"
+                                                },
+                                                "ReferenceID": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Notes": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "NoteCode": {
+                                        "description": "Code specifying the type of note",
+                                        "type": "string"
+                                    },
+                                    "Note": {
+                                        "description": "Free-form textual description of the note",
+                                        "examples": [
+                                            "REPEAT LOGO PREVIOUS ORDER"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "LanguageCode": {
+                                        "description": "Code designating the language used in text. ISO 639 language code",
+                                        "examples": [
+                                            "ENG"
+                                        ],
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "RegulatoryCompliances": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "description": "Indicates that the related item[s] are following the specified government or industry rules regarding material, manufacturing process and or end product",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "RegulatoryComplianceQual": {
+                                        "description": "Code indicating the act or legislation",
+                                        "type": "string"
+                                    },
+                                    "YesOrNoResponse": {
+                                        "description": "Code indicating a Yes or No condition or response",
+                                        "type": "string"
+                                    },
+                                    "RegulatoryComplianceID": {
+                                        "description": "The ID relating to the RegulatoryComplianceQual, if applicable ",
+                                        "type": "string"
+                                    },
+                                    "RegulatoryAgency": {
+                                        "description": "Used to indicate the organization responsible for validating or enforcing the RegulatoryComplianceQual when not otherwise specified by the RegulatoryComplianceQual",
+                                        "type": "string"
+                                    },
+                                    "Description": {
+                                        "description": "Free-form textual description to clarify the related data elements and their content",
+                                        "examples": [
+                                            "New products only. Do not reuse packaging"
+                                        ],
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "LineItem": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [],
+                        "properties": {
+                            "ReportLineItem": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [],
+                                "properties": {
+                                    "LineSequenceNumber": {
+                                        "description": "For an initiated document, this is a unique number for the line item[s]. For a return transaction, this number should be the same as what was received from the source transaction.",
+                                        "examples": [
+                                            "01",
+                                            "02",
+                                            "08"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ApplicationId": {
+                                        "description": "ERP generated code to uniquely identify the item",
+                                        "examples": [
+                                            "980023"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "SPSItemUID": {
+                                        "description": "Unique Identifier of the specific item",
+                                        "type": "string"
+                                    },
+                                    "BuyerPartNumber": {
+                                        "description": "Buyer's primary product identifier",
+                                        "examples": [
+                                            "9999-SPS"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "VendorPartNumber": {
+                                        "description": "Vendor's primary product identifier",
+                                        "examples": [
+                                            "11155-559999"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ConsumerPackageCode": {
+                                        "description": "Consumer level or customer unit product identification number",
+                                        "examples": [
+                                            "093597609541"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "EAN": {
+                                        "description": "International Article Number, aka European Article Number, which is the European equivalent of the United States UPC[Universal Product Code]",
+                                        "examples": [
+                                            "1234567890123"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "GTIN": {
+                                        "description": "Global Trade Item Number which is an item identifier that encompasses all product identification numbers such as UPC, EAN, ITF, etc. and can be assigned at various packing levels",
+                                        "examples": [
+                                            "12345678901234"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "UPCCaseCode": {
+                                        "description": "Package or case level product identification number",
+                                        "examples": [
+                                            "98765432101"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "NatlDrugCode": {
+                                        "description": "National Drug Code or NDC is a unique, universal product identifier for drugs. Primarily used in the pharmaceutical industry",
+                                        "examples": [
+                                            "51456-299"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "InternationalStandardBookNumber": {
+                                        "description": "ISBN is a unique number assigned to every book before publication",
+                                        "examples": [
+                                            "999-0-555-22222-0"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ProductID": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "PartNumberQual": {
+                                                    "description": "Qualifier describing the additional product identification numbers not defined in specific fields at the line level",
+                                                    "type": "string"
+                                                },
+                                                "PartNumber": {
+                                                    "description": "Additional product identification numbers not defined in specific fields at the line level",
+                                                    "examples": [
+                                                        "ABC-456789"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "PurchasePriceType": {
+                                        "description": "Code identifying the type of price",
+                                        "type": "string"
+                                    },
+                                    "PurchasePrice": {
+                                        "description": "Agreed upon price the buyer is paying for the line item",
+                                        "examples": [
+                                            5.85
+                                        ],
+                                        "type": "number"
+                                    },
+                                    "PurchasePriceBasis": {
+                                        "description": "Code specifying the type of unit price for an item",
+                                        "type": "string"
+                                    },
+                                    "ProductSizeCode": {
+                                        "description": "Vendor/Buyer assigned size code. NRF codes should go in the NRFStandardColorAndSize fields",
+                                        "examples": [
+                                            "S-800"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ProductSizeDescription": {
+                                        "description": "Free-form textual description of the product size",
+                                        "examples": [
+                                            "Small"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ProductColorCode": {
+                                        "description": "Vendor/Buyer assigned color code. NRF codes should go in the NRFStandardColorAndSize fields",
+                                        "examples": [
+                                            "C-999"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ProductColorDescription": {
+                                        "description": "Free-form textual description of the product color",
+                                        "examples": [
+                                            "Fire Truck Red"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ProductMaterialCode": {
+                                        "description": "Vendor/Buyer assigned fabric code/material code. NRF codes should go in the NRFStandardColorAndSize fields",
+                                        "examples": [
+                                            "F-000"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ProductMaterialDescription": {
+                                        "description": "Free-form textual description of the item's primary material/fabric",
+                                        "examples": [
+                                            "Faux Fabric"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "ProductProcessCode": {
+                                        "type": "string"
+                                    },
+                                    "ProductProcessDescription": {
+                                        "type": "string"
+                                    },
+                                    "Department": {
+                                        "description": "Name or number identifying an area wherein merchandise is categorized within a store",
+                                        "examples": [
+                                            "026"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "DepartmentDescription": {
+                                        "description": "Free form text to describe the name or number identifying an area wherein merchandise is categorized within a store",
+                                        "examples": [
+                                            "Electronics"
+                                        ],
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "PriceInformation": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "ChangeReasonCode": {
+                                            "type": "string"
+                                        },
+                                        "EffectiveDate": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "PriceTypeIDCode": {
+                                            "description": "Code identifying the type of price",
+                                            "type": "string"
+                                        },
+                                        "UnitPrice": {
+                                            "description": "Price as defined by the PriceTypeIDCode",
+                                            "examples": [
+                                                5.48
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "UnitPriceBasis": {
+                                            "description": "Code specifying the type of unit price for an item",
+                                            "type": "string"
+                                        },
+                                        "UnitPriceBasisMultiplier": {
+                                            "description": "Value to be used as a modifier to obtain a new UnitPriceBasis.",
+                                            "examples": [
+                                                3.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "Currency": {
+                                            "description": "ISO Currency Code[http://www.iso.org/iso/home/standards/currency_codes.htm]",
+                                            "type": "string"
+                                        },
+                                        "PriceMultiplierQual": {
+                                            "description": "Code indicating the type of price multiplier",
+                                            "type": "string"
+                                        },
+                                        "PriceMultiplier": {
+                                            "description": "Value to be used as a multiplier to obtain a new price",
+                                            "examples": [
+                                                8.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "RebateAmount": {
+                                            "type": "number"
+                                        },
+                                        "Quantity": {
+                                            "type": "number"
+                                        },
+                                        "QuantityUOM": {
+                                            "type": "string"
+                                        },
+                                        "MultiplePriceQuantity": {
+                                            "description": "Quantity of units for a given price [i.e. 3 for $10.00].",
+                                            "examples": [
+                                                3.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "ClassOfTradeCode": {
+                                            "description": "Self defined categories used to indicate who is authorized to view or use the related price information contained in the PriceInformation or PricingType group",
+                                            "type": "string"
+                                        },
+                                        "ConditionValue": {
+                                            "type": "string"
+                                        },
+                                        "Description": {
+                                            "description": "Free-form textual description to clarify the related data elements and their content",
+                                            "examples": [
+                                                "New products only. Do not reuse packaging"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "ProductOrItemDescription": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "ProductCharacteristicCode": {
+                                            "description": "Code defining/classifying the type of description being sent",
+                                            "type": "string"
+                                        },
+                                        "AgencyQualifierCode": {
+                                            "type": "string"
+                                        },
+                                        "ProductDescriptionCode": {
+                                            "type": "string"
+                                        },
+                                        "ProductDescription": {
+                                            "description": "Free-form textual description of the product",
+                                            "examples": [
+                                                "Super comfortable"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "SurfaceLayerPositionCode": {
+                                            "type": "string"
+                                        },
+                                        "SourceSubqualifier": {
+                                            "type": "string"
+                                        },
+                                        "YesOrNoResponse": {
+                                            "description": "Code indicating a Yes or No condition or response",
+                                            "type": "string"
+                                        },
+                                        "LanguageCode": {
+                                            "description": "Code designating the language used in text. ISO 639 language code",
+                                            "examples": [
+                                                "ENG"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "PhysicalDetails": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "PackQualifier": {
+                                            "description": "Code to identify the pack hierarchical level",
+                                            "type": "string"
+                                        },
+                                        "PackValue": {
+                                            "description": "The number of units inside the PackQualifier",
+                                            "examples": [
+                                                6
+                                            ],
+                                            "type": "integer"
+                                        },
+                                        "PackSize": {
+                                            "description": "Measurable size of the sellable unit",
+                                            "examples": [
+                                                18.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "PackUOM": {
+                                            "description": "Unit of measure for the PackSize",
+                                            "type": "string"
+                                        },
+                                        "PackingMedium": {
+                                            "description": "Code identifying the type of packaging",
+                                            "type": "string"
+                                        },
+                                        "PackingMaterial": {
+                                            "description": "Code identifying the type of packaging material",
+                                            "type": "string"
+                                        },
+                                        "WeightQualifier": {
+                                            "description": "Code defining the type of weight",
+                                            "type": "string"
+                                        },
+                                        "PackWeight": {
+                                            "description": "Numeric value of total weight in reference to the PackQualifier or PalletQualifier",
+                                            "examples": [
+                                                1600.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "PackWeightUOM": {
+                                            "description": "Code specifying the units in which the PackWeight is being measured by",
+                                            "type": "string"
+                                        },
+                                        "PackVolume": {
+                                            "description": "Numeric value of volume per unit of measure in reference to the PackQualifier or PalletQualifier",
+                                            "examples": [
+                                                1728.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "PackVolumeUOM": {
+                                            "description": "Code specifying the units in which the PackVolume is being measured by",
+                                            "type": "string"
+                                        },
+                                        "PackLength": {
+                                            "description": "The larger horizontal dimension of your pack, as defined by the PackQualifer, when the pack is in the upright position",
+                                            "examples": [
+                                                12.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "PackWidth": {
+                                            "description": "The smaller horizontal dimension of your pack, as defined by the PackQualifier, when the pack is in the upright position",
+                                            "examples": [
+                                                12.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "PackHeight": {
+                                            "description": "The vertical dimension of your pack, as defined by the PackQualifer, when the pack is in the upright position",
+                                            "examples": [
+                                                12.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "DimensionUOM": {
+                                            "description": "Code specifying the units in which the length, width, or height is being measured by",
+                                            "type": "string"
+                                        },
+                                        "Description": {
+                                            "description": "Free-form textual description to clarify the related data elements and their content",
+                                            "examples": [
+                                                "New products only. Do not reuse packaging"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "SurfaceLayerPositionCode": {
+                                            "type": "string"
+                                        },
+                                        "AssignedID": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "References": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "ReferenceQual": {
+                                            "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                            "type": "string"
+                                        },
+                                        "ReferenceID": {
+                                            "type": "string"
+                                        },
+                                        "Description": {
+                                            "description": "Free-form textual description to clarify the related data elements and their content",
+                                            "examples": [
+                                                "New products only. Do not reuse packaging"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "Time": {
+                                            "description": "All standard XML formats are accepted.",
+                                            "examples": [
+                                                "16:13:03-05:00"
+                                            ],
+                                            "type": "string",
+                                            "format": "time"
+                                        },
+                                        "ReferenceIDs": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "required": [],
+                                                "properties": {
+                                                    "ReferenceQual": {
+                                                        "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceID": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "Notes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "NoteCode": {
+                                            "description": "Code specifying the type of note",
+                                            "type": "string"
+                                        },
+                                        "Note": {
+                                            "description": "Free-form textual description of the note",
+                                            "examples": [
+                                                "REPEAT LOGO PREVIOUS ORDER"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "LanguageCode": {
+                                            "description": "Code designating the language used in text. ISO 639 language code",
+                                            "examples": [
+                                                "ENG"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "Address": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "AddressTypeCode": {
+                                            "description": "Code identifying an organizational entity, a physical location, property, or an individual",
+                                            "type": "string"
+                                        },
+                                        "LocationCodeQualifier": {
+                                            "description": "Code identifying the structure or format of the related location number[s]",
+                                            "type": "string"
+                                        },
+                                        "AddressLocationNumber": {
+                                            "description": "Unique value assigned to identify a location",
+                                            "examples": [
+                                                "11111"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "AddressName": {
+                                            "description": "Primary free-form textual description of a location",
+                                            "examples": [
+                                                "SPS Commerce",
+                                                "The White House"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "AddressAlternateName": {
+                                            "description": "Additional free-form description of a location",
+                                            "examples": [
+                                                "ATTN: Marketing"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "AddressAlternateName2": {
+                                            "description": "Additional free-form description of a location",
+                                            "examples": [
+                                                "ATTN: John Doe"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Address1": {
+                                            "description": "Address information",
+                                            "examples": [
+                                                "1600 Pennsylvania Ave NW",
+                                                "333 South 7th Street"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Address2": {
+                                            "description": "Address information",
+                                            "examples": [
+                                                "ATTN: The President",
+                                                "Suite 1000"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Address3": {
+                                            "description": "Address information",
+                                            "examples": [
+                                                "333 South Seventh Street Tower"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Address4": {
+                                            "description": "Address information",
+                                            "examples": [
+                                                "10th Floor"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "City": {
+                                            "description": "Free-form text for city name",
+                                            "examples": [
+                                                "Minneapolis",
+                                                "Washington"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "State": {
+                                            "description": "Code[Standard State/Province] as defined by appropriate government agency",
+                                            "examples": [
+                                                "DC",
+                                                "MN"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "PostalCode": {
+                                            "description": "International postal zone excluding punctuation and blanks[Zip Code for United States]",
+                                            "examples": [
+                                                "20500",
+                                                "55402"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "Country": {
+                                            "description": "Human readable description identifying the country",
+                                            "examples": [
+                                                "US",
+                                                "USA"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "LocationID": {
+                                            "description": "Provides further description to the address information. This can be either text or an ID",
+                                            "examples": [
+                                                "555555",
+                                                "East Location, next to interstate"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "CountrySubDivision": {
+                                            "type": "string"
+                                        },
+                                        "AddressTaxIdNumber": {
+                                            "description": "Unique number assigned by the relevant tax authority to identify a party for use in relation to Value Added Tax[VAT]",
+                                            "examples": [
+                                                "999999"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "AddressTaxExemptNumber": {
+                                            "type": "string"
+                                        },
+                                        "References": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "required": [],
+                                                "properties": {
+                                                    "ReferenceQual": {
+                                                        "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceID": {
+                                                        "type": "string"
+                                                    },
+                                                    "Description": {
+                                                        "description": "Free-form textual description to clarify the related data elements and their content",
+                                                        "examples": [
+                                                            "New products only. Do not reuse packaging"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "Date": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "Time": {
+                                                        "description": "All standard XML formats are accepted.",
+                                                        "examples": [
+                                                            "16:13:03-05:00"
+                                                        ],
+                                                        "type": "string",
+                                                        "format": "time"
+                                                    },
+                                                    "ReferenceIDs": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "additionalProperties": false,
+                                                            "required": [],
+                                                            "properties": {
+                                                                "ReferenceQual": {
+                                                                    "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                                    "type": "string"
+                                                                },
+                                                                "ReferenceID": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "Contacts": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "required": [],
+                                                "properties": {
+                                                    "ContactTypeCode": {
+                                                        "description": "Code identifying a type of contact",
+                                                        "type": "string"
+                                                    },
+                                                    "ContactName": {
+                                                        "description": "Free-form name",
+                                                        "examples": [
+                                                            "SPS Commerce"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "PrimaryPhone": {
+                                                        "description": "Phone number of contact listed",
+                                                        "examples": [
+                                                            "866-245-8100"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "PrimaryFax": {
+                                                        "description": "Fax number of contact listed",
+                                                        "examples": [
+                                                            "612-435-9401"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "PrimaryEmail": {
+                                                        "description": "E-mail address for contact listed",
+                                                        "examples": [
+                                                            "info@spscommerce.com"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "AdditionalContactDetails": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "description": "This group should be used if the associated normalized fields already contain information.",
+                                                            "additionalProperties": false,
+                                                            "required": [],
+                                                            "properties": {
+                                                                "ContactQual": {
+                                                                    "type": "string"
+                                                                },
+                                                                "ContactID": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "ContactReference": {
+                                                        "description": "Additional field to clarify a contact",
+                                                        "examples": [
+                                                            "ext: 451"
+                                                        ],
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "Dates": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "required": [],
+                                                "properties": {
+                                                    "DateTimeQualifier": {
+                                                        "description": "Code specifying the type of date",
+                                                        "type": "string"
+                                                    },
+                                                    "Date": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "Time": {
+                                                        "description": "All standard XML formats are accepted.",
+                                                        "examples": [
+                                                            "16:13:03-05:00"
+                                                        ],
+                                                        "type": "string",
+                                                        "format": "time"
+                                                    },
+                                                    "DateTimePeriod": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "ProductActivityReporting": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "This group is normally used to describe how products or items preformed at specific trading partner locations. The data contained in this group could possibly be, but not limited to, quantity sold and quantity on-hand at a specific store or warehouse.",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "ActivityCode": {
+                                            "description": "Used to indicate the kind of quantity being reported",
+                                            "type": "string"
+                                        },
+                                        "TotalQty": {
+                                            "description": "Numeric value of the total quantity",
+                                            "examples": [
+                                                100.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "TotalQtyUOM": {
+                                            "description": "The unit of measure for the numeric value of the total quantity",
+                                            "type": "string"
+                                        },
+                                        "Dates": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "DateTimeQualifier": {
+                                                    "description": "Code specifying the type of date",
+                                                    "type": "string"
+                                                },
+                                                "Date": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "Time": {
+                                                    "description": "All standard XML formats are accepted.",
+                                                    "examples": [
+                                                        "16:13:03-05:00"
+                                                    ],
+                                                    "type": "string",
+                                                    "format": "time"
+                                                },
+                                                "DateTimePeriod": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "References": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [],
+                                            "properties": {
+                                                "ReferenceQual": {
+                                                    "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                    "type": "string"
+                                                },
+                                                "ReferenceID": {
+                                                    "type": "string"
+                                                },
+                                                "Description": {
+                                                    "description": "Free-form textual description to clarify the related data elements and their content",
+                                                    "examples": [
+                                                        "New products only. Do not reuse packaging"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "Date": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "Time": {
+                                                    "description": "All standard XML formats are accepted.",
+                                                    "examples": [
+                                                        "16:13:03-05:00"
+                                                    ],
+                                                    "type": "string",
+                                                    "format": "time"
+                                                },
+                                                "ReferenceIDs": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "additionalProperties": false,
+                                                        "required": [],
+                                                        "properties": {
+                                                            "ReferenceQual": {
+                                                                "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription",
+                                                                "type": "string"
+                                                            },
+                                                            "ReferenceID": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "LocationCodeQualifier": {
+                                            "description": "Code identifying the structure or format of the related location number[s]",
+                                            "type": "string"
+                                        },
+                                        "LocationDescription": {
+                                            "description": "Generic description to explain all the location quantities. i.e. Bin Number, Warehouse, Stockroom",
+                                            "examples": [
+                                                "Aisle end cap"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "LocationQuantityPrice": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "required": [],
+                                                "properties": {
+                                                    "Location": {
+                                                        "description": "For CrossDock, it's the marked for location. For MultiStore[could also be DC] ship-to location",
+                                                        "examples": [
+                                                            "9999"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "LocationQty": {
+                                                        "type": "number"
+                                                    },
+                                                    "LocationQtyUOM": {
+                                                        "type": "string"
+                                                    },
+                                                    "SPSLocationUID": {
+                                                        "description": "Unique Identifier of a specific location",
+                                                        "type": "string"
+                                                    },
+                                                    "Dates": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "additionalProperties": false,
+                                                            "required": [],
+                                                            "properties": {
+                                                                "DateTimeQualifier": {
+                                                                    "description": "Code specifying the type of date",
+                                                                    "type": "string"
+                                                                },
+                                                                "Date": {
+                                                                    "type": "string",
+                                                                    "format": "date"
+                                                                },
+                                                                "Time": {
+                                                                    "description": "All standard XML formats are accepted.",
+                                                                    "examples": [
+                                                                        "16:13:03-05:00"
+                                                                    ],
+                                                                    "type": "string",
+                                                                    "format": "time"
+                                                                },
+                                                                "DateTimePeriod": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "PriceTypeIDCode": {
+                                                        "description": "Code identifying the type of price",
+                                                        "type": "string"
+                                                    },
+                                                    "UnitPrice": {
+                                                        "description": "Price as defined by the PriceTypeIDCode",
+                                                        "examples": [
+                                                            5.48
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "Currency": {
+                                                        "description": "ISO Currency Code[http://www.iso.org/iso/home/standards/currency_codes.htm]",
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "PriceInformation": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "required": [],
+                                                "properties": {
+                                                    "ChangeReasonCode": {
+                                                        "type": "string"
+                                                    },
+                                                    "EffectiveDate": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "PriceTypeIDCode": {
+                                                        "description": "Code identifying the type of price",
+                                                        "type": "string"
+                                                    },
+                                                    "UnitPrice": {
+                                                        "description": "Price as defined by the PriceTypeIDCode",
+                                                        "examples": [
+                                                            5.48
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "UnitPriceBasis": {
+                                                        "description": "Code specifying the type of unit price for an item",
+                                                        "type": "string"
+                                                    },
+                                                    "UnitPriceBasisMultiplier": {
+                                                        "description": "Value to be used as a modifier to obtain a new UnitPriceBasis.",
+                                                        "examples": [
+                                                            3.0
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "Currency": {
+                                                        "description": "ISO Currency Code[http://www.iso.org/iso/home/standards/currency_codes.htm]",
+                                                        "type": "string"
+                                                    },
+                                                    "PriceMultiplierQual": {
+                                                        "description": "Code indicating the type of price multiplier",
+                                                        "type": "string"
+                                                    },
+                                                    "PriceMultiplier": {
+                                                        "description": "Value to be used as a multiplier to obtain a new price",
+                                                        "examples": [
+                                                            8.0
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "RebateAmount": {
+                                                        "type": "number"
+                                                    },
+                                                    "Quantity": {
+                                                        "type": "number"
+                                                    },
+                                                    "QuantityUOM": {
+                                                        "type": "string"
+                                                    },
+                                                    "MultiplePriceQuantity": {
+                                                        "description": "Quantity of units for a given price [i.e. 3 for $10.00].",
+                                                        "examples": [
+                                                            3.0
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "ClassOfTradeCode": {
+                                                        "description": "Self defined categories used to indicate who is authorized to view or use the related price information contained in the PriceInformation or PricingType group",
+                                                        "type": "string"
+                                                    },
+                                                    "ConditionValue": {
+                                                        "type": "string"
+                                                    },
+                                                    "Description": {
+                                                        "description": "Free-form textual description to clarify the related data elements and their content",
+                                                        "examples": [
+                                                            "New products only. Do not reuse packaging"
+                                                        ],
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "Taxes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "TaxTypeCode": {
+                                            "description": "Identification of the type of duty, tax, or fee applicable to commodities or of tax applicable to services",
+                                            "type": "string"
+                                        },
+                                        "TaxAmount": {
+                                            "description": "The monetary amount applied",
+                                            "examples": [
+                                                1845.08
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "TaxPercentQual": {
+                                            "description": "Code indicating on what basis a tax percent is calculated",
+                                            "type": "string"
+                                        },
+                                        "TaxPercent": {
+                                            "description": "The percentage that is applied to determine the tax amount. Percentages should be represented as real numbers[0% through 100% should be normalized to 0.0 through 100.00]",
+                                            "examples": [
+                                                8.5
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "JurisdictionQual": {
+                                            "description": "Code identifying the source of the data used in the Tax JurisdictionCode",
+                                            "type": "string"
+                                        },
+                                        "JurisdictionCode": {
+                                            "description": "Code represents the City, State, or Providence[tax authority] associated with the Tax group",
+                                            "examples": [
+                                                "07034"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "TaxExemptCode": {
+                                            "description": "Code indicating whether the header or item level data is exempt[or not exempt] for the tax and taxing authority indicated in JurisdictionCode",
+                                            "type": "string"
+                                        },
+                                        "RelationshipCode": {
+                                            "description": "Code identifying whether the tax amount is included in the total transaction amount",
+                                            "type": "string"
+                                        },
+                                        "PercentDollarBasis": {
+                                            "description": "Monetary amount that is used when calculating a tax, allowance, or charge amount.",
+                                            "examples": [
+                                                2000.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "TaxHandlingCode": {
+                                            "description": "Code indicating method of handling for a tax",
+                                            "type": "string"
+                                        },
+                                        "TaxID": {
+                                            "description": "Number assigned to a purchaser[buyer, orderer] by a tax jurisdiction[state, country, etc]",
+                                            "examples": [
+                                                "99990000"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "AssignedID": {
+                                            "type": "string"
+                                        },
+                                        "Description": {
+                                            "description": "Free-form textual description to clarify the related data elements and their content",
+                                            "examples": [
+                                                "New products only. Do not reuse packaging"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "ChargesAllowances": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "AllowChrgIndicator": {
+                                            "description": "Code which indicates an allowance or charge for the service specified",
+                                            "type": "string"
+                                        },
+                                        "AllowChrgCode": {
+                                            "description": "Code describing the type of allowance or charge for the service specified",
+                                            "type": "string"
+                                        },
+                                        "AllowChrgAgencyCode": {
+                                            "description": "Code identifying the agency assigning the code values",
+                                            "type": "string"
+                                        },
+                                        "AllowChrgAgency": {
+                                            "description": "Agency maintained code identifying the service, promotion, allowance, or charge",
+                                            "examples": [
+                                                "Pending Review"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "AllowChrgAmt": {
+                                            "description": "Amount of the allowance or charge",
+                                            "examples": [
+                                                85.02
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "AllowChrgPercentQual": {
+                                            "description": "Code indicating on what basis an allowance or charge percent is calculated",
+                                            "type": "string"
+                                        },
+                                        "AllowChrgPercent": {
+                                            "description": "Percentage of allowance or charge. Percentages should be represented as real numbers[0% through 100% should be normalized to 0.0 through 100.00]",
+                                            "examples": [
+                                                5.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "PercentDollarBasis": {
+                                            "description": "Monetary amount that is used when calculating a tax, allowance, or charge amount.",
+                                            "examples": [
+                                                2000.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "AllowChrgRate": {
+                                            "description": "Value expressed in monetary currency that applies to the given quantity [i.e. The rate is $5.00 off one dozen]. [AllowChrgRate, AllowChrgQty, AllowChrgQtyUOM fields should all be sent in conjunction with each other]",
+                                            "examples": [
+                                                2.43
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "AllowChrgQtyUOM": {
+                                            "description": "The unit of measure used in relation with AllowChrgQty[AllowChrgRate, AllowChrgQty, AllowChrgQtyUOM fields should all be sent in conjunction with each other]",
+                                            "type": "string"
+                                        },
+                                        "AllowChrgQty": {
+                                            "description": "Numeric value of quantity to which the allowance or charge applies[AllowChrgRate, AllowChrgQty, AllowChrgQtyUOM fields should all be sent in conjunction with each other]",
+                                            "examples": [
+                                                8.0
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "AllowChrgHandlingCode": {
+                                            "description": "Code indicating method of handling for an allowance or charge",
+                                            "type": "string"
+                                        },
+                                        "ReferenceIdentification": {
+                                            "type": "string"
+                                        },
+                                        "AllowChrgHandlingDescription": {
+                                            "description": "Free-form textual description of the allowance or charge",
+                                            "examples": [
+                                                "This will cover the cost of shipping"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "OptionNumber": {
+                                            "type": "string"
+                                        },
+                                        "ExceptionNumber": {
+                                            "type": "string"
+                                        },
+                                        "AllowChrgQty2": {
+                                            "type": "number"
+                                        },
+                                        "LanguageCode": {
+                                            "description": "Code designating the language used in text. ISO 639 language code",
+                                            "examples": [
+                                                "ENG"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "CalculationSequence": {
+                                            "description": "Used to indicate at what point a value should be used in calculations where orders of operations matter [i.e. 1 would indicate that the related value should be taken first].",
+                                            "examples": [
+                                                1
+                                            ],
+                                            "type": "integer"
+                                        },
+                                        "Taxes": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "required": [],
+                                                "properties": {
+                                                    "TaxTypeCode": {
+                                                        "description": "Identification of the type of duty, tax, or fee applicable to commodities or of tax applicable to services",
+                                                        "type": "string"
+                                                    },
+                                                    "TaxAmount": {
+                                                        "description": "The monetary amount applied",
+                                                        "examples": [
+                                                            1845.08
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "TaxPercentQual": {
+                                                        "description": "Code indicating on what basis a tax percent is calculated",
+                                                        "type": "string"
+                                                    },
+                                                    "TaxPercent": {
+                                                        "description": "The percentage that is applied to determine the tax amount. Percentages should be represented as real numbers[0% through 100% should be normalized to 0.0 through 100.00]",
+                                                        "examples": [
+                                                            8.5
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "JurisdictionQual": {
+                                                        "description": "Code identifying the source of the data used in the Tax JurisdictionCode",
+                                                        "type": "string"
+                                                    },
+                                                    "JurisdictionCode": {
+                                                        "description": "Code represents the City, State, or Providence[tax authority] associated with the Tax group",
+                                                        "examples": [
+                                                            "07034"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "TaxExemptCode": {
+                                                        "description": "Code indicating whether the header or item level data is exempt[or not exempt] for the tax and taxing authority indicated in JurisdictionCode",
+                                                        "type": "string"
+                                                    },
+                                                    "RelationshipCode": {
+                                                        "description": "Code identifying whether the tax amount is included in the total transaction amount",
+                                                        "type": "string"
+                                                    },
+                                                    "PercentDollarBasis": {
+                                                        "description": "Monetary amount that is used when calculating a tax, allowance, or charge amount.",
+                                                        "examples": [
+                                                            2000.0
+                                                        ],
+                                                        "type": "number"
+                                                    },
+                                                    "TaxHandlingCode": {
+                                                        "description": "Code indicating method of handling for a tax",
+                                                        "type": "string"
+                                                    },
+                                                    "TaxID": {
+                                                        "description": "Number assigned to a purchaser[buyer, orderer] by a tax jurisdiction[state, country, etc]",
+                                                        "examples": [
+                                                            "99990000"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "AssignedID": {
+                                                        "type": "string"
+                                                    },
+                                                    "Description": {
+                                                        "description": "Free-form textual description to clarify the related data elements and their content",
+                                                        "examples": [
+                                                            "New products only. Do not reuse packaging"
+                                                        ],
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "MonetaryAmounts": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "MonetaryAmountCode": {
+                                            "description": "Code used to qualify or further define an amount value",
+                                            "type": "string"
+                                        },
+                                        "MonetaryAmount": {
+                                            "description": "Amount total of various kinds in the transaction as defined by MonetaryAmountCode.",
+                                            "examples": [
+                                                9.95
+                                            ],
+                                            "type": "number"
+                                        },
+                                        "CreditDebitFlag": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "RegulatoryCompliances": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Indicates that the related item[s] are following the specified government or industry rules regarding material, manufacturing process and or end product",
+                                    "additionalProperties": false,
+                                    "required": [],
+                                    "properties": {
+                                        "RegulatoryComplianceQual": {
+                                            "description": "Code indicating the act or legislation",
+                                            "type": "string"
+                                        },
+                                        "YesOrNoResponse": {
+                                            "description": "Code indicating a Yes or No condition or response",
+                                            "type": "string"
+                                        },
+                                        "RegulatoryComplianceID": {
+                                            "description": "The ID relating to the RegulatoryComplianceQual, if applicable ",
+                                            "type": "string"
+                                        },
+                                        "RegulatoryAgency": {
+                                            "description": "Used to indicate the organization responsible for validating or enforcing the RegulatoryComplianceQual when not otherwise specified by the RegulatoryComplianceQual",
+                                            "type": "string"
+                                        },
+                                        "Description": {
+                                            "description": "Free-form textual description to clarify the related data elements and their content",
+                                            "examples": [
+                                                "New products only. Do not reuse packaging"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "Summary": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [],
+                    "properties": {
+                        "TotalLineItemNumber": {
+                            "description": "Sum of the total number of line items in this document",
+                            "examples": [
+                                3
+                            ],
+                            "type": "integer"
+                        },
+                        "TotalNumberofPurchaseOrders": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "oneOf": [
+        {
+            "$ref": "#/definitions/ProductActivity"
+        },
+        {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/ProductActivity"
+            }
+        }
+    ]
+}

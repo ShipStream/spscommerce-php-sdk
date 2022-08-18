@@ -1,0 +1,22 @@
+{
+    "name": "shipstream/sps-commerce-sdk",
+    "description": "A PHP library for integrating with SPS Commerce via HTTP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shipstream",
+            "email": "info@shipstream.io"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "swaggest/json-cli": "^1.9",
+        "php-mock/php-mock-phpunit": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {"ShipStream\\SpsCommerce\\": "src/"}
+    },
+    "autoload-dev": {
+    }
+}

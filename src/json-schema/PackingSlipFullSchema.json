@@ -1,0 +1,1871 @@
+{
+  "sections": [
+    {
+      "id": "PackingSlip",
+      "parent_id": "",
+      "items": [
+        {
+          "type": "object",
+          "description": "Encloses all document header elements.",
+          "id": "Header"
+        },
+        {
+          "type": "array",
+          "description": "Encloses all document item elements.",
+          "id": "Item"
+        },
+        {
+          "type": "array",
+          "description": "Encloses all document pack elements.",
+          "id": "Pack"
+        }
+      ],
+      "path": "",
+      "type": "object"
+    },
+    {
+      "id": "Header",
+      "parent_id": "PackingSlip",
+      "items": [
+        {
+          "type": "string",
+          "description": "Identifying number for the purchase order assigned by the buying organization.",
+          "minLength": [
+            1,
+            10
+          ],
+          "maxLength": [
+            35,
+            10,
+            18,
+            50,
+            22,
+            30
+          ],
+          "id": "PurchaseOrderNumber"
+        },
+        {
+          "type": "string",
+          "format": "date",
+          "description": "Date the purchase order was created.",
+          "id": "PurchaseOrderDate"
+        },
+        {
+          "type": "array",
+          "description": "Supplemental text for the transaction.",
+          "id": "Notes"
+        },
+        {
+          "type": "array",
+          "contains": {},
+          "description": "Represent an entity such as an organizational, physical location, property, or individual.",
+          "id": "Address"
+        },
+        {
+          "type": "array",
+          "description": "Specifies carrier identity, transportation information, and equipment details.",
+          "id": "CarrierInformation"
+        },
+        {
+          "type": "string",
+          "description": "End consumer's order number.",
+          "minLength": 1,
+          "maxLength": [
+            18,
+            35,
+            50,
+            30
+          ],
+          "id": "CustomerOrderNumber"
+        },
+        {
+          "type": "array",
+          "description": "Supplemental information supporting the transaction.",
+          "id": "References"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 15,
+          "description": "Unique internal identifier defined by SPS Commerce which identifies the relationship.",
+          "id": "TradingPartnerId"
+        },
+        {
+          "type": "array",
+          "description": "Provides contact information.",
+          "id": "Contacts"
+        },
+        {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2,
+          "description": "Project number assigned to a standard reorder purchase order.",
+          "id": "JobNumber"
+        },
+        {
+          "type": "string",
+          "description": "Different entities belonging to the same parent company.",
+          "minLength": [
+            1,
+            3
+          ],
+          "maxLength": [
+            50,
+            3
+          ],
+          "id": "Division"
+        },
+        {
+          "type": "string",
+          "minLength": [
+            1,
+            2
+          ],
+          "maxLength": [
+            12,
+            30
+          ],
+          "description": "Identification number assigned to the shipment by the shipper that uniquely identifies the shipment from origin to ultimate destination and is not subject to modification.",
+          "id": "ShipmentIdentification"
+        },
+        {
+          "type": "string",
+          "format": "date",
+          "description": "Date shipment will leave the ship from location.",
+          "id": "ShipDate"
+        },
+        {
+          "type": "string",
+          "description": "Time the shipment left the ship from location. [All standard XML formats are accepted. For example: HH:mm:ssZ].",
+          "id": "ShipmentTime"
+        },
+        {
+          "type": "array",
+          "description": "Transportation instructions specifying at what point costs, risks, obligations, and ownership shift from seller to buyer.",
+          "id": "FOBRelatedInstruction"
+        },
+        {
+          "type": "array",
+          "description": "This group is used to communicate quantities for all line items.",
+          "id": "QuantityTotals"
+        },
+        {
+          "type": "string",
+          "description": "Reference number assigned by the carrier.",
+          "minLength": 1,
+          "maxLength": [
+            50,
+            30
+          ],
+          "id": "CarrierProNumber"
+        },
+        {
+          "type": "string",
+          "description": "Number assigned by buyer that uniquely identifies the vendor.",
+          "minLength": 1,
+          "maxLength": 30,
+          "id": "Vendor"
+        },
+        {
+          "type": "array",
+          "description": "Provides date and time information.",
+          "id": "Dates"
+        },
+        {
+          "type": "string",
+          "description": "Identifying number for the purchase order relating back to the original blanket order.",
+          "minLength": 1,
+          "maxLength": 30,
+          "id": "ReleaseNumber"
+        },
+        {
+          "type": "string",
+          "description": "A shipper assigned number that outlines the ownership, terms of carriage and is a receipt of goods.",
+          "id": "BillOfLadingNumber"
+        },
+        {
+          "type": "array",
+          "description": "Provides tax details.",
+          "id": "Taxes"
+        },
+        {
+          "type": "array",
+          "description": "Details a charge, allowance, or service associated with the transaction.",
+          "id": "ChargesAllowances"
+        },
+        {
+          "type": "string",
+          "format": "date",
+          "description": "Current scheduled date of delivery.",
+          "id": "CurrentScheduledDeliveryDate"
+        },
+        {
+          "type": "string",
+          "description": "Name or number identifying an area wherein merchandise is categorized within a store.",
+          "id": "Department"
+        },
+        {
+          "type": "string",
+          "description": "End consumer's account number.",
+          "minLength": 1,
+          "maxLength": 30,
+          "id": "CustomerAccountNumber"
+        }
+      ],
+      "path": "Header",
+      "type": "object"
+    },
+    {
+      "id": "Notes",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code specifying the type of note.",
+          "enumDescriptions": {
+            "GFT": "Gift Note",
+            "PCK": "Packing Slip",
+            "RTN": "Return Instructions",
+            "GEN": "General Note",
+            "SPE": "Special Instructions",
+            "SHP": "Shipping Note"
+          },
+          "id": "NoteCode"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the note.",
+          "minLength": 1,
+          "maxLength": [
+            80,
+            264,
+            50
+          ],
+          "id": "Note"
+        }
+      ],
+      "path": "Header.Notes",
+      "type": "object"
+    },
+    {
+      "id": "Address",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code identifying an organizational entity, a physical location, property, or an individual.",
+          "enumDescriptions": {
+            "BT": "Bill to Party",
+            "ST": "Ship To",
+            "RT": "Return Address",
+            "DA": "Delivery Address",
+            "SF": "Ship From",
+            "SO": "Sold To",
+            "VN": "Vendor",
+            "BO": "Broker",
+            "OB": "Ordered By",
+            "WH": "Warehouse",
+            "AG": "Agent",
+            "PF": "Party to Receive Freight Bill",
+            "BY": "Buying Party",
+            "CS": "Consolidator"
+          },
+          "id": "AddressTypeCode"
+        },
+        {
+          "type": "string",
+          "description": "Primary free-form textual description of a location.",
+          "minLength": 1,
+          "maxLength": [
+            60,
+            55
+          ],
+          "id": "AddressName"
+        },
+        {
+          "type": "string",
+          "description": "Address information.",
+          "minLength": 1,
+          "maxLength": [
+            60,
+            39,
+            55
+          ],
+          "id": "Address1"
+        },
+        {
+          "type": "string",
+          "description": "Address information.",
+          "minLength": 1,
+          "maxLength": [
+            20,
+            60,
+            55
+          ],
+          "id": "Address2"
+        },
+        {
+          "type": "string",
+          "description": "Free-form text for city name.",
+          "minLength": [
+            1,
+            2
+          ],
+          "maxLength": [
+            35,
+            18,
+            20,
+            60,
+            30
+          ],
+          "id": "City"
+        },
+        {
+          "type": "string",
+          "description": "Code[Standard State/Province] as defined by appropriate government agency.",
+          "minLength": [
+            1,
+            2
+          ],
+          "maxLength": [
+            10,
+            2,
+            3
+          ],
+          "id": "State"
+        },
+        {
+          "type": "string",
+          "description": "International postal zone excluding punctuation and blanks[Zip Code for United States].",
+          "minLength": [
+            1,
+            2,
+            3
+          ],
+          "maxLength": [
+            25,
+            15
+          ],
+          "id": "PostalCode"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 55,
+          "description": "Address information.",
+          "id": "Address3"
+        },
+        {
+          "type": "array",
+          "description": "Provides contact information.",
+          "id": "Contacts"
+        },
+        {
+          "type": "string",
+          "description": "Additional free-form description of a location.",
+          "minLength": 1,
+          "maxLength": [
+            60,
+            55
+          ],
+          "id": "AddressAlternateName"
+        },
+        {
+          "type": "string",
+          "description": "Human readable description identifying the country.",
+          "minLength": [
+            1,
+            2
+          ],
+          "maxLength": [
+            2,
+            10,
+            3,
+            20
+          ],
+          "id": "Country"
+        },
+        {
+          "type": "string",
+          "description": "Code identifying the structure or format of the related location number[s].",
+          "enumDescriptions": {
+            "92": "Buyer Location Number"
+          },
+          "id": "LocationCodeQualifier"
+        },
+        {
+          "type": "string",
+          "description": "Unique value assigned to identify a location.",
+          "minLength": 1,
+          "maxLength": [
+            80,
+            60,
+            55
+          ],
+          "id": "AddressLocationNumber"
+        },
+        {
+          "type": "array",
+          "description": "Supplemental information supporting the transaction.",
+          "id": "References"
+        },
+        {
+          "type": "string",
+          "description": "Provides further description to the address information. This can be either text or an ID.",
+          "id": "LocationID"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "Additional free-form description of a location.",
+          "id": "AddressAlternateName2"
+        }
+      ],
+      "path": "Header.Address",
+      "type": "object"
+    },
+    {
+      "id": "Contacts",
+      "parent_id": "Address",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code identifying a type of contact.",
+          "enumDescriptions": {
+            "BI": "Bill Inquiry Contact",
+            "IC": "Primary Information Contact",
+            "OC": "Order Contact",
+            "BD": "Buyer Name or Department",
+            "AL": "Alternate Information Contact"
+          },
+          "id": "ContactTypeCode"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": [
+            80,
+            60,
+            30
+          ],
+          "description": "Phone number of contact listed.",
+          "id": "PrimaryPhone"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "Free-form name.",
+          "id": "ContactName"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "E-mail address for contact listed.",
+          "id": "PrimaryEmail"
+        },
+        {
+          "type": "string",
+          "description": "Fax number of contact listed.",
+          "id": "PrimaryFax"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 15,
+          "description": "Additional field to clarify a contact.",
+          "id": "ContactReference"
+        }
+      ],
+      "path": "Header.Address.Contacts",
+      "type": "object"
+    },
+    {
+      "id": "References",
+      "parent_id": "Address",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription.",
+          "enumDescriptions": {
+            "VN": "Vendor Order Number",
+            "IT": "Internal Customer Number"
+          },
+          "id": "ReferenceQual"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description to clarify the related data elements and their content.",
+          "id": "Description"
+        },
+        {
+          "type": "string",
+          "description": "Value as defined by the ReferenceQual.",
+          "id": "ReferenceID"
+        }
+      ],
+      "path": "Header.Address.References",
+      "type": "object"
+    },
+    {
+      "id": "CarrierInformation",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Free-form description of the routing/requested routing for shipment or the originating carrier's identity.",
+          "minLength": 1,
+          "maxLength": [
+            80,
+            50,
+            35,
+            30
+          ],
+          "id": "CarrierRouting"
+        },
+        {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 4,
+          "description": "Standard Carrier Alpha Code[SCAC] - 2 to 4 digit alphabetic code assigned by the National Motor Freight Traffic Association identifying transportation companies.",
+          "id": "CarrierAlphaCode"
+        },
+        {
+          "type": "string",
+          "description": "Code specifying the method or type of transportation for the shipment.",
+          "enumDescriptions": {
+            "LT": "Less Than Trailer Load[LTL]"
+          },
+          "id": "CarrierTransMethodCode"
+        },
+        {
+          "type": "string",
+          "description": "Sequencing or serial part of an equipment unit's identifying number[Pure numeric form for equipment number is preferred].",
+          "id": "CarrierEquipmentNumber"
+        },
+        {
+          "type": "array",
+          "description": "Describes the seal used in transportation.",
+          "id": "SealNumbers"
+        },
+        {
+          "type": "array",
+          "description": "Contains a service level code.",
+          "id": "ServiceLevelCodes"
+        }
+      ],
+      "path": "Header.CarrierInformation",
+      "type": "object"
+    },
+    {
+      "id": "SealNumbers",
+      "parent_id": "CarrierInformation",
+      "items": [
+        {
+          "type": "string",
+          "description": "Stamped lock that is on the container.",
+          "id": "SealNumber"
+        }
+      ],
+      "path": "Header.CarrierInformation.SealNumbers",
+      "type": "object"
+    },
+    {
+      "id": "ServiceLevelCodes",
+      "parent_id": "CarrierInformation",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code indicating the level of transportation service or the billing service offered by the transportation carrier.",
+          "enumDescriptions": {
+            "CG": "Ground",
+            "DS": "Door Service",
+            "ND": "Next Day Air",
+            "ON": "Overnight",
+            "PX": "Premium Service",
+            "SE": "Second Day",
+            "SG": "Standard Ground"
+          },
+          "id": "ServiceLevelCode"
+        }
+      ],
+      "path": "Header.CarrierInformation.ServiceLevelCodes",
+      "type": "object"
+    },
+    {
+      "id": "References",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription.",
+          "enumDescriptions": {
+            "GRN": "Gift Registry Number",
+            "RSN": "Reservation Number",
+            "LO": "Load Planning Number",
+            "AH": "Agreement Number",
+            "PD": "Promotion Deal Number",
+            "TPP": "Third Party Payment Information",
+            "BAF": "Receipt Number",
+            "OD": "Return Request Reference Number",
+            "AN": "Associated Purchase Order Numbers",
+            "TN": "Transaction Reference Number",
+            "INV": "Invoice Number",
+            "PK": "Packing List Number",
+            "IT": "Internal Customer Number",
+            "BB": "Authorization Number",
+            "WS": "Warehouse Storage Location Number",
+            "RU": "Route Number",
+            "VN": "Vendor Order Number"
+          },
+          "id": "ReferenceQual"
+        },
+        {
+          "type": "string",
+          "description": "Value as defined by the ReferenceQual.",
+          "minLength": [
+            1,
+            6
+          ],
+          "maxLength": [
+            8,
+            50,
+            100,
+            30
+          ],
+          "id": "ReferenceID"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description to clarify the related data elements and their content.",
+          "id": "Description"
+        }
+      ],
+      "path": "Header.References",
+      "type": "object"
+    },
+    {
+      "id": "Contacts",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code identifying a type of contact.",
+          "enumDescriptions": {
+            "OC": "Order Contact",
+            "SR": "Sales Representative or Department",
+            "IC": "Primary Information Contact",
+            "BD": "Buyer Name or Department"
+          },
+          "id": "ContactTypeCode"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": [
+            60,
+            55
+          ],
+          "description": "Free-form name.",
+          "id": "ContactName"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Phone number of contact listed.",
+          "id": "PrimaryPhone"
+        }
+      ],
+      "path": "Header.Contacts",
+      "type": "object"
+    },
+    {
+      "id": "FOBRelatedInstruction",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code identifying the source of the transportation terms.",
+          "enumDescriptions": {
+            "02": "Industry Defined"
+          },
+          "id": "TransportationTermsType"
+        },
+        {
+          "type": "string",
+          "description": "Code that defines to the recipient what types of fees are associated with the movement of goods. By default, if you do not send the TransportationTermsType, you are using the standard codes from the Incoterms website [http://www.iccwbo.org/products-and-services/trade-facilitation/].",
+          "id": "TransportationTerms"
+        },
+        {
+          "type": "string",
+          "description": "Code identifying payment terms for transportation charges.",
+          "enumDescriptions": {
+            "CC": "Collect",
+            "PO": "Prepaid Only"
+          },
+          "id": "FOBPayCode"
+        },
+        {
+          "type": "string",
+          "description": "Location of ownership of the goods.",
+          "id": "FOBTitlePassageLocation"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Free-form textual description of the location at which ownership of goods is transferred.",
+          "id": "FOBLocationDescription"
+        }
+      ],
+      "path": "Header.FOBRelatedInstruction",
+      "type": "object"
+    },
+    {
+      "id": "QuantityTotals",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Qualifier used to define the related total amounts.",
+          "enumDescriptions": {
+            "SQT": "Summary Quantity Totals"
+          },
+          "id": "QuantityTotalsQualifier"
+        },
+        {
+          "type": "string",
+          "description": "Code defining the type of weight.",
+          "enumDescriptions": {
+            "G": "Gross Weight"
+          },
+          "id": "WeightQualifier"
+        },
+        {
+          "type": "number",
+          "description": "A unit of weight.",
+          "id": "Weight"
+        },
+        {
+          "type": "number",
+          "description": "The amount of space, measured in cubic units, that an object or substance occupies.",
+          "id": "Volume"
+        },
+        {
+          "type": "number",
+          "description": "An amount.",
+          "id": "Quantity"
+        },
+        {
+          "type": "string",
+          "description": "The unit of measure in relation to an amount.",
+          "enumDescriptions": {
+            "CT": "Carton",
+            "PL": "Pallet/Unit Load"
+          },
+          "id": "QuantityUOM"
+        },
+        {
+          "type": "string",
+          "description": "The unit of measure used in relation to a weight.",
+          "enumDescriptions": {
+            "LB": "Pound"
+          },
+          "id": "WeightUOM"
+        }
+      ],
+      "path": "Header.QuantityTotals",
+      "type": "object"
+    },
+    {
+      "id": "Dates",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code specifying the type of date.",
+          "enumDescriptions": {
+            "TRM": "Transmission Date",
+            "097": "Document/Transaction Date",
+            "006": "Customer Order",
+            "010": "Requested Ship"
+          },
+          "id": "DateTimeQualifier"
+        },
+        {
+          "type": "string",
+          "format": "date",
+          "description": "A specific day.",
+          "id": "Date"
+        }
+      ],
+      "path": "Header.Dates",
+      "type": "object"
+    },
+    {
+      "id": "Taxes",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Identification of the type of duty, tax, or fee applicable to commodities or of tax applicable to services.",
+          "enumDescriptions": {
+            "GS": "Goods and Services[GST]",
+            "PS": "State/Provincial Services",
+            "TX": "All Taxes",
+            "LS": "State and Local Sales"
+          },
+          "id": "TaxTypeCode"
+        },
+        {
+          "type": "number",
+          "description": "The monetary amount applied.",
+          "id": "TaxAmount"
+        },
+        {
+          "type": "number",
+          "description": "The percentage that is applied to determine the tax amount. Percentages should be represented as real numbers[0% through 100% should be normalized to 0.0 through 100.00].",
+          "id": "TaxPercent"
+        }
+      ],
+      "path": "Header.Taxes",
+      "type": "object"
+    },
+    {
+      "id": "ChargesAllowances",
+      "parent_id": "Header",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code which indicates an allowance or charge for the service specified.",
+          "enumDescriptions": {
+            "C": "Charge"
+          },
+          "id": "AllowChrgIndicator"
+        },
+        {
+          "type": "string",
+          "description": "Code describing the type of allowance or charge for the service specified.",
+          "enumDescriptions": {
+            "G830": "Shipping and Handling",
+            "D340": "Goods and Services",
+            "G821": "Shipping",
+            "C310": "Discount"
+          },
+          "id": "AllowChrgCode"
+        },
+        {
+          "type": "number",
+          "description": "Amount of the allowance or charge.",
+          "id": "AllowChrgAmt"
+        }
+      ],
+      "path": "Header.ChargesAllowances",
+      "type": "object"
+    },
+    {
+      "id": "Item",
+      "parent_id": "PackingSlip",
+      "items": [
+        {
+          "type": "string",
+          "description": "Vendor's primary product identifier.",
+          "minLength": 1,
+          "maxLength": [
+            48,
+            50,
+            45,
+            30
+          ],
+          "id": "VendorPartNumber"
+        },
+        {
+          "type": "number",
+          "description": "Most up-to-date quantity.",
+          "id": "OrderQty"
+        },
+        {
+          "type": "array",
+          "description": "Description of the product.",
+          "id": "ProductOrItemDescription"
+        },
+        {
+          "type": "string",
+          "description": "Buyer's primary product identifier.",
+          "minLength": [
+            1,
+            7
+          ],
+          "maxLength": [
+            48,
+            50,
+            45,
+            7
+          ],
+          "id": "BuyerPartNumber"
+        },
+        {
+          "type": "string",
+          "description": "Consumer level or customer unit product identification number.",
+          "minLength": [
+            1,
+            12
+          ],
+          "maxLength": [
+            48,
+            12,
+            13,
+            30
+          ],
+          "id": "ConsumerPackageCode"
+        },
+        {
+          "type": "number",
+          "description": "Agreed upon price charged to the end consumer for the line item.",
+          "id": "ConsumerPrice"
+        },
+        {
+          "type": "number",
+          "description": "Quantity that has already or is scheduled to be shipped/delivered.",
+          "id": "ShipQty"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the product size.",
+          "minLength": 1,
+          "maxLength": 48,
+          "id": "ProductSizeDescription"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the product color.",
+          "minLength": 1,
+          "maxLength": 48,
+          "id": "ProductColorDescription"
+        },
+        {
+          "type": "array",
+          "description": "Supplemental text for the transaction.",
+          "id": "Notes"
+        },
+        {
+          "type": "array",
+          "description": "Details a charge, allowance, or service associated with the transaction.",
+          "id": "ChargesAllowances"
+        },
+        {
+          "type": "array",
+          "description": "Identifies additional product identification numbers which are not defined in designated fields.",
+          "id": "ProductID"
+        },
+        {
+          "type": "array",
+          "description": "Provides date and time information.",
+          "id": "Dates"
+        },
+        {
+          "type": "array",
+          "description": "Supplemental information supporting the transaction.",
+          "id": "References"
+        },
+        {
+          "type": "string",
+          "description": "For an initiated document, this is a unique number for the line item[s]. For a return transaction, this number should be the same as what was received from the source transaction. Example: You received a Purchase Order with the first LineSequenceNumber of 10. You would then send back an Invoice with the first LineSequenceNumber of 10.",
+          "minLength": 1,
+          "maxLength": 20,
+          "id": "LineSequenceNumber"
+        },
+        {
+          "type": "string",
+          "description": "Unit of measure used in relation with the OrderQty.",
+          "enumDescriptions": {
+            "CA": "Case",
+            "EA": "Each",
+            "PK": "Package",
+            "01": "Actual Pounds",
+            "4F": "Hundred Pack",
+            "AS": "Assortment",
+            "BD": "Bundle",
+            "BG": "Bag",
+            "BN": "Bulk",
+            "BO": "Bottle",
+            "BX": "Box",
+            "CH": "Container",
+            "CN": "Can",
+            "CP": "Crate",
+            "CT": "Carton",
+            "DP": "Dozen Pair",
+            "DR": "Drum",
+            "DS": "Display",
+            "DZ": "Dozen",
+            "GA": "Gallon",
+            "GS": "Gross",
+            "HC": "Hundred Count",
+            "HD": "Half Dozen",
+            "KT": "Kit",
+            "LB": "Pound",
+            "LO": "Lot",
+            "PC": "Piece",
+            "PH": "Pack[Pak]",
+            "PR": "Pair",
+            "RL": "Roll",
+            "ST": "Set",
+            "UN": "Unit"
+          },
+          "id": "OrderQtyUOM"
+        },
+        {
+          "type": "number",
+          "description": "Quantity of an order, shipment, or the disposition of any difference between the quantity ordered and quantity shipped for a line item.",
+          "id": "QtyLeftToReceive"
+        },
+        {
+          "type": "string",
+          "format": "date",
+          "description": "Date shipment will leave the ship from location.",
+          "id": "ShipDate"
+        },
+        {
+          "type": "string",
+          "description": "Unit of measure used with the ShipQty.",
+          "enumDescriptions": {
+            "EA": "Each",
+            "BX": "Box",
+            "CT": "Carton",
+            "DZ": "Dozen",
+            "PA": "Pail",
+            "PK": "Package",
+            "CA": "Case",
+            "PC": "Piece",
+            "8C": "Cord",
+            "AA": "Ball",
+            "AV": "Capsule",
+            "AY": "Assembly",
+            "BD": "Bundle",
+            "BF": "BoardFeet",
+            "BG": "Bag",
+            "BI": "Bar",
+            "BJ": "Band",
+            "BO": "Bottle",
+            "BR": "Barrel",
+            "CF": "Cubic Feet",
+            "CG": "Card",
+            "CN": "Can",
+            "DR": "Drum",
+            "FT": "Foot",
+            "GA": "Gallon",
+            "GS": "Gross",
+            "H1": "Half Pages Electronic",
+            "HA": "Hank",
+            "HR": "Hours",
+            "IN": "Inch",
+            "KE": "Keg",
+            "KT": "Kit",
+            "LB": "Pound",
+            "LF": "Linear Foot",
+            "LK": "Link",
+            "LN": "Length",
+            "LO": "Lot",
+            "MM": "Millimeter",
+            "MR": "Meter",
+            "NS": "Short Ton",
+            "OZ": "Ounce Av",
+            "PD": "Pad",
+            "PP": "Plate",
+            "PR": "Pair",
+            "PT": "Pint",
+            "QT": "Quart",
+            "RL": "Roll",
+            "SF": "Square Foot",
+            "SH": "Sheet",
+            "SJ": "Sack",
+            "SO": "Spool",
+            "ST": "Set",
+            "SY": "Square Yard",
+            "TB": "Tube",
+            "TK": "Tank",
+            "YD": "Yard",
+            "01": "Actual Pounds",
+            "4F": "Hundred Pack",
+            "AS": "Assortment",
+            "BN": "Bulk",
+            "CH": "Container",
+            "CP": "Crate",
+            "DP": "Dozen Pair",
+            "DS": "Display",
+            "HC": "Hundred Count",
+            "HD": "Half Dozen",
+            "PH": "Pack[Pak]",
+            "UN": "Unit"
+          },
+          "id": "ShipQtyUOM"
+        },
+        {
+          "type": "array",
+          "description": "Details pricing data for the product.",
+          "id": "PriceInformation"
+        },
+        {
+          "type": "array",
+          "description": "Encloses all document subline elements.",
+          "id": "Subline"
+        },
+        {
+          "type": "array",
+          "description": "Details of the outer, inner, and consumer package.",
+          "id": "PhysicalDetails"
+        },
+        {
+          "type": "string",
+          "description": "International Article Number, aka European Article Number, which is the European equivalent of the United States UPC[Universal Product Code].",
+          "minLength": 13,
+          "maxLength": 13,
+          "id": "EAN"
+        },
+        {
+          "type": "string",
+          "description": "Global Trade Item Number which is an item identifier that encompasses all product identification numbers such as UPC, EAN, ITF, etc. and can be assigned at various packing levels.",
+          "minLength": 14,
+          "maxLength": 14,
+          "id": "GTIN"
+        },
+        {
+          "type": "string",
+          "description": "Package or case level product identification number.",
+          "minLength": 1,
+          "maxLength": 48,
+          "id": "UPCCaseCode"
+        },
+        {
+          "type": "string",
+          "description": "Code identifying the type of price of the end consumer price.",
+          "enumDescriptions": {
+            "RTL": "Retail",
+            "UCP": "Unit Cost Price"
+          },
+          "id": "ConsumerPriceType"
+        },
+        {
+          "type": "string",
+          "description": "Vendor/Buyer assigned size code. NRF codes should go in the NRFStandardColorAndSize fields.",
+          "id": "ProductSizeCode"
+        },
+        {
+          "type": "string",
+          "description": "Vendor/Buyer assigned color code. NRF codes should go in the NRFStandardColorAndSize fields.",
+          "id": "ProductColorCode"
+        },
+        {
+          "type": "array",
+          "description": "Provides tax details.",
+          "id": "Taxes"
+        }
+      ],
+      "path": "Item",
+      "type": "object"
+    },
+    {
+      "id": "ProductOrItemDescription",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code defining/classifying the type of description being sent.",
+          "enumDescriptions": {
+            "38": "Grade",
+            "08": "Product Description"
+          },
+          "id": "ProductCharacteristicCode"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the product.",
+          "minLength": [
+            1,
+            2
+          ],
+          "maxLength": [
+            80,
+            50,
+            60,
+            200
+          ],
+          "id": "ProductDescription"
+        },
+        {
+          "type": "string",
+          "description": "Industry defined description code.",
+          "id": "ProductDescriptionCode"
+        }
+      ],
+      "path": "Item.ProductOrItemDescription",
+      "type": "object"
+    },
+    {
+      "id": "Notes",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code specifying the type of note.",
+          "enumDescriptions": {
+            "MKG": "Marketing Message",
+            "GEN": "General Note",
+            "GFT": "Gift Note",
+            "SPE": "Special Instructions",
+            "SHP": "Shipping Note",
+            "CCG": "Customization",
+            "RTN": "Return Instructions",
+            "PCK": "Packing Slip",
+            "PRN": "Personalization"
+          },
+          "id": "NoteCode"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the note.",
+          "minLength": 1,
+          "maxLength": [
+            264,
+            50,
+            80,
+            150
+          ],
+          "id": "Note"
+        }
+      ],
+      "path": "Item.Notes",
+      "type": "object"
+    },
+    {
+      "id": "ChargesAllowances",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code describing the type of allowance or charge for the service specified.",
+          "enumDescriptions": {
+            "G821": "Shipping",
+            "B800": "Credit",
+            "G830": "Shipping and Handling",
+            "I131": "Total Fees",
+            "C310": "Discount"
+          },
+          "id": "AllowChrgCode"
+        },
+        {
+          "type": "number",
+          "description": "Amount of the allowance or charge.",
+          "id": "AllowChrgAmt"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50,
+          "description": "Provides a specific value as defined by the code used in either the AllowChrgCode or AllowChrgAgency.",
+          "id": "ReferenceIdentification"
+        },
+        {
+          "type": "string",
+          "description": "Code which indicates an allowance or charge for the service specified.",
+          "enumDescriptions": {
+            "C": "Charge"
+          },
+          "id": "AllowChrgIndicator"
+        }
+      ],
+      "path": "Item.ChargesAllowances",
+      "type": "object"
+    },
+    {
+      "id": "ProductID",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Qualifier describing the additional product identification numbers not defined in specific fields at the line level.",
+          "enumDescriptions": {
+            "MN": "Model Number",
+            "CB": "Buyer Catalog Number",
+            "MG": "Manufacturer's Part Number"
+          },
+          "id": "PartNumberQual"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": [
+            48,
+            10
+          ],
+          "description": "Additional product identification numbers not defined in specific fields at the line level.",
+          "id": "PartNumber"
+        }
+      ],
+      "path": "Item.ProductID",
+      "type": "object"
+    },
+    {
+      "id": "Dates",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code specifying the type of date.",
+          "enumDescriptions": {
+            "511": "Shelf Life Expiration",
+            "AAH": "Offer Expiry"
+          },
+          "id": "DateTimeQualifier"
+        },
+        {
+          "type": "string",
+          "format": "date",
+          "description": "A specific day.",
+          "id": "Date"
+        }
+      ],
+      "path": "Item.Dates",
+      "type": "object"
+    },
+    {
+      "id": "References",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code specifying the type of data in the ReferenceID/ReferenceDescription.",
+          "enumDescriptions": {
+            "LT": "Lot Number",
+            "SE": "Serial Number",
+            "GRN": "Gift Registry Number",
+            "DJ": "Delivery Ticket Number"
+          },
+          "id": "ReferenceQual"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10,
+          "description": "Value as defined by the ReferenceQual.",
+          "id": "ReferenceID"
+        }
+      ],
+      "path": "Item.References",
+      "type": "object"
+    },
+    {
+      "id": "PriceInformation",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "number",
+          "description": "Price as defined by the PriceTypeIDCode.",
+          "id": "UnitPrice"
+        },
+        {
+          "type": "string",
+          "description": "Code identifying the type of price.",
+          "enumDescriptions": {
+            "AAB": "Gross Price",
+            "RTL": "Retail"
+          },
+          "id": "PriceTypeIDCode"
+        }
+      ],
+      "path": "Item.PriceInformation",
+      "type": "object"
+    },
+    {
+      "id": "Subline",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Buyer's primary product identifier.",
+          "id": "BuyerPartNumber"
+        },
+        {
+          "type": "number",
+          "description": "Component quantity within the pre-pack.",
+          "id": "QtyPer"
+        },
+        {
+          "type": "array",
+          "description": "Description of the product.",
+          "id": "ProductOrItemDescription"
+        }
+      ],
+      "path": "Item.Subline",
+      "type": "object"
+    },
+    {
+      "id": "ProductOrItemDescription",
+      "parent_id": "Subline",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code defining/classifying the type of description being sent.",
+          "enumDescriptions": {
+            "08": "Product Description"
+          },
+          "id": "ProductCharacteristicCode"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the product.",
+          "id": "ProductDescription"
+        }
+      ],
+      "path": "Item.Subline.ProductOrItemDescription",
+      "type": "object"
+    },
+    {
+      "id": "PhysicalDetails",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code to identify the pack hierarchical level.",
+          "enumDescriptions": {
+            "OU": "Outer",
+            "IN": "Inner"
+          },
+          "id": "PackQualifier"
+        },
+        {
+          "type": "number",
+          "description": "Numeric value of total weight in reference to the PackQualifier or PalletQualifier.",
+          "id": "PackWeight"
+        },
+        {
+          "type": "string",
+          "description": "Code specifying the units in which the PackWeight is being measured by.",
+          "enumDescriptions": {
+            "LB": "Pound",
+            "KG": "Kilogram"
+          },
+          "id": "PackWeightUOM"
+        },
+        {
+          "type": "number",
+          "description": "Numeric value of volume per unit of measure in reference to the PackQualifier or PalletQualifier.",
+          "id": "PackVolume"
+        },
+        {
+          "type": "string",
+          "description": "Code specifying the units in which the PackVolume is being measured by.",
+          "enumDescriptions": {
+            "CI": "Cubic Inches"
+          },
+          "id": "PackVolumeUOM"
+        },
+        {
+          "type": "number",
+          "description": "The number of units inside the PackQualifier.",
+          "id": "PackValue"
+        }
+      ],
+      "path": "Item.PhysicalDetails",
+      "type": "object"
+    },
+    {
+      "id": "Taxes",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Identification of the type of duty, tax, or fee applicable to commodities or of tax applicable to services.",
+          "enumDescriptions": {
+            "TX": "All Taxes",
+            "LS": "State and Local Sales"
+          },
+          "id": "TaxTypeCode"
+        },
+        {
+          "type": "number",
+          "description": "The monetary amount applied.",
+          "id": "TaxAmount"
+        },
+        {
+          "type": "number",
+          "description": "The percentage that is applied to determine the tax amount. Percentages should be represented as real numbers[0% through 100% should be normalized to 0.0 through 100.00].",
+          "id": "TaxPercent"
+        }
+      ],
+      "path": "Item.Taxes",
+      "type": "object"
+    },
+    {
+      "id": "Pack",
+      "parent_id": "PackingSlip",
+      "items": [
+        {
+          "type": "string",
+          "description": "Serial Shipping Container Code[SSCC] and Application Identifier[00] indicates the shipment or parts of shipment. This field includes both the SSCC[18 digits] and the Application Identifier[2 digits], which should be 20 digits in length.",
+          "id": "ShippingSerialID"
+        },
+        {
+          "type": "array",
+          "description": "Encloses all document item elements.",
+          "id": "Item"
+        },
+        {
+          "type": "array",
+          "description": "Represent an entity such as an organizational, physical location, property, or individual.",
+          "id": "Address"
+        },
+        {
+          "type": "array",
+          "description": "Details of the outer, inner, and consumer package.",
+          "id": "PhysicalDetails"
+        }
+      ],
+      "path": "Pack",
+      "type": "object"
+    },
+    {
+      "id": "Item",
+      "parent_id": "Pack",
+      "items": [
+        {
+          "type": "string",
+          "description": "For an initiated document, this is a unique number for the line item[s]. For a return transaction, this number should be the same as what was received from the source transaction. Example: You received a Purchase Order with the first LineSequenceNumber of 10. You would then send back an Invoice with the first LineSequenceNumber of 10.",
+          "id": "LineSequenceNumber"
+        },
+        {
+          "type": "string",
+          "description": "Buyer's primary product identifier.",
+          "minLength": 1,
+          "maxLength": 48,
+          "id": "BuyerPartNumber"
+        },
+        {
+          "type": "string",
+          "description": "Vendor's primary product identifier.",
+          "minLength": 1,
+          "maxLength": [
+            48,
+            20
+          ],
+          "id": "VendorPartNumber"
+        },
+        {
+          "type": "number",
+          "description": "Most up-to-date quantity.",
+          "id": "OrderQty"
+        },
+        {
+          "type": "string",
+          "description": "Unit of measure used in relation with the OrderQty.",
+          "enumDescriptions": {
+            "CA": "Case"
+          },
+          "id": "OrderQtyUOM"
+        },
+        {
+          "type": "number",
+          "description": "Quantity that has already or is scheduled to be shipped/delivered.",
+          "id": "ShipQty"
+        },
+        {
+          "type": "string",
+          "description": "Unit of measure used with the ShipQty.",
+          "enumDescriptions": {
+            "CA": "Case",
+            "DZ": "Dozen",
+            "EA": "Each",
+            "PR": "Pair"
+          },
+          "id": "ShipQtyUOM"
+        },
+        {
+          "type": "array",
+          "description": "Details of the outer, inner, and consumer package.",
+          "id": "PhysicalDetails"
+        },
+        {
+          "type": "array",
+          "description": "Description of the product.",
+          "id": "ProductOrItemDescription"
+        },
+        {
+          "type": "number",
+          "description": "Agreed upon price charged to the end consumer for the line item.",
+          "id": "ConsumerPrice"
+        },
+        {
+          "type": "array",
+          "description": "Provides tax details.",
+          "id": "Taxes"
+        },
+        {
+          "type": "array",
+          "description": "Details a charge, allowance, or service associated with the transaction.",
+          "id": "ChargesAllowances"
+        },
+        {
+          "type": "string",
+          "description": "Consumer level or customer unit product identification number.",
+          "id": "ConsumerPackageCode"
+        },
+        {
+          "type": "array",
+          "description": "Identifies additional product identification numbers which are not defined in designated fields.",
+          "id": "ProductID"
+        },
+        {
+          "type": "string",
+          "description": "Vendor/Buyer assigned size code. NRF codes should go in the NRFStandardColorAndSize fields.",
+          "id": "ProductSizeCode"
+        },
+        {
+          "type": "string",
+          "description": "Vendor/Buyer assigned color code. NRF codes should go in the NRFStandardColorAndSize fields.",
+          "id": "ProductColorCode"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the product size.",
+          "id": "ProductSizeDescription"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the product color.",
+          "id": "ProductColorDescription"
+        }
+      ],
+      "path": "Pack.Item",
+      "type": "object"
+    },
+    {
+      "id": "PhysicalDetails",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code to identify the pack hierarchical level.",
+          "enumDescriptions": {
+            "IN": "Inner",
+            "CP": "Consumer Package"
+          },
+          "id": "PackQualifier"
+        },
+        {
+          "type": "number",
+          "description": "The number of units inside the PackQualifier.",
+          "id": "PackValue"
+        },
+        {
+          "type": "string",
+          "description": "Unit of measure for the PackSize.",
+          "enumDescriptions": {
+            "UN": "Unit"
+          },
+          "id": "PackUOM"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description to clarify the related data elements and their content.",
+          "id": "Description"
+        }
+      ],
+      "path": "Pack.Item.PhysicalDetails",
+      "type": "object"
+    },
+    {
+      "id": "ProductOrItemDescription",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code defining/classifying the type of description being sent.",
+          "enumDescriptions": {
+            "08": "Product Description"
+          },
+          "id": "ProductCharacteristicCode"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the product.",
+          "minLength": 1,
+          "maxLength": [
+            80,
+            105
+          ],
+          "id": "ProductDescription"
+        }
+      ],
+      "path": "Pack.Item.ProductOrItemDescription",
+      "type": "object"
+    },
+    {
+      "id": "Taxes",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Identification of the type of duty, tax, or fee applicable to commodities or of tax applicable to services.",
+          "enumDescriptions": {
+            "TX": "All Taxes"
+          },
+          "id": "TaxTypeCode"
+        },
+        {
+          "type": "number",
+          "description": "The monetary amount applied.",
+          "id": "TaxAmount"
+        }
+      ],
+      "path": "Pack.Item.Taxes",
+      "type": "object"
+    },
+    {
+      "id": "ChargesAllowances",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code which indicates an allowance or charge for the service specified.",
+          "enumDescriptions": {
+            "A": "Allowance",
+            "C": "Charge",
+            "N": "No Allowance or Charge"
+          },
+          "id": "AllowChrgIndicator"
+        },
+        {
+          "type": "string",
+          "description": "Code describing the type of allowance or charge for the service specified.",
+          "enumDescriptions": {
+            "B090": "Forward/Advance",
+            "B270": "Collect",
+            "B800": "Credit",
+            "F800": "Promotional",
+            "G830": "Shipping and Handling"
+          },
+          "id": "AllowChrgCode"
+        },
+        {
+          "type": "number",
+          "description": "Amount of the allowance or charge.",
+          "id": "AllowChrgAmt"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description of the allowance or charge.",
+          "id": "AllowChrgHandlingDescription"
+        }
+      ],
+      "path": "Pack.Item.ChargesAllowances",
+      "type": "object"
+    },
+    {
+      "id": "ProductID",
+      "parent_id": "Item",
+      "items": [
+        {
+          "type": "string",
+          "description": "Qualifier describing the additional product identification numbers not defined in specific fields at the line level.",
+          "enumDescriptions": {
+            "IT": "Buyer's Style Number"
+          },
+          "id": "PartNumberQual"
+        },
+        {
+          "type": "string",
+          "description": "Additional product identification numbers not defined in specific fields at the line level.",
+          "id": "PartNumber"
+        }
+      ],
+      "path": "Pack.Item.ProductID",
+      "type": "object"
+    },
+    {
+      "id": "Address",
+      "parent_id": "Pack",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code identifying an organizational entity, a physical location, property, or an individual.",
+          "enumDescriptions": {
+            "ST": "Ship To"
+          },
+          "id": "AddressTypeCode"
+        },
+        {
+          "type": "string",
+          "description": "Primary free-form textual description of a location.",
+          "id": "AddressName"
+        },
+        {
+          "type": "string",
+          "description": "Address information.",
+          "id": "Address1"
+        },
+        {
+          "type": "string",
+          "description": "Free-form text for city name.",
+          "id": "City"
+        },
+        {
+          "type": "string",
+          "description": "Code[Standard State/Province] as defined by appropriate government agency.",
+          "id": "State"
+        },
+        {
+          "type": "string",
+          "description": "International postal zone excluding punctuation and blanks[Zip Code for United States].",
+          "id": "PostalCode"
+        },
+        {
+          "type": "string",
+          "description": "Human readable description identifying the country.",
+          "id": "Country"
+        }
+      ],
+      "path": "Pack.Address",
+      "type": "object"
+    },
+    {
+      "id": "PhysicalDetails",
+      "parent_id": "Pack",
+      "items": [
+        {
+          "type": "string",
+          "description": "Code to identify the pack hierarchical level.",
+          "enumDescriptions": {
+            "OU": "Outer"
+          },
+          "id": "PackQualifier"
+        },
+        {
+          "type": "string",
+          "description": "Free-form textual description to clarify the related data elements and their content.",
+          "id": "Description"
+        },
+        {
+          "type": "number",
+          "description": "Measurable size of the sellable unit.",
+          "id": "PackSize"
+        },
+        {
+          "type": "number",
+          "description": "Numeric value of total weight in reference to the PackQualifier or PalletQualifier.",
+          "id": "PackWeight"
+        },
+        {
+          "type": "number",
+          "description": "The number of units inside the PackQualifier.",
+          "id": "PackValue"
+        }
+      ],
+      "path": "Pack.PhysicalDetails",
+      "type": "object"
+    }
+  ],
+  "title": "PackingSlip"
+}

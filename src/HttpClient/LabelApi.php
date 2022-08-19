@@ -11,6 +11,7 @@ class LabelApi
      * @var ClientInterface
      */
     protected $client;
+
     /**
      * @var Configuration
      */
@@ -18,6 +19,7 @@ class LabelApi
 
     /**
      * @param Configuration $config
+     * @param ClientInterface|null $client
      */
     public function __construct(
         Configuration $config,
@@ -25,25 +27,23 @@ class LabelApi
     )
     {
         $this->config = $config;
-        $this->client = $client ? $client : $config->getHttpClient();
+        $this->client = $client ?: $config->getHttpClient();
     }
-
 
     /**
      * @return Configuration
      */
-    public function getConfig()
+    public function getConfig(): Configuration
     {
         return $this->config;
     }
 
     /**
-     * @param $payload
-     * @param $queryParams
+     * @param null $queryParams
      * @return string
      * @throws ApiException
      */
-    public function getAllShippingLabels($queryParams = null)
+    public function getAllShippingLabels($queryParams = null): string
     {
         try {
             $httpClient = $this->config->getHttpClient();
@@ -64,7 +64,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function getShippingLabelById($label_id, $queryParams = null)
+    public function getShippingLabelById($label_id, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -96,7 +96,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function getShippingLabelSchema($label_id, $queryParams = null)
+    public function getShippingLabelSchema($label_id, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -128,7 +128,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function getShippingLabelSampleJson($label_id, $queryParams = null)
+    public function getShippingLabelSampleJson($label_id, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -160,7 +160,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function renderShippingLabelSamplePdf($label_id, $queryParams = null)
+    public function renderShippingLabelSamplePdf($label_id, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -188,11 +188,12 @@ class LabelApi
 
     /**
      * @param $label_id
-     * @param $queryParams
+     * @param $sample_uid
+     * @param null $queryParams
      * @return string
      * @throws ApiException
      */
-    public function renderSpecificShippingLabelSamplePdf($label_id, $sample_uid, $queryParams = null)
+    public function renderSpecificShippingLabelSamplePdf($label_id, $sample_uid, $queryParams = null): string
     {
         // verify the required parameter 'label_id'  & 'sample_uid' are set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0) || $sample_uid== null || (is_array($sample_uid) && count($sample_uid) === 0)) {
@@ -230,7 +231,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function renderShippingLabelPdf($label_id, $payload, $queryParams = null)
+    public function renderShippingLabelPdf($label_id, $payload, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -262,7 +263,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function renderShippingLabelPdfBatch($label_id, $payload, $queryParams = null)
+    public function renderShippingLabelPdfBatch($label_id, $payload, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -294,7 +295,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function renderShippingLabelZpl($label_id, $payload, $queryParams = null)
+    public function renderShippingLabelZpl($label_id, $payload, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -326,7 +327,7 @@ class LabelApi
      * @return string
      * @throws ApiException
      */
-    public function renderShippingLabelZplBatch($label_id, $payload, $queryParams = null)
+    public function renderShippingLabelZplBatch($label_id, $payload, $queryParams = null): string
     {
         // verify the required parameter 'label_id' is set
         if ($label_id === null || (is_array($label_id) && count($label_id) === 0)) {
@@ -353,12 +354,11 @@ class LabelApi
 
     /**
      * @param $batchId
-     * @param $payload
-     * @param $queryParams
+     * @param null $queryParams
      * @return string
      * @throws ApiException
      */
-    public function getBatchStatus($batchId, $queryParams = null)
+    public function getBatchStatus($batchId, $queryParams = null): string
     {
         // verify the required parameter 'batchId' is set
         if ($batchId === null || (is_array($batchId) && count($batchId) === 0)) {

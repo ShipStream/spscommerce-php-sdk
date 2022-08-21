@@ -2,33 +2,57 @@
 namespace ShipStream\SpsCommerce\HttpClient;
 
 use Exception;
-use GuzzleHttp\Psr7\Request;
-use InvalidArgumentException;
 use RuntimeException;
-use ShipStream\SpsCommerce\HttpClient\DefaultApi;
 
 class Configuration
 {
-    /*
-     * @class \ ShipStream\SpsCommerce\HttpClient\DefaultApi
-     */
-    protected  $httpClient;
 
+    /**
+     * @var DefaultApi
+     */
+    protected $httpClient;
+
+    /**
+     * @var string
+     */
     protected $endpoint;
+
+    /**
+     * @var string
+     */
+    protected $clientSecret;
+
+    /**
+     * @var string
+     */
+    protected $clientId;
+
+    /**
+     * @var string
+     */
+    protected $accessToken;
+
+    /**
+     * @var string
+     */
+    protected $state;
+
+    /**
+     * @var string
+     */
+    protected $redirectUri;
+
+
     /**
      * @const array[string]
      */
     public const REQUIRED_CONFIG_KEYS = [
         "client_id",
         "client_secret",
-        "accessToken",
+        "access_token",
         "state",
+        "redirect_uri"
     ];
-
-    const SPS_COMMERCE_APP_CLIENT_ID = 'qmNZGzPDKgev6MQPKa5mepEQHPQnxV2D';
-    const SPS_COMMERCE_APP_CLIENT_SECRET = 'V9ZyLTedsQJ6J6FFSGbGkbhX5Dl3Jq3gF44XCaK_bFb2yhkvnbsggHYDGWAdHGti';
-    const SPS_COMMERCE_APP_REDIRECT_URI = 'http://localhost:8888/client/pluginConnect/sps';
-    const SPS_COMMERCE_APP_STATE = 'BPGN5u7FEb';
 
     const SPS_COMMERCE_API_BASE_URL = 'https://api.spscommerce.com';
     const SHIPPING_LABEL_API_END_POINT = 'label/v1';
@@ -58,34 +82,40 @@ class Configuration
             $configurationOptions,
             [
                 "url" => self::SPS_COMMERCE_API_BASE_URL,
-                "accessToken" => $configurationOptions["accessToken"] ?? null,
+                "accessToken" => $configurationOptions["access_token"] ?? null,
                 "accessTokenExpiration" => $configurationOptions["accessTokenExpiration"] ?? null
             ]
         );
+
+        $this->clientId = $configurationOptions["client_id"];
+        $this->clientSecret = $configurationOptions["client_secret"];
+        $this->accessToken = $configurationOptions["access_token"];
+        $this->state = $configurationOptions["state"];
+        $this->redirectUri = $configurationOptions["redirect_uri"];
 
         $this->httpClient = new DefaultApi($options);
     }
 
     public function getClientId()
     {
-        return self::SPS_COMMERCE_APP_CLIENT_ID;
+        return $this->clientId;
     }
 
     public function getClientSecret()
     {
-        return self::SPS_COMMERCE_APP_CLIENT_SECRET;
+        return $this->clientSecret;
     }
 
     public function getRedirectUri()
     {
-        return self::SPS_COMMERCE_APP_REDIRECT_URI;
+        return $this->redirectUri;
     }
-    public function getHttpClient()
+    public function getHttpClient(): DefaultApi
     {
         return $this->httpClient;
     }
 
-    public function getApiBaseUrl()
+    public function getApiBaseUrl(): string
     {
         return self::SPS_COMMERCE_API_BASE_URL;
     }

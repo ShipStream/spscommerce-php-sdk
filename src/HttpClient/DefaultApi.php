@@ -3,19 +3,17 @@
 namespace ShipStream\SpsCommerce\HttpClient;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\RedirectMiddleware;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
-use Slim\Exception\HttpInternalServerErrorException;
 
 class DefaultApi
 {
     const DEFAULT_TIMEOUT = 10;
     public $options;
+
     /** @var Client */
     public $http;
     /**
@@ -27,7 +25,7 @@ class DefaultApi
 
     /**
      * DefaultApi constructor.
-     * @param $options
+     * @param array $options
      */
     public function __construct(array $options)
     {
@@ -49,38 +47,90 @@ class DefaultApi
      * @param $payload
      * @param $uriPath
      * @param $queryParams
-     * @param int $timeout - Float describing the timeout of the request in seconds. Use 0 to wait indefinitely (the default behavior).
+     * @param array $headers
+     * @param int|null $timeout - Float describing the timeout of the request in seconds. Use 0 to wait indefinitely (the default behavior).
      * @param bool $stream - use streaming
      * @return ResponseInterface
+     * @throws ApiException
      */
-    public function post($payload, $uriPath, $queryParams, $timeout = null, bool $stream = false): ResponseInterface
+    public function post($payload, $uriPath, $queryParams, array $headers = [], int $timeout = null, bool $stream = false): ResponseInterface
     {
-        return $this->request($payload, $uriPath, $queryParams, 'POST', $timeout, $stream);
+        return $this->request($payload, $uriPath, $queryParams, $headers, 'POST', $timeout, $stream);
     }
 
-    public function get($payload, $uriPath, $queryParams, $timeout = null): ResponseInterface
+    /**
+     * @param $payload
+     * @param $uriPath
+     * @param $queryParams
+     * @param array $headers
+     * @param int|null $timeout
+     * @return ResponseInterface
+     * @throws ApiException
+     */
+    public function get($payload, $uriPath, $queryParams, array $headers = [], int $timeout = null): ResponseInterface
     {
-        return $this->request($payload, $uriPath, $queryParams, 'GET', $timeout, false);
+        return $this->request($payload, $uriPath, $queryParams, $headers, 'GET', $timeout, false);
     }
 
-    private function request($payload, $uriPath, $queryParams, $method, $timeout = null, bool $stream = false): ResponseInterface
+    /**
+     * @param $payload
+     * @param $uriPath
+     * @param $queryParams
+     * @param array $headers
+     * @param int|null $timeout - Float describing the timeout of the request in seconds. Use 0 to wait indefinitely (the default behavior).
+     * @param bool $stream - use streaming
+     * @return ResponseInterface
+     * @throws ApiException
+     */
+    public function put($payload, $uriPath, $queryParams, array $headers = [], int $timeout = null, bool $stream = false): ResponseInterface
+    {
+        return $this->request($payload, $uriPath, $queryParams, $headers, 'PUT', $timeout, $stream);
+    }
+
+
+    /**
+     * @param $payload
+     * @param $uriPath
+     * @param $queryParams
+     * @param array $headers
+     * @param int|null $timeout
+     * @return ResponseInterface
+     * @throws ApiException
+     */
+    public function delete($payload, $uriPath, $queryParams, array $headers = [], int $timeout = null): ResponseInterface
+    {
+        return $this->request($payload, $uriPath, $queryParams, $headers, 'DELETE', $timeout, false);
+    }
+
+    /**
+     * @param $payload
+     * @param $uriPath
+     * @param $queryParams
+     * @param $headers
+     * @param $method
+     * @param null $timeout
+     * @param bool $stream
+     * @return ResponseInterface
+     * @throws ApiException
+     */
+    private function request($payload, $uriPath, $queryParams, $headers, $method, $timeout = null, bool $stream = false): ResponseInterface
     {
         try {
+            $headerConfigurations = [
+                'Authorization' => "Bearer {$this->options['accessToken']}",
+                'Content-Type' => 'application/json'
+            ];
+            $headerConfigurations = array_merge($headerConfigurations, $headers);
+            if( isset($headers['Content-Type'])) {
+                $headerConfigurations['Content-Type'] = $headers['Content-Type'];
+            }
             $options = [
-                'headers' => [
-                    'Authorization' => "Bearer {$this->options['accessToken']}",
-                    'Content-Type' => 'application/json'
-                ],
+                'headers' => $headerConfigurations,
                 'query' => $queryParams,
                 'body' => $payload,
                 'stream' => $stream,
                 'timeout' => $timeout ?? $this->timeout
             ];
-
-            // enable debug
-            if (array_key_exists("debug", $this->options)) {
-                $options['debug'] = $this->options["debug"];
-            }
 
             //execute get/post call
             $response = $this->http->requestAsync($method, $uriPath, $options)->wait();
@@ -130,24 +180,6 @@ class DefaultApi
                     $e
                 );
             }
-        }
-    }
-
-    protected function check($key, $value)
-    {
-        if ((!isset($value) || trim($value) === '')) {
-            $options = implode(', ', array_map(
-                function ($v, $k) {
-                    if (is_array($v)) {
-                        return $k . '[]=' . implode('&' . $k . '[]=', $v);
-                    } else {
-                        return $k . '=' . $v;
-                    }
-                },
-                $this->options,
-                array_keys($this->options)
-            ));
-            throw new InvalidArgumentException("The '${key}' should be defined as argument or default option: {$options}");
         }
     }
 }

@@ -26,7 +26,7 @@ class LabelApi
     )
     {
         $this->config = $config;
-        $this->client = $client ? $client : $config->getHttpClient();
+        $this->client = $client ?: $config->getHttpClient();
     }
 
 

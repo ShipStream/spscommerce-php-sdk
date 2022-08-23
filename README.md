@@ -1,15 +1,18 @@
-# SPS-Commerce-PHP-SDK
+## SPS-Commerce-PHP-SDK
 
 A PHP library for integrating with SPS Commerce Transaction APIs via HTTP.
 
-## Install
+### Install
 
 ```shell
 composer require shipstream/sps-commerce-sdk
 ```
 
 ### PHP Object Mapping
-Create PHP Object Mapper from json-schema resources using `json-cli`
+Create PHP Object Mapper from json-schema resources using `json-cli`. 
+
+#### 1. Creating Order PHP classes 
+Shell Script to create PHP classes for `Order` using json schema  `src/schema-json/Orders.json`
 ```bash
 #!/bin/bash
 set -e
@@ -18,8 +21,24 @@ swaggest/json-cli \
 json-cli gen-php ./src/json-schema/Orders.json \
     --ptr-in-schema "#/definitions/Order" \
     --def-ptr "#/definitions" \
-    --ns ShipStream\\SpsCommerce\\RSX\\v770 \
-    --ns-path src/RSX/v770
+    --ns ShipStream\\SpsCommerce\\RSX\\v770\\Order \
+    --ns-path src/RSX/v770/Order/
+
+```
+
+
+#### 2. Creating Shipment PHP classes
+Shell Script to create PHP classes for `Shipemt` using json schema  `src/schema-json/Shipments.json`
+```bash
+#!/bin/bash
+set -e
+docker run --rm -v $PWD:/app --workdir /app \
+swaggest/json-cli \
+json-cli gen-php ./src/json-schema/Shipments.json \
+    --ptr-in-schema "#/definitions/Shipment" \
+    --def-ptr "#/definitions" \
+    --ns ShipStream\\SpsCommerce\\RSX\\v770\\Shipment \
+    --ns-path src/RSX/v770/Shipment/
 
 ```
 
@@ -65,5 +84,4 @@ try {
 }
 
 ?>
-
 ```

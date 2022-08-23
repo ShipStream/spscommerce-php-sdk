@@ -1,18 +1,18 @@
 # SPS-Commerce-PHP-SDK
 
-A PHP library for integrating with SPS Commerce HTTP APIs.
+A PHP library for integrating with SPS Commerce HTTP APIs and JSON Schemas. 
 
 ## Install
 
 ```shell
-composer require shipstream/sps-commerce-sdk
+composer require shipstream/spscommerce-php-sdk
 ```
 
 ## HTTP Client Usage
 
-Here is code sample to send a REST API request to the SPS Commerce Transaction API.
+Here is a code sample to send a REST API request to the SPS Commerce Transaction API.
 
-```injectablephp
+```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -32,7 +32,7 @@ $config = new Configuration([
 $api = new TransactionApi($config);
 try {
 
-    $file_path = "in/CA584618-1-v7.7-BulkImport.xml";
+    $file_path = "in/CA584618-1-v7.7-BulkImport.json";
     $file_content = file_get_contents($file_path);
     $header = [
         'Content-Type' => 'application/octet-stream'
@@ -53,14 +53,14 @@ try {
 
 ## RSX Object Usage
 
-Here is a code sample to load a JSON file into the appropriate RSX class:
+Here is a code sample to load a JSON string into the appropriate RSX class:
 
 ```php
 <?php
 
 require 'vendor/autoload.php';
 
-$jsonString = file_get_contents(__DIR__.'/sample-files/Orders(850)/PO584616-1-v7.7-DropShip.json');
+$jsonString = file_get_contents('sample-files/Orders(850)/PO584616-1-v7.7-DropShip.json');
 $order = \ShipStream\SpsCommerce\RSX\v770\Orders\Order::import(
     json_decode($jsonString)
 );

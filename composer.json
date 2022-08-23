@@ -20,5 +20,6 @@
         "psr-4": {"ShipStream\\SpsCommerce\\": "src/"}
     },
     "autoload-dev": {
+        "psr-4": {"ShipStream\\SpsCommerce\\Tests": "test/"}
     }
 }

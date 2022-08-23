@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "templates": [
+    {
+      "canRender": true,
+      "description": "This is a SPS Commerce created sample Bulk Import shipping label. This is an example of the data requirements and look that a retailer would expect to see on this type of label.",
+      "id": "15aa5856",
+      "name": "Sample Label - Bulk Import",
+      "ownerID": "157627141979612915626333577105111854232",
+      "ownerName": "SPS Commerce",
+      "type": "label"
+    },
+    {
+      "canRender": true,
+      "description": "This is a SPS Commerce created sample Cross Dock shipping label. This is an example of the data requirements and look that a retailer would expect to see on this type of label.",
+      "id": "6a5aac7e",
+      "name": "Sample Label - Cross Dock",
+      "ownerID": "157627141979612915626333577105111854232",
+      "ownerName": "SPS Commerce",
+      "type": "label"
+    }
+  ],
+  "total": 2
+}

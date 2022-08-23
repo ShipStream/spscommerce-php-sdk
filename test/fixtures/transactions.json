@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "path": "/out/CA584615-1-v7.7-BulkImport.xml",
+      "type": "file",
+      "url": "https://api.spscommerce.com/transactions/v5/data/out/CA584615-1-v7.7-BulkImport.xml"
+    }
+  ],
+  "paging": {
+    "limit": 1000,
+    "next": {
+      "cursor": "1iV7qUkBbZVTXiHkle",
+      "url": "https://api.spscommerce.com/transactions/v5/data/out/?limit=1000&cursor=1iV7qUkBbZVTXiHkle"
+    }
+  }
+}

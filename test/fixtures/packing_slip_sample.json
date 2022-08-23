@@ -1,0 +1,27 @@
+{
+  "Header": {
+    "Address": [
+      {
+        "Address1": "123 Main Street",
+        "Address2": "Suite 100",
+        "AddressName": "William Bill To",
+        "AddressTypeCode": "SF",
+        "City": "Minneapolis",
+        "Country": "USA",
+        "PostalCode": "55402",
+        "State": "MN"
+      }
+    ],
+    "BillOfLadingNumber": "BOL-Number"
+  },
+  "Pack": [
+    {
+      "Item": [
+        {
+          "UPCCaseCode": "676123123123"
+        }
+      ],
+      "ShippingSerialID": "00001234560014762261"
+    }
+  ]
+}

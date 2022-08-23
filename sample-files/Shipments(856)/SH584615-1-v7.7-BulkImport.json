@@ -1,0 +1,277 @@
+{
+  "Header" : {
+    "ShipmentHeader" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "ShipmentIdentification" : "Sh123546-1",
+      "ShipDate" : "2020-12-15",
+      "TsetPurposeCode" : "00",
+      "ShipNoticeDate" : "2020-12-15",
+      "ShipNoticeTime" : "14:22:14",
+      "ASNStructureCode" : "0001",
+      "BillOfLadingNumber" : "123546879",
+      "AppointmentNumber" : "12354",
+      "CurrentScheduledDeliveryDate" : "2020-12-20",
+      "CurrentScheduledDeliveryTime" : "16:22:14"
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "002",
+      "Date" : "2020-12-20",
+      "Time" : "16:22:14"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "AN",
+      "ReferenceID" : "5987-1",
+      "Description" : "Customer Contract Number \"Typically return whatever References are received on PO\""
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "This will only be sent when you have notes"
+    } ],
+    "Contacts" : [ {
+      "ContactTypeCode" : "IC",
+      "ContactName" : "SPS Commerce Buyer",
+      "PrimaryPhone" : "612-435-9400",
+      "PrimaryFax" : "612-435-9468",
+      "PrimaryEmail" : "info@spscommerce.com"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "SF",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "123546",
+      "AddressName" : "Warehouse",
+      "Address1" : "1 Address Way",
+      "Address2" : "Suite A",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    }, {
+      "AddressTypeCode" : "ST",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "123",
+      "AddressName" : "SPS Commerce Distribution Center",
+      "Address1" : "333 S 7th Street",
+      "Address2" : "Suite 1000",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    } ],
+    "CarrierInformation" : [ {
+      "StatusCode" : "CL",
+      "CarrierTransMethodCode" : "M",
+      "CarrierAlphaCode" : "RBTC",
+      "CarrierRouting" : "Robinson Carrier",
+      "EquipmentDescriptionCode" : "TL",
+      "CarrierEquipmentNumber" : "123456",
+      "SealNumbers" : [ {
+        "SealNumber" : "123546"
+      } ]
+    } ],
+    "QuantityAndWeight" : [ {
+      "PackingMedium" : "CTN",
+      "PackingMaterial" : "25",
+      "LadingQuantity" : 12,
+      "WeightQualifier" : "G",
+      "Weight" : 400.0,
+      "WeightUOM" : "LB"
+    } ],
+    "FOBRelatedInstruction" : [ {
+      "FOBPayCode" : "CC",
+      "FOBLocationQualifier" : "DE",
+      "FOBLocationDescription" : "FOB Destination"
+    } ],
+    "QuantityTotals" : [ {
+      "QuantityTotalsQualifier" : "SQT",
+      "Quantity" : 8.0,
+      "QuantityUOM" : "EA"
+    } ]
+  },
+  "OrderLevel" : [ {
+    "OrderHeader" : {
+      "PurchaseOrderNumber" : "PO584615-1",
+      "ReleaseNumber" : "456",
+      "PurchaseOrderDate" : "2018-03-12",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174"
+    },
+    "QuantityAndWeight" : [ {
+      "PackingMedium" : "CTN",
+      "PackingMaterial" : "25",
+      "LadingQuantity" : 12,
+      "WeightQualifier" : "G",
+      "Weight" : 400.0,
+      "WeightUOM" : "LB"
+    } ],
+    "PackLevel" : [ {
+      "Pack" : {
+        "PackLevelType" : "P",
+        "ShippingSerialID" : "00007774760000006929"
+      },
+      "PhysicalDetails" : [ {
+        "PackQualifier" : "OU",
+        "PackValue" : 1,
+        "PackSize" : 2.0,
+        "PackUOM" : "EA",
+        "PackingMedium" : "CTN",
+        "PackingMaterial" : "94"
+      } ],
+      "ItemLevel" : [ {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "1",
+          "BuyerPartNumber" : "SPSBuyerItem1",
+          "VendorPartNumber" : "SPSSupplierHD-20",
+          "ConsumerPackageCode" : "859563003863",
+          "GTIN" : "10859563003863",
+          "UPCCaseCode" : "496099966745",
+          "ProductID" : [ {
+            "PartNumberQual" : "MG",
+            "PartNumber" : "9565452"
+          } ],
+          "OrderQty" : 5.0,
+          "OrderQtyUOM" : "EA",
+          "PurchasePrice" : 20.0,
+          "ItemStatusCode" : "IA",
+          "ShipQty" : 3.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 1,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 60.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description1"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15",
+          "Time" : "14:22:14"
+        } ],
+        "References" : [ {
+          "ReferenceQual" : "MR",
+          "ReferenceID" : "MerchandiseTypeCode"
+        } ],
+        "Notes" : [ {
+          "NoteCode" : "GEN",
+          "Note" : "Gift Message: Happy Birthday!"
+        } ]
+      }, {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "2",
+          "BuyerPartNumber" : "SPSBuyerItem2",
+          "VendorPartNumber" : "SPSSupplierHD-40",
+          "ConsumerPackageCode" : "884502115161",
+          "GTIN" : "10884502115161",
+          "UPCCaseCode" : "496099965155",
+          "ProductID" : [ {
+            "PartNumberQual" : "MG",
+            "PartNumber" : "2563247"
+          } ],
+          "OrderQty" : 2.0,
+          "OrderQtyUOM" : "EA",
+          "PurchasePrice" : 10.0,
+          "ItemStatusCode" : "IA",
+          "ShipQty" : 2.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 1,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 280.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description2"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15",
+          "Time" : "14:22:14"
+        } ],
+        "References" : [ {
+          "ReferenceQual" : "MR",
+          "ReferenceID" : "MerchandiseTypeCode"
+        } ],
+        "Notes" : [ {
+          "NoteCode" : "GEN",
+          "Note" : "Gift Message: Happy Birthday!"
+        } ]
+      } ]
+    }, {
+      "Pack" : {
+        "PackLevelType" : "P",
+        "ShippingSerialID" : "00007774760000006930"
+      },
+      "PhysicalDetails" : [ {
+        "PackQualifier" : "OU",
+        "PackValue" : 1,
+        "PackSize" : 2.0,
+        "PackUOM" : "EA",
+        "PackingMedium" : "CTN",
+        "PackingMaterial" : "94"
+      } ],
+      "ItemLevel" : [ {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "3",
+          "BuyerPartNumber" : "SPSBuyerItem3",
+          "VendorPartNumber" : "SPSSupplierHD-60",
+          "ConsumerPackageCode" : "043000186706",
+          "GTIN" : "10043000186706",
+          "UPCCaseCode" : "471108151743",
+          "ProductID" : [ {
+            "PartNumberQual" : "MG",
+            "PartNumber" : "2563299"
+          } ],
+          "OrderQty" : 3.0,
+          "OrderQtyUOM" : "EA",
+          "PurchasePrice" : 50.0,
+          "ItemStatusCode" : "IA",
+          "ShipQty" : 3.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 1,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 100.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description3"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15",
+          "Time" : "14:22:14"
+        } ],
+        "References" : [ {
+          "ReferenceQual" : "MR",
+          "ReferenceID" : "MerchandiseTypeCode"
+        } ],
+        "Notes" : [ {
+          "NoteCode" : "GEN",
+          "Note" : "Gift Message: Happy Birthday!"
+        } ]
+      } ]
+    } ]
+  } ],
+  "Summary" : {
+    "TotalLineItemNumber" : 3
+  }
+}

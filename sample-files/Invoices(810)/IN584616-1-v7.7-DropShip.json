@@ -1,0 +1,167 @@
+﻿{
+  "Header" : {
+    "InvoiceHeader" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "InvoiceNumber" : "123456",
+      "InvoiceDate" : "2020-12-15",
+      "PurchaseOrderDate" : "2020-12-01",
+      "PurchaseOrderNumber" : "PO584616-1",
+      "InvoiceTypeCode" : "DR",
+      "TsetPurposeCode" : "00",
+      "BuyersCurrency" : "USD",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174",
+      "CustomerOrderNumber" : "98745612",
+      "CarrierProNumber" : "123546879",
+      "BillOfLadingNumber" : "123546879",
+      "ShipDate" : "2020-12-15"
+    },
+    "PaymentTerms" : [ {
+      "TermsType" : "01",
+      "TermsBasisDateCode" : "3",
+      "TermsDiscountPercentage" : 2.0,
+      "TermsDiscountDate" : "2020-12-29",
+      "TermsDiscountDueDays" : 10,
+      "TermsNetDueDate" : "2021-01-19",
+      "TermsNetDueDays" : 31,
+      "TermsDiscountAmount" : 0.38,
+      "TermsDescription" : "2% 10 Net 31"
+    } ],
+    "Dates" : [ {
+      "DateTimeQualifier" : "002",
+      "Date" : "2020-12-20"
+    } ],
+    "Contacts" : [ {
+      "ContactTypeCode" : "IC",
+      "ContactName" : "SPS Commerce Buyer",
+      "PrimaryPhone" : "612-435-9400",
+      "PrimaryFax" : "612-435-9468",
+      "PrimaryEmail" : "info@spscommerce.com"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "BT",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "091532452",
+      "AddressName" : "Corporate Headquarters",
+      "AddressAlternateName" : "Attn: Headquarters",
+      "Address1" : "1450 Energy Park Drive",
+      "Address2" : "Dock E",
+      "City" : "Saint Paul",
+      "State" : "MN",
+      "PostalCode" : "55108",
+      "Country" : "USA"
+    }, {
+      "AddressTypeCode" : "RI",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "091532452",
+      "AddressName" : "Corporate Headquarters",
+      "AddressAlternateName" : "Attn: Headquarters",
+      "Address1" : "1450 Energy Park Drive",
+      "Address2" : "Dock E",
+      "City" : "Saint Paul",
+      "State" : "MN",
+      "PostalCode" : "55108",
+      "Country" : "USA"
+    }, {
+      "AddressTypeCode" : "ST",
+      "AddressName" : "SPS Commerce",
+      "AddressAlternateName" : "DC 123",
+      "Address1" : "333 S 7th Street",
+      "Address2" : "Suite 1000",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "CT",
+      "ReferenceID" : "5987-1",
+      "Description" : "Customer Contract Number"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "FOR QUESTIONS PLEASE CONTACT YOUR BUYER AT 612-435-9400"
+    } ],
+    "Taxes" : [ {
+      "TaxTypeCode" : "PG",
+      "TaxAmount" : 0.38,
+      "TaxPercent" : 2.0,
+      "JurisdictionQual" : "SP",
+      "JurisdictionCode" : "111",
+      "TaxExemptCode" : "2",
+      "TaxID" : "125467"
+    } ],
+    "ChargesAllowances" : [ {
+      "AllowChrgIndicator" : "A",
+      "AllowChrgCode" : "C310",
+      "AllowChrgAmt" : 1.0,
+      "AllowChrgPercentQual" : "6",
+      "AllowChrgPercent" : 5.0,
+      "AllowChrgHandlingCode" : "06",
+      "AllowChrgHandlingDescription" : "Discount"
+    } ],
+    "FOBRelatedInstruction" : [ {
+      "FOBPayCode" : "CC",
+      "FOBLocationQualifier" : "DE",
+      "FOBLocationDescription" : "FOB Destination"
+    } ],
+    "CarrierInformation" : [ {
+      "StatusCode" : "CL",
+      "CarrierTransMethodCode" : "M",
+      "CarrierAlphaCode" : "RBTC",
+      "CarrierRouting" : "Robinson Carrier",
+      "EquipmentDescriptionCode" : "TL",
+      "CarrierEquipmentNumber" : "123456",
+      "SealNumbers" : [ {
+        "SealNumber" : "123546"
+      } ]
+    } ],
+    "QuantityTotals" : [ {
+      "QuantityTotalsQualifier" : "SQT",
+      "Quantity" : 1.0,
+      "QuantityUOM" : "EA"
+    } ]
+  },
+  "LineItem" : [ {
+    "InvoiceLine" : {
+      "LineSequenceNumber" : "1",
+      "BuyerPartNumber" : "SPSBuyerItem1",
+      "VendorPartNumber" : "SPSSupplierHD-20",
+      "ConsumerPackageCode" : "859563003863",
+      "GTIN" : "00859563003863",
+      "UPCCaseCode" : "496099966745",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "9565452"
+      } ],
+      "InvoiceQty" : 1.0,
+      "InvoiceQtyUOM" : "EA",
+      "PurchasePrice" : 20.0,
+      "ShipQty" : 1.0,
+      "ShipQtyUOM" : "EA"
+    },
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 60.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description1"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  } ],
+  "Summary" : {
+    "TotalAmount" : 19.38,
+    "TotalSalesAmount" : 20.0,
+    "TotalTermsDiscountAmount" : 0.38,
+    "TotalLineItemNumber" : 1,
+    "InvoiceAmtDueByTermsDate" : 19.0
+  }
+}

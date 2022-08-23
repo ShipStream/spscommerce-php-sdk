@@ -1,0 +1,268 @@
+﻿{
+  "Header" : {
+    "OrderHeader" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "PurchaseOrderNumber" : "PO584615-1",
+      "TsetPurposeCode" : "00",
+      "PrimaryPOTypeCode" : "SA",
+      "PurchaseOrderDate" : "2020-12-01",
+      "ShipCompleteCode" : "Y",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174",
+      "Division" : "019"
+    },
+    "PaymentTerms" : [ {
+      "TermsType" : "01",
+      "TermsBasisDateCode" : "3",
+      "TermsDiscountPercentage" : 2.0,
+      "TermsDiscountDueDays" : 10,
+      "TermsNetDueDays" : 31,
+      "TermsDiscountAmount" : 23.36,
+      "TermsDescription" : "2% 10 Net 31"
+    } ],
+    "Dates" : [ {
+      "DateTimeQualifier" : "010",
+      "Date" : "2020-12-15"
+    } ],
+    "Contacts" : [ {
+      "ContactTypeCode" : "IC",
+      "ContactName" : "SPS Commerce Buyer",
+      "PrimaryPhone" : "612-435-9400",
+      "PrimaryFax" : "612-435-9468",
+      "PrimaryEmail" : "info@spscommerce.com"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "BT",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "091532452",
+      "AddressName" : "Corporate Headquarters",
+      "Address1" : "1450 Energy Park Drive",
+      "Address2" : "Dock E",
+      "City" : "St. Paul",
+      "State" : "MN",
+      "PostalCode" : "55108"
+    }, {
+      "AddressTypeCode" : "ST",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "123",
+      "AddressName" : "SPS Commerce Distribution Center",
+      "AddressAlternateName" : "DC 123",
+      "Address1" : "333 S 7th Street",
+      "Address2" : "Suite 1000",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    } ],
+    "FOBRelatedInstruction" : [ {
+      "FOBPayCode" : "CC",
+      "FOBLocationQualifier" : "DE",
+      "FOBLocationDescription" : "FOB Destination"
+    } ],
+    "CarrierInformation" : [ {
+      "CarrierTransMethodCode" : "M",
+      "CarrierAlphaCode" : "JBHT",
+      "CarrierRouting" : "J. B. Hunt",
+      "ServiceLevelCodes" : [ {
+        "ServiceLevelCode" : "SE"
+      } ]
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "CT",
+      "ReferenceID" : "5987-1",
+      "Description" : "Customer Contract Number"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "FOR QUESTIONS PLEASE CONTACT YOUR BUYER AT 612-435-9400"
+    } ],
+    "ChargesAllowances" : [ {
+      "AllowChrgIndicator" : "A",
+      "AllowChrgCode" : "C310",
+      "AllowChrgAmt" : 13.5,
+      "AllowChrgPercentQual" : "6",
+      "AllowChrgPercent" : 5.0,
+      "AllowChrgHandlingCode" : "06",
+      "AllowChrgHandlingDescription" : "Discount"
+    } ],
+    "QuantityTotals" : [ {
+      "QuantityTotalsQualifier" : "SQT",
+      "Quantity" : 20.0,
+      "QuantityUOM" : "EA"
+    } ]
+  },
+  "LineItem" : [ {
+    "OrderLine" : {
+      "LineSequenceNumber" : "1",
+      "BuyerPartNumber" : "SPSBuyerItem1",
+      "VendorPartNumber" : "SPSSupplierHD-20",
+      "ConsumerPackageCode" : "859563003863",
+      "GTIN" : "00859563003863",
+      "UPCCaseCode" : "496099966745",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "9565452"
+      } ],
+      "OrderQty" : 30.0,
+      "OrderQtyUOM" : "EA",
+      "PurchasePrice" : 20.0
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "037",
+      "Date" : "2020-12-15"
+    } ],
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 60.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description1"
+    } ],
+    "PhysicalDetails" : [ {
+      "PackQualifier" : "OU",
+      "PackValue" : 1,
+      "PackSize" : 1.0,
+      "PackUOM" : "EA"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ],
+    "QuantitiesSchedulesLocations" : [ {
+      "QuantityQualifier" : "01",
+      "TotalQty" : 30.0,
+      "TotalQtyUOM" : "EA",
+      "LocationQuantity" : [ {
+        "Location" : "0010",
+        "Qty" : 10.0
+      }, {
+        "Location" : "0020",
+        "Qty" : 10.0
+      }, {
+        "Location" : "0030",
+        "Qty" : 10.0
+      } ],
+      "Dates" : [ {
+        "DateTimeQualifier" : "037",
+        "Date" : "2020-03-12"
+      } ]
+    } ]
+  }, {
+    "OrderLine" : {
+      "LineSequenceNumber" : "2",
+      "BuyerPartNumber" : "SPSBuyerItem2",
+      "VendorPartNumber" : "SPSSupplierHD-40",
+      "ConsumerPackageCode" : "884502115161",
+      "GTIN" : "00884502115161",
+      "UPCCaseCode" : "496099965155",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "2563247"
+      } ],
+      "OrderQty" : 75.0,
+      "OrderQtyUOM" : "EA",
+      "PurchasePrice" : 10.0
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "037",
+      "Date" : "2020-12-15"
+    } ],
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 40.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description2"
+    } ],
+    "PhysicalDetails" : [ {
+      "PackQualifier" : "OU",
+      "PackValue" : 1,
+      "PackSize" : 1.0,
+      "PackUOM" : "EA"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ],
+    "QuantitiesSchedulesLocations" : [ {
+      "QuantityQualifier" : "01",
+      "TotalQty" : 75.0,
+      "TotalQtyUOM" : "EA",
+      "LocationQuantity" : [ {
+        "Location" : "0010",
+        "Qty" : 25.0
+      }, {
+        "Location" : "0020",
+        "Qty" : 25.0
+      }, {
+        "Location" : "0030",
+        "Qty" : 25.0
+      } ],
+      "Dates" : [ {
+        "DateTimeQualifier" : "037",
+        "Date" : "2020-03-12"
+      } ]
+    } ]
+  }, {
+    "OrderLine" : {
+      "LineSequenceNumber" : "3",
+      "BuyerPartNumber" : "SPSBuyerItem3",
+      "VendorPartNumber" : "SPSSupplierHD-40",
+      "ConsumerPackageCode" : "043000186706",
+      "GTIN" : "00043000186706",
+      "UPCCaseCode" : "471108151743",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "2563299"
+      } ],
+      "OrderQty" : 45.0,
+      "OrderQtyUOM" : "EA",
+      "PurchasePrice" : 50.0
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "037",
+      "Date" : "2020-12-15"
+    } ],
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 100.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description3"
+    } ],
+    "QuantitiesSchedulesLocations" : [ {
+      "QuantityQualifier" : "01",
+      "TotalQty" : 45.0,
+      "TotalQtyUOM" : "EA",
+      "LocationQuantity" : [ {
+        "Location" : "0010",
+        "Qty" : 15.0
+      }, {
+        "Location" : "0020",
+        "Qty" : 15.0
+      }, {
+        "Location" : "0030",
+        "Qty" : 15.0
+      } ],
+      "Dates" : [ {
+        "DateTimeQualifier" : "037",
+        "Date" : "2020-03-12"
+      } ]
+    } ]
+  } ],
+  "Summary" : {
+    "TotalAmount" : 3600.0,
+    "TotalLineItemNumber" : 3
+  }
+}

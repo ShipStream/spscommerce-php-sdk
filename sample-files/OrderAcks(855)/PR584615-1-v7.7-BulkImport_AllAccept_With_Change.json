@@ -1,0 +1,154 @@
+{
+  "Header" : {
+    "OrderHeader" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "PurchaseOrderNumber" : "PO584615-1",
+      "TsetPurposeCode" : "00",
+      "PurchaseOrderDate" : "2020-12-01",
+      "AcknowledgementType" : "AC",
+      "AcknowledgementDate" : "2020-12-02",
+      "BuyersCurrency" : "USD",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174"
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "002",
+      "Date" : "2020-12-20",
+      "Time" : "14:22:14"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "ST",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "123",
+      "AddressName" : "SPS Commerce",
+      "AddressAlternateName" : "DC 123",
+      "Address1" : "333 S 7th Street",
+      "Address2" : "Suite 1000",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "CT",
+      "ReferenceID" : "5987-1",
+      "Description" : "Customer Contract Number"
+    } ]
+  },
+  "LineItem" : [ {
+    "OrderLine" : {
+      "LineSequenceNumber" : "1",
+      "BuyerPartNumber" : "SPSBuyerItem1",
+      "VendorPartNumber" : "SPSSupplierHD-20",
+      "ConsumerPackageCode" : "859563003863",
+      "GTIN" : "00859563003863",
+      "UPCCaseCode" : "496099966745",
+      "OrderQty" : 5.0,
+      "OrderQtyUOM" : "EA",
+      "PurchasePrice" : 20.0
+    },
+    "LineItemAcknowledgement" : [ {
+      "ItemStatusCode" : "IQ",
+      "ItemScheduleQty" : 3.0,
+      "ItemScheduleUOM" : "EA",
+      "ItemScheduleQualifier" : "068",
+      "ItemScheduleDate" : "2020-12-15"
+    }, {
+      "ItemStatusCode" : "IB",
+      "ItemScheduleQty" : 2.0,
+      "ItemScheduleUOM" : "EA",
+      "ItemScheduleQualifier" : "068",
+      "ItemScheduleDate" : "2020-12-15"
+    } ],
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 60.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description1"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  }, {
+    "OrderLine" : {
+      "LineSequenceNumber" : "2",
+      "BuyerPartNumber" : "SPSBuyerItem2",
+      "VendorPartNumber" : "SPSSupplierHD-40",
+      "ConsumerPackageCode" : "884502115161",
+      "GTIN" : "00884502115161",
+      "UPCCaseCode" : "496099965155",
+      "OrderQty" : 2.0,
+      "OrderQtyUOM" : "EA",
+      "PurchasePrice" : 10.0
+    },
+    "LineItemAcknowledgement" : [ {
+      "ItemStatusCode" : "DR",
+      "ItemScheduleQty" : 2.0,
+      "ItemScheduleUOM" : "EA",
+      "ItemScheduleQualifier" : "017",
+      "ItemScheduleDate" : "2018-12-26"
+    } ],
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 280.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description1"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  }, {
+    "OrderLine" : {
+      "LineSequenceNumber" : "3",
+      "BuyerPartNumber" : "SPSBuyerItem3",
+      "VendorPartNumber" : "SPSSupplierHD-60",
+      "ConsumerPackageCode" : "043000186706",
+      "GTIN" : "00043000186706",
+      "UPCCaseCode" : "471108151743",
+      "OrderQty" : 3.0,
+      "OrderQtyUOM" : "EA",
+      "PurchasePrice" : 50.0
+    },
+    "LineItemAcknowledgement" : [ {
+      "ItemStatusCode" : "IA",
+      "ItemScheduleQty" : 3.0,
+      "ItemScheduleUOM" : "EA",
+      "ItemScheduleQualifier" : "068",
+      "ItemScheduleDate" : "2020-12-15"
+    } ],
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 100.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description3"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  } ],
+  "Summary" : {
+    "TotalAmount" : 270.0,
+    "TotalLineItemNumber" : 3
+  }
+}

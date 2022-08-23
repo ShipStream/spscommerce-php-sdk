@@ -1,0 +1,374 @@
+{
+  "Header" : {
+    "ShipmentHeader" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "ShipmentIdentification" : "SH123546-1",
+      "ShipDate" : "2020-12-15",
+      "ShipmentTime" : "11:13:03-05:00",
+      "TsetPurposeCode" : "00",
+      "ShipNoticeDate" : "2020-12-15",
+      "ShipNoticeTime" : "11:13:03-05:00",
+      "ASNStructureCode" : "0001",
+      "BillOfLadingNumber" : "123546879"
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "002",
+      "Date" : "2020-12-20"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "AN",
+      "ReferenceID" : "5987-1",
+      "Description" : "\"Typically return whatever References are received on PO\""
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "This will only be sent when you have notes"
+    } ],
+    "Contacts" : [ {
+      "ContactTypeCode" : "IC",
+      "ContactName" : "SPS Commerce Buyer",
+      "PrimaryPhone" : "612-435-9400",
+      "PrimaryFax" : "612-435-9468",
+      "PrimaryEmail" : "info@spscommerce.com"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "SF",
+      "LocationCodeQualifier" : "91",
+      "AddressLocationNumber" : "123456",
+      "AddressName" : "Warehouse",
+      "Address1" : "1 Address Way",
+      "Address2" : "Suite A",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    }, {
+      "AddressTypeCode" : "ST",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "123",
+      "AddressName" : "SPS Commerce Distribution Center",
+      "Address1" : "333 S 7th Street",
+      "Address2" : "Suite 1000",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    } ],
+    "CarrierInformation" : [ {
+      "StatusCode" : "CL",
+      "CarrierTransMethodCode" : "M",
+      "CarrierAlphaCode" : "RBTC",
+      "CarrierRouting" : "Robinson Carrier",
+      "EquipmentDescriptionCode" : "TL",
+      "CarrierEquipmentNumber" : "123456",
+      "SealNumbers" : [ {
+        "SealNumber" : "123546"
+      } ]
+    } ],
+    "QuantityAndWeight" : [ {
+      "PackingMedium" : "CTN",
+      "PackingMaterial" : "25",
+      "LadingQuantity" : 4,
+      "WeightQualifier" : "G",
+      "Weight" : 65.0,
+      "WeightUOM" : "LB"
+    } ],
+    "FOBRelatedInstruction" : [ {
+      "FOBPayCode" : "CC",
+      "FOBLocationQualifier" : "DE"
+    } ],
+    "QuantityTotals" : [ {
+      "QuantityTotalsQualifier" : "SQT",
+      "Quantity" : 42.0,
+      "QuantityUOM" : "EA"
+    } ]
+  },
+  "OrderLevel" : [ {
+    "OrderHeader" : {
+      "PurchaseOrderNumber" : "PO584615-1",
+      "PurchaseOrderDate" : "2020-12-01",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174",
+      "Division" : "019"
+    },
+    "QuantityAndWeight" : [ {
+      "PackingMedium" : "CTN",
+      "PackingMaterial" : "25",
+      "LadingQuantity" : 1,
+      "Weight" : 20.0,
+      "WeightUOM" : "LB"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "Z7",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "0387"
+    } ],
+    "PackLevel" : [ {
+      "Pack" : {
+        "PackLevelType" : "P",
+        "ShippingSerialID" : "00007774760000006929"
+      },
+      "ItemLevel" : [ {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "1",
+          "BuyerPartNumber" : "SPSBuyerItem1",
+          "VendorPartNumber" : "SPSSupplierHD-20",
+          "ConsumerPackageCode" : "859563003863",
+          "ShipQty" : 3.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 1,
+          "PackSize" : 1.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 60.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description1"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15"
+        } ],
+        "Notes" : [ {
+          "NoteCode" : "GEN",
+          "Note" : "Gift Message: Happy Birthday!"
+        } ]
+      }, {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "2",
+          "BuyerPartNumber" : "SPSBuyerItem2",
+          "VendorPartNumber" : "SPSSupplierHD-40",
+          "ConsumerPackageCode" : "884502115161",
+          "ShipQty" : 2.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 1,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 280.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description2"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15"
+        } ],
+        "Notes" : [ {
+          "NoteCode" : "GEN",
+          "Note" : "Gift Message: Happy Birthday!"
+        } ]
+      } ]
+    } ]
+  }, {
+    "OrderHeader" : {
+      "PurchaseOrderNumber" : "PO584615-2",
+      "PurchaseOrderDate" : "2020-12-01",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174",
+      "Division" : "019"
+    },
+    "QuantityAndWeight" : [ {
+      "PackingMedium" : "CTN",
+      "PackingMaterial" : "25",
+      "LadingQuantity" : 2,
+      "Weight" : 25.0,
+      "WeightUOM" : "LB"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "Z7",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "0166"
+    } ],
+    "PackLevel" : [ {
+      "Pack" : {
+        "PackLevelType" : "P",
+        "ShippingSerialID" : "00007774760000006927"
+      },
+      "ItemLevel" : [ {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "1",
+          "BuyerPartNumber" : "SPSBuyerItem3",
+          "VendorPartNumber" : "SPSSupplierHD-60",
+          "ConsumerPackageCode" : "043000186706",
+          "ShipQty" : 5.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 5,
+          "PackSize" : 1.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 100.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description3"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15"
+        } ]
+      } ]
+    }, {
+      "Pack" : {
+        "PackLevelType" : "P",
+        "ShippingSerialID" : "00198766543211234562"
+      },
+      "ItemLevel" : [ {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "2",
+          "BuyerPartNumber" : "SPSBuyerItem4",
+          "VendorPartNumber" : "SPSSupplierHD-80",
+          "ConsumerPackageCode" : "043000186786",
+          "ShipQty" : 6.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 1,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 150.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description4"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15"
+        } ]
+      } ]
+    } ]
+  }, {
+    "OrderHeader" : {
+      "PurchaseOrderNumber" : "PO584615-3",
+      "PurchaseOrderDate" : "2020-12-01",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174",
+      "Division" : "019"
+    },
+    "QuantityAndWeight" : [ {
+      "PackingMedium" : "CTN",
+      "PackingMaterial" : "25",
+      "LadingQuantity" : 1,
+      "Weight" : 20.0,
+      "WeightUOM" : "LB"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "Z7",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "0150"
+    } ],
+    "PackLevel" : [ {
+      "Pack" : {
+        "PackLevelType" : "P",
+        "ShippingSerialID" : "00198766543211234563"
+      },
+      "ItemLevel" : [ {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "1",
+          "BuyerPartNumber" : "SPSBuyerItem5",
+          "VendorPartNumber" : "SPSSupplierHD-50",
+          "ConsumerPackageCode" : "043000186796",
+          "ShipQty" : 10.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 5,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 100.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description5"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15"
+        } ]
+      }, {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "2",
+          "BuyerPartNumber" : "SPSBuyerItem6",
+          "VendorPartNumber" : "SPSSupplierHD-90",
+          "ConsumerPackageCode" : "043000186704",
+          "ShipQty" : 6.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 5,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 100.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description6"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15"
+        } ]
+      }, {
+        "ShipmentLine" : {
+          "LineSequenceNumber" : "3",
+          "BuyerPartNumber" : "SPSBuyerItem7",
+          "VendorPartNumber" : "SPSSupplierHD-100",
+          "ConsumerPackageCode" : "043000186705",
+          "ShipQty" : 10.0,
+          "ShipQtyUOM" : "EA"
+        },
+        "PhysicalDetails" : [ {
+          "PackQualifier" : "IN",
+          "PackValue" : 5,
+          "PackSize" : 2.0,
+          "PackUOM" : "EA"
+        } ],
+        "PriceInformation" : [ {
+          "PriceTypeIDCode" : "RTL",
+          "UnitPrice" : 100.0
+        } ],
+        "ProductOrItemDescription" : [ {
+          "ProductCharacteristicCode" : "08",
+          "ProductDescription" : "Sample Description7"
+        } ],
+        "Dates" : [ {
+          "DateTimeQualifier" : "037",
+          "Date" : "2020-12-15"
+        } ]
+      } ]
+    } ]
+  } ],
+  "Summary" : {
+    "TotalLineItemNumber" : 7
+  }
+}

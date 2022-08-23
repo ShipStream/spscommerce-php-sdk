@@ -1,0 +1,87 @@
+{
+  "Header" : {
+    "HeaderReport" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "DocumentId" : "123546-1",
+      "TsetPurposeCode" : "00",
+      "ReportTypeCode" : "MB",
+      "InventoryDate" : "2020-12-01",
+      "InventoryTime" : "06:51:40",
+      "Vendor" : "VEND6174"
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "196",
+      "Date" : "2020-12-01"
+    }, {
+      "DateTimeQualifier" : "197",
+      "Date" : "2020-12-01"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "RL",
+      "AddressName" : "SPS Commerce"
+    } ]
+  },
+  "Structure" : [ {
+    "LineItem" : [ {
+      "InventoryLine" : {
+        "BuyerPartNumber" : "SPSBuyerItem1",
+        "VendorPartNumber" : "SPSSupplierHD-20",
+        "ConsumerPackageCode" : "859563003863",
+        "ProductID" : [ {
+          "PartNumberQual" : "ZBP",
+          "PartNumber" : "ABC-456789"
+        } ],
+        "PurchasePrice" : 20.0
+      },
+      "ProductOrItemDescription" : [ {
+        "ProductCharacteristicCode" : "08",
+        "ProductDescription" : "Sample Description1"
+      } ],
+      "QuantitiesSchedulesLocations" : [ {
+        "QuantityQualifier" : "33",
+        "TotalQty" : 10.0
+      } ]
+    }, {
+      "InventoryLine" : {
+        "BuyerPartNumber" : "SPSBuyerItem2",
+        "VendorPartNumber" : "SPSSupplierHD-40",
+        "ConsumerPackageCode" : "884502115161",
+        "ProductID" : [ {
+          "PartNumberQual" : "ZBP",
+          "PartNumber" : "ABC-456789"
+        } ],
+        "PurchasePrice" : 10.0
+      },
+      "ProductOrItemDescription" : [ {
+        "ProductCharacteristicCode" : "08",
+        "ProductDescription" : "Sample Description2"
+      } ],
+      "QuantitiesSchedulesLocations" : [ {
+        "QuantityQualifier" : "33",
+        "TotalQty" : 32.0
+      } ]
+    }, {
+      "InventoryLine" : {
+        "BuyerPartNumber" : "SPSBuyerItem3",
+        "VendorPartNumber" : "SPSSupplierHD-60",
+        "ConsumerPackageCode" : "043000186706",
+        "ProductID" : [ {
+          "PartNumberQual" : "ZBP",
+          "PartNumber" : "ABC-456789"
+        } ],
+        "PurchasePrice" : 50.0
+      },
+      "ProductOrItemDescription" : [ {
+        "ProductCharacteristicCode" : "08",
+        "ProductDescription" : "Sample Description3"
+      } ],
+      "QuantitiesSchedulesLocations" : [ {
+        "QuantityQualifier" : "33",
+        "TotalQty" : 44.0
+      } ]
+    } ]
+  } ],
+  "Summary" : {
+    "TotalLineItemNumber" : 3
+  }
+}

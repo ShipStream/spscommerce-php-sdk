@@ -1,0 +1,222 @@
+{
+  "Header" : {
+    "InvoiceHeader" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "InvoiceNumber" : "123456",
+      "InvoiceDate" : "2020-12-15",
+      "PurchaseOrderDate" : "2020-12-01",
+      "PurchaseOrderNumber" : "PO112853-1",
+      "InvoiceTypeCode" : "DR",
+      "TsetPurposeCode" : "00",
+      "BuyersCurrency" : "USD",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174",
+      "BillOfLadingNumber" : "123546879",
+      "ShipDate" : "2020-12-15"
+    },
+    "PaymentTerms" : [ {
+      "TermsType" : "01",
+      "TermsBasisDateCode" : "3",
+      "TermsDiscountPercentage" : 2.0,
+      "TermsDiscountDate" : "2020-12-29",
+      "TermsDiscountDueDays" : 10,
+      "TermsNetDueDate" : "2021-01-19",
+      "TermsNetDueDays" : 31,
+      "TermsDiscountAmount" : 23.36,
+      "TermsDescription" : "2% 10 Net 31"
+    } ],
+    "Dates" : [ {
+      "DateTimeQualifier" : "002",
+      "Date" : "2020-12-20",
+      "Time" : "14:22:14"
+    } ],
+    "Contacts" : [ {
+      "ContactTypeCode" : "IC",
+      "ContactName" : "SPS Commerce Buyer",
+      "PrimaryPhone" : "612-435-9400",
+      "PrimaryFax" : "612-435-9468",
+      "PrimaryEmail" : "info@spscommerce.com"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "BT",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "091532452",
+      "AddressName" : "Corporate Headquarters",
+      "AddressAlternateName" : "Attn: Headquarters",
+      "Address1" : "1450 Energy Park Drive",
+      "Address2" : "Dock E",
+      "City" : "Saint Paul",
+      "State" : "MN",
+      "PostalCode" : "55108",
+      "Country" : "USA"
+    }, {
+      "AddressTypeCode" : "RI",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "091532452",
+      "AddressName" : "Corporate Headquarters",
+      "AddressAlternateName" : "Attn: Headquarters",
+      "Address1" : "1450 Energy Park Drive",
+      "Address2" : "Dock E",
+      "City" : "Saint Paul",
+      "State" : "MN",
+      "PostalCode" : "55108",
+      "Country" : "USA"
+    }, {
+      "AddressTypeCode" : "ST",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "123",
+      "AddressName" : "SPS Commerce",
+      "AddressAlternateName" : "DC 123",
+      "Address1" : "333 S 7th Street",
+      "Address2" : "Suite 1000",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    }, {
+      "AddressTypeCode" : "Z7",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "0010"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "CT",
+      "ReferenceID" : "5987-1",
+      "Description" : "Customer Contract Number"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "FOR QUESTIONS PLEASE CONTACT YOUR BUYER AT 612-435-9400"
+    } ],
+    "FOBRelatedInstruction" : [ {
+      "FOBPayCode" : "CC",
+      "FOBLocationQualifier" : "DE",
+      "FOBLocationDescription" : "FOB Destination"
+    } ],
+    "CarrierInformation" : [ {
+      "StatusCode" : "CL",
+      "CarrierTransMethodCode" : "M",
+      "CarrierAlphaCode" : "RBTC",
+      "CarrierRouting" : "Robinson Carrier",
+      "EquipmentDescriptionCode" : "TL",
+      "CarrierEquipmentNumber" : "123456",
+      "SealNumbers" : [ {
+        "SealNumber" : "123546"
+      } ]
+    } ],
+    "QuantityTotals" : [ {
+      "QuantityTotalsQualifier" : "SQT",
+      "Quantity" : 20.0,
+      "QuantityUOM" : "EA"
+    } ]
+  },
+  "LineItem" : [ {
+    "InvoiceLine" : {
+      "LineSequenceNumber" : "1",
+      "BuyerPartNumber" : "SPSBuyerItem1",
+      "VendorPartNumber" : "SPSSupplierHD-20",
+      "ConsumerPackageCode" : "859563003863",
+      "GTIN" : "00859563003863",
+      "UPCCaseCode" : "496099966745",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "9565452"
+      } ],
+      "InvoiceQty" : 10.0,
+      "InvoiceQtyUOM" : "EA",
+      "PurchasePrice" : 20.0,
+      "ShipQty" : 10.0,
+      "ShipQtyUOM" : "EA"
+    },
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 60.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description1"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  }, {
+    "InvoiceLine" : {
+      "LineSequenceNumber" : "2",
+      "BuyerPartNumber" : "SPSBuyerItem2",
+      "VendorPartNumber" : "SPSSupplierHD-40",
+      "ConsumerPackageCode" : "884502115161",
+      "GTIN" : "00884502115161",
+      "UPCCaseCode" : "496099965155",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "2563247"
+      } ],
+      "InvoiceQty" : 25.0,
+      "InvoiceQtyUOM" : "EA",
+      "PurchasePrice" : 10.0,
+      "ShipQty" : 25.0,
+      "ShipQtyUOM" : "EA"
+    },
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 280.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description2"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  }, {
+    "InvoiceLine" : {
+      "LineSequenceNumber" : "3",
+      "BuyerPartNumber" : "SPSBuyerItem3",
+      "VendorPartNumber" : "SPSSupplierHD-60",
+      "ConsumerPackageCode" : "043000186706",
+      "GTIN" : "00043000186706",
+      "UPCCaseCode" : "471108151743",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "2563299"
+      } ],
+      "InvoiceQty" : 15.0,
+      "InvoiceQtyUOM" : "EA",
+      "PurchasePrice" : 50.0,
+      "ShipQty" : 15.0,
+      "ShipQtyUOM" : "EA"
+    },
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 100.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description3"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  } ],
+  "Summary" : {
+    "TotalAmount" : 1200.0,
+    "TotalSalesAmount" : 1200.0,
+    "TotalTermsDiscountAmount" : 23.86,
+    "TotalLineItemNumber" : 3,
+    "InvoiceAmtDueByTermsDate" : 1176.14
+  }
+}

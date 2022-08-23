@@ -1,0 +1,139 @@
+{
+  "Header" : {
+    "OrderHeader" : {
+      "TradingPartnerId" : "SPSALLTESTID",
+      "PurchaseOrderNumber" : "PO584615-1",
+      "TsetPurposeCode" : "00",
+      "PrimaryPOTypeCode" : "SA",
+      "PurchaseOrderDate" : "2020-12-01",
+      "ShipCompleteCode" : "Y",
+      "Department" : "SPS",
+      "Vendor" : "VEND6174",
+      "Division" : "019",
+      "CustomerOrderNumber" : "98745612"
+    },
+    "PaymentTerms" : [ {
+      "TermsType" : "01",
+      "TermsBasisDateCode" : "3",
+      "TermsDiscountPercentage" : 2.0,
+      "TermsDiscountDueDays" : 10,
+      "TermsNetDueDays" : 31,
+      "TermsDiscountAmount" : 23.36,
+      "TermsDescription" : "2% 10 Net 31"
+    } ],
+    "Dates" : [ {
+      "DateTimeQualifier" : "010",
+      "Date" : "2020-12-15"
+    } ],
+    "Contacts" : [ {
+      "ContactTypeCode" : "IC",
+      "ContactName" : "SPS Commerce Buyer",
+      "PrimaryPhone" : "612-435-9400",
+      "PrimaryFax" : "612-435-9468",
+      "PrimaryEmail" : "info@spscommerce.com"
+    } ],
+    "Address" : [ {
+      "AddressTypeCode" : "BT",
+      "LocationCodeQualifier" : "92",
+      "AddressLocationNumber" : "091532452",
+      "AddressName" : "Corporate Headquarters",
+      "Address1" : "1450 Energy Park Drive",
+      "Address2" : "Dock E",
+      "City" : "St. Paul",
+      "State" : "MN",
+      "PostalCode" : "55108"
+    }, {
+      "AddressTypeCode" : "ST",
+      "LocationCodeQualifier" : "92",
+      "Address1" : "333 S 7th Street",
+      "Address2" : "Suite 1000",
+      "City" : "Minneapolis",
+      "State" : "MN",
+      "PostalCode" : "55402",
+      "Country" : "USA"
+    } ],
+    "FOBRelatedInstruction" : [ {
+      "FOBPayCode" : "CC",
+      "FOBLocationQualifier" : "DE",
+      "FOBLocationDescription" : "FOB Destination"
+    } ],
+    "CarrierInformation" : [ {
+      "CarrierTransMethodCode" : "M",
+      "CarrierAlphaCode" : "UPSN",
+      "CarrierRouting" : "UPS Ground",
+      "ServiceLevelCodes" : [ {
+        "ServiceLevelCode" : "SE"
+      } ]
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "CT",
+      "ReferenceID" : "5987-1",
+      "Description" : "Customer Contract Number"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "FOR QUESTIONS PLEASE CONTACT YOUR BUYER AT 612-435-9400"
+    } ],
+    "ChargesAllowances" : [ {
+      "AllowChrgIndicator" : "A",
+      "AllowChrgCode" : "C310",
+      "AllowChrgAmt" : 13.5,
+      "AllowChrgPercentQual" : "6",
+      "AllowChrgPercent" : 5.0,
+      "AllowChrgHandlingCode" : "06",
+      "AllowChrgHandlingDescription" : "Discount"
+    } ],
+    "QuantityTotals" : [ {
+      "QuantityTotalsQualifier" : "SQT",
+      "Quantity" : 1.0,
+      "QuantityUOM" : "EA"
+    } ]
+  },
+  "LineItem" : [ {
+    "OrderLine" : {
+      "LineSequenceNumber" : "1",
+      "BuyerPartNumber" : "SPSBuyerItem1",
+      "VendorPartNumber" : "SPSSupplierHD-20",
+      "ConsumerPackageCode" : "859563003863",
+      "GTIN" : "00859563003863",
+      "UPCCaseCode" : "496099966745",
+      "ProductID" : [ {
+        "PartNumberQual" : "MG",
+        "PartNumber" : "9565452"
+      } ],
+      "OrderQty" : 5.0,
+      "OrderQtyUOM" : "EA",
+      "PurchasePrice" : 20.0
+    },
+    "Dates" : [ {
+      "DateTimeQualifier" : "037",
+      "Date" : "2020-12-15"
+    } ],
+    "PriceInformation" : [ {
+      "PriceTypeIDCode" : "RTL",
+      "UnitPrice" : 60.0
+    } ],
+    "ProductOrItemDescription" : [ {
+      "ProductCharacteristicCode" : "08",
+      "ProductDescription" : "Sample Description1"
+    } ],
+    "PhysicalDetails" : [ {
+      "PackQualifier" : "OU",
+      "PackValue" : 1,
+      "PackSize" : 1.0,
+      "PackUOM" : "EA"
+    } ],
+    "References" : [ {
+      "ReferenceQual" : "MR",
+      "ReferenceID" : "MerchandiseTypeCode"
+    } ],
+    "Notes" : [ {
+      "NoteCode" : "GEN",
+      "Note" : "Gift Message: Happy Birthday!"
+    } ]
+  } ],
+  "Summary" : {
+    "TotalAmount" : 19.0,
+    "TotalLineItemNumber" : 1
+  }
+}

@@ -1,5 +1,6 @@
 {
     "name": "shipstream/spscommerce-php-sdk",
+    "version": "1.0.0",
     "description": "A PHP library for integrating with SPS Commerce via HTTP",
     "license": "MIT",
     "authors": [

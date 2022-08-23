@@ -1,5 +1,5 @@
 {
-    "name": "shipstream/sps-commerce-sdk",
+    "name": "shipstream/spscommerce-php-sdk",
     "description": "A PHP library for integrating with SPS Commerce via HTTP",
     "license": "MIT",
     "authors": [

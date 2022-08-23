@@ -1,49 +1,16 @@
-## SPS-Commerce-PHP-SDK
+# SPS-Commerce-PHP-SDK
 
-A PHP library for integrating with SPS Commerce Transaction APIs via HTTP.
+A PHP library for integrating with SPS Commerce HTTP APIs.
 
-### Install
+## Install
 
 ```shell
 composer require shipstream/sps-commerce-sdk
 ```
 
-### PHP Object Mapping
-Create PHP Object Mapper from json-schema resources using `json-cli`. 
+## HTTP Client Usage
 
-#### 1. Creating Order PHP classes 
-Shell Script to create PHP classes for `Order` using json schema  `src/schema-json/Orders.json`
-```bash
-#!/bin/bash
-set -e
-docker run --rm -v $PWD:/app --workdir /app \
-swaggest/json-cli \
-json-cli gen-php ./src/json-schema/Orders.json \
-    --ptr-in-schema "#/definitions/Order" \
-    --def-ptr "#/definitions" \
-    --ns ShipStream\\SpsCommerce\\RSX\\v770\\Order \
-    --ns-path src/RSX/v770/Order/
-
-```
-
-
-#### 2. Creating Shipment PHP classes
-Shell Script to create PHP classes for `Shipemt` using json schema  `src/schema-json/Shipments.json`
-```bash
-#!/bin/bash
-set -e
-docker run --rm -v $PWD:/app --workdir /app \
-swaggest/json-cli \
-json-cli gen-php ./src/json-schema/Shipments.json \
-    --ptr-in-schema "#/definitions/Shipment" \
-    --def-ptr "#/definitions" \
-    --ns ShipStream\\SpsCommerce\\RSX\\v770\\Shipment \
-    --ns-path src/RSX/v770/Shipment/
-
-```
-
-### PHP code snippet to send HTTP Request
-Here is code sample to send REST API request to `SPS-Commerce` API endpoint
+Here is code sample to send a REST API request to the SPS Commerce Transaction API.
 
 ```injectablephp
 <?php
@@ -66,7 +33,7 @@ $api = new TransactionApi($config);
 try {
 
     $file_path = "in/CA584618-1-v7.7-BulkImport.xml";
-    $file_content = "This API accepts a payload that initiates a new transaction. Transactions with the same file path will be overwritten. The only allowed Content-Type header value is application/octet-stream.";
+    $file_content = file_get_contents($file_path);
     $header = [
         'Content-Type' => 'application/octet-stream'
         'sps-meta-description' => 'Creating new Transaction at specified path'
@@ -82,6 +49,27 @@ try {
 } catch (InternalServerError $e) {
     echo $e->getMessage();
 }
-
-?>
 ```
+
+## RSX Object Usage
+
+Here is a code sample to load a JSON file into the appropriate RSX class:
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$jsonString = file_get_contents(__DIR__.'/sample-files/Orders(850)/PO584616-1-v7.7-DropShip.json');
+$order = \ShipStream\SpsCommerce\RSX\v770\Orders\Order::import(
+    json_decode($jsonString)
+);
+
+echo json_encode($order->header->address->jsonSerialize());
+```
+
+## Development
+
+The "RSX" classes for mapping data types to PHP objects are all generated using [json-cli](https://github.com/swaggest/json-cli).
+
+Run the shell script `generate.sh` to re-generate the classes if needed. 

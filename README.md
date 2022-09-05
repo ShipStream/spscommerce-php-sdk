@@ -65,7 +65,7 @@ $order = \ShipStream\SpsCommerce\RSX\v770\Orders\Order::import(
     json_decode($jsonString)
 );
 
-echo json_encode($order->header->address->jsonSerialize());
+echo json_encode(\ShipStream\SpsCommerce\RSX\v770\Orders\OrderHeaderAddressItems::export($order->header->address[0]));
 ```
 
 ## Development

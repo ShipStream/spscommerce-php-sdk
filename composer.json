@@ -11,7 +11,8 @@
     ],
     "require": {
         "guzzlehttp/guzzle": "^6.2.1",
-        "ext-json": "*"
+        "ext-json": "*",
+        "swaggest/json-schema": "^0.12"
     },
     "require-dev": {
         "swaggest/json-cli": "^1.9",

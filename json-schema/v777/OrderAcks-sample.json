@@ -1,0 +1,1105 @@
+{
+  "Meta": {
+    "SenderUniqueID": "9999999999",
+    "SenderCompanyName": "Test Company 1",
+    "ReceiverUniqueID": "000000000",
+    "ReceiverCompanyName": "SPS Commerce",
+    "IsDropShip": false,
+    "InterchangeControlNumber": "111111111",
+    "GroupControlIdentifier": "55555555",
+    "GroupControlNumber": "2222222",
+    "DocumentControlIdentifier": "1111111222222",
+    "DocumentControlNumber": "4444444444444",
+    "InterchangeSenderID": "987654321098",
+    "InterchangeReceiverID": "123456789012",
+    "GroupSenderID": "987654321098",
+    "GroupReceiverID": "123456789012",
+    "BatchPart": "99995555",
+    "BatchTotal": 60,
+    "BatchID": "testBatchID",
+    "Comments": "testComments",
+    "Validation": "testValidation",
+    "OrderManagement": "SalesOrPriceCatalog",
+    "Version": "testVersion"
+  },
+  "Header": {
+    "OrderHeader": {
+      "TradingPartnerId": "000ALLTESTID",
+      "PurchaseOrderNumber": "1010101010101",
+      "TsetPurposeCode": "06",
+      "PrimaryPOTypeCode": "KN",
+      "PrimaryPOTypeDescription": "This is a test. Do not ship",
+      "AdditionalPOTypeCodes": [
+        {
+          "POTypeCode": "SA",
+          "POTypeDescription": "This is a test. Do not ship"
+        }
+      ],
+      "PurchaseOrderDate": "2013-08-29",
+      "PurchaseOrderTime": "21:05:49-06:00",
+      "ReleaseNumber": "XYZ999999",
+      "AcknowledgementNumber": "977650397",
+      "AcknowledgementType": "AH",
+      "ShipCompleteCode": "N",
+      "InternalOrderNumber": "456789-123",
+      "InternalOrderDate": "2013-09-18",
+      "AcknowledgementDate": "2013-10-15",
+      "AcknowledgementTime": "15:34:56-05:00",
+      "BuyersCurrency": "testBuyersCurrency",
+      "SellersCurrency": "testSellersCurrency",
+      "ExchangeRate": 1.03157,
+      "Department": "026",
+      "DepartmentDescription": "Electronics",
+      "Vendor": "99999999",
+      "JobNumber": "777770000555555",
+      "Division": "Sam's Club",
+      "CustomerAccountNumber": "123456789",
+      "CustomerOrderNumber": "987654321",
+      "DocumentVersion": "4",
+      "DocumentRevision": "2"
+    },
+    "PaymentTerms": [
+      {
+        "TermsType": "10",
+        "TermsBasisDateCode": "6",
+        "TermsTimeRelationCode": "10",
+        "TermsDiscountPercentage": 5.62,
+        "TermsDiscountDate": "2013-11-28",
+        "TermsDiscountDueDays": 60,
+        "TermsNetDueDate": "2013-11-15",
+        "TermsNetDueDays": 90,
+        "TermsDiscountAmount": 1845.08,
+        "TermsDeferredDueDate": "2013-10-25",
+        "TermsDeferredAmountDue": 215.28,
+        "PercentOfInvoicePayable": 12.5,
+        "TermsDescription": "Must be paid in full by end of year",
+        "TermsDueDay": 28,
+        "PaymentMethodCode": "ESC",
+        "PaymentMethodID": "999888777",
+        "LatePaymentChargePercent": 15.2,
+        "TermsStartDate": "2013-09-30",
+        "TermsDueDateQual": "02",
+        "AmountSubjectToDiscount": 68.18,
+        "DiscountAmountDue": 97.45
+      }
+    ],
+    "Dates": [
+      {
+        "DateTimeQualifier": "012",
+        "Date": "2012-10-31",
+        "Time": "16:13:03-05:00",
+        "DateTimePeriod": "testDateTimePeriod"
+      }
+    ],
+    "Contacts": [
+      {
+        "ContactTypeCode": "BD",
+        "ContactName": "SPS Commerce",
+        "PrimaryPhone": "866-245-8100",
+        "PrimaryFax": "612-435-9401",
+        "PrimaryEmail": "info@spscommerce.com",
+        "AdditionalContactDetails": [
+          {
+            "ContactQual": "EX",
+            "ContactID": "999-999-9999"
+          }
+        ],
+        "ContactReference": "ext: 451"
+      }
+    ],
+    "Address": [
+      {
+        "AddressTypeCode": "PLCO",
+        "LocationCodeQualifier": "BE",
+        "AddressLocationNumber": "11111",
+        "AddressName": "SPS Commerce",
+        "AddressAlternateName": "ATTN: Marketing",
+        "AddressAlternateName2": "ATTN: John Doe",
+        "Address1": "1600 Pennsylvania Ave NW",
+        "Address2": "ATTN: The President",
+        "Address3": "333 South Seventh Street Tower",
+        "Address4": "10th Floor",
+        "City": "Minneapolis",
+        "State": "DC",
+        "PostalCode": "55402",
+        "Country": "US",
+        "LocationID": "555555",
+        "CountrySubDivision": "testCountrySubDivision",
+        "AddressTaxIdNumber": "999999",
+        "AddressTaxExemptNumber": "testAddressTaxExemptNumber",
+        "References": [
+          {
+            "ReferenceQual": "AI",
+            "ReferenceID": "testReferenceID",
+            "Description": "New products only. Do not reuse packaging",
+            "Date": "2013-12-21",
+            "Time": "16:13:03-05:00",
+            "ReferenceIDs": [
+              {
+                "ReferenceQual": "YD",
+                "ReferenceID": "testReferenceID"
+              }
+            ]
+          }
+        ],
+        "Contacts": [
+          {
+            "ContactTypeCode": "MRP",
+            "ContactName": "SPS Commerce",
+            "PrimaryPhone": "866-245-8100",
+            "PrimaryFax": "612-435-9401",
+            "PrimaryEmail": "info@spscommerce.com",
+            "AdditionalContactDetails": [
+              {
+                "ContactQual": "NP",
+                "ContactID": "999-999-9999"
+              }
+            ],
+            "ContactReference": "ext: 451"
+          }
+        ],
+        "Dates": [
+          {
+            "DateTimeQualifier": "069",
+            "Date": "2013-12-21",
+            "Time": "16:13:03-05:00",
+            "DateTimePeriod": "testDateTimePeriod"
+          }
+        ]
+      }
+    ],
+    "FOBRelatedInstruction": [
+      {
+        "FOBPayCode": "CD",
+        "FOBLocationQualifier": "PL",
+        "FOBLocationDescription": "Minnesota",
+        "FOBTitlePassageCode": "SP",
+        "FOBTitlePassageLocation": "South Korea",
+        "TransportationTermsType": "03",
+        "TransportationTerms": "testTransportationTerms",
+        "RiskOfLossCode": "IM",
+        "Description": "New products only. Do not reuse packaging"
+      }
+    ],
+    "CarrierInformation": [
+      {
+        "StatusCode": "BK",
+        "CarrierTransMethodCode": "BP",
+        "CarrierAlphaCode": "EMSY",
+        "CarrierRouting": "ONTRAC",
+        "EquipmentDescriptionCode": "HV",
+        "CarrierEquipmentInitial": "XBGQ",
+        "CarrierEquipmentNumber": "4806196209",
+        "EquipmentType": "testEquipmentType",
+        "OwnershipCode": "S",
+        "RoutingSequenceCode": "BO",
+        "TransitDirectionCode": "SS",
+        "TransitTimeQual": "WD",
+        "TransitTime": 53.8,
+        "ServiceLevelCodes": [
+          {
+            "ServiceLevelCode": "PB"
+          }
+        ],
+        "Address": [
+          {
+            "AddressTypeCode": "BO",
+            "LocationCodeQualifier": "TPL",
+            "AddressLocationNumber": "11111",
+            "AddressName": "SPS Commerce",
+            "AddressAlternateName": "ATTN: Marketing",
+            "AddressAlternateName2": "ATTN: John Doe",
+            "Address1": "1600 Pennsylvania Ave NW",
+            "Address2": "ATTN: The President",
+            "Address3": "333 South Seventh Street Tower",
+            "Address4": "10th Floor",
+            "City": "Minneapolis",
+            "State": "DC",
+            "PostalCode": "20500",
+            "Country": "US",
+            "LocationID": "East Location, next to interstate",
+            "CountrySubDivision": "testCountrySubDivision",
+            "AddressTaxIdNumber": "999999",
+            "AddressTaxExemptNumber": "testAddressTaxExemptNumber",
+            "Dates": [
+              {
+                "DateTimeQualifier": "ACT",
+                "Date": "2012-10-31",
+                "Time": "16:13:03-05:00",
+                "DateTimePeriod": "testDateTimePeriod"
+              }
+            ]
+          }
+        ],
+        "SealNumbers": [
+          {
+            "SealStatusCode": "02",
+            "SealNumber": "AA1111111"
+          }
+        ]
+      }
+    ],
+    "References": [
+      {
+        "ReferenceQual": "V3",
+        "ReferenceID": "testReferenceID",
+        "Description": "New products only. Do not reuse packaging",
+        "Date": "2012-10-31",
+        "Time": "16:13:03-05:00",
+        "ReferenceIDs": [
+          {
+            "ReferenceQual": "19",
+            "ReferenceID": "testReferenceID"
+          }
+        ]
+      }
+    ],
+    "Notes": [
+      {
+        "NoteCode": "CCG",
+        "Note": "REPEAT LOGO PREVIOUS ORDER",
+        "LanguageCode": "ENG"
+      }
+    ],
+    "Commodity": [
+      {
+        "CommodityCodeQualifier": "T",
+        "CommodityCode": "P2512"
+      }
+    ],
+    "Taxes": [
+      {
+        "TaxTypeCode": "CG",
+        "TaxAmount": 1845.08,
+        "TaxPercentQual": "4",
+        "TaxPercent": 8.5,
+        "JurisdictionQual": "MB",
+        "JurisdictionCode": "07034",
+        "TaxExemptCode": "2",
+        "RelationshipCode": "I",
+        "PercentDollarBasis": 2000,
+        "TaxHandlingCode": "02",
+        "TaxID": "99990000",
+        "AssignedID": "testAssignedID",
+        "Description": "New products only. Do not reuse packaging"
+      }
+    ],
+    "ChargesAllowances": [
+      {
+        "AllowChrgIndicator": "C",
+        "AllowChrgCode": "A485",
+        "AllowChrgAgencyCode": "AX",
+        "AllowChrgAgency": "Pending Review",
+        "AllowChrgAmt": 85.02,
+        "AllowChrgPercentQual": "1",
+        "AllowChrgPercent": 5,
+        "PercentDollarBasis": 2000,
+        "AllowChrgRate": 2.43,
+        "AllowChrgQtyUOM": "EV",
+        "AllowChrgQty": 8,
+        "AllowChrgHandlingCode": "01",
+        "ReferenceIdentification": "testReferenceIdentification",
+        "AllowChrgHandlingDescription": "This will cover the cost of shipping",
+        "OptionNumber": "testOptionNumber",
+        "ExceptionNumber": "testExceptionNumber",
+        "AllowChrgQty2": 42.47,
+        "LanguageCode": "ENG",
+        "CalculationSequence": 1,
+        "Taxes": [
+          {
+            "TaxTypeCode": "A",
+            "TaxAmount": 1845.08,
+            "TaxPercentQual": "2",
+            "TaxPercent": 8.5,
+            "JurisdictionQual": "SP",
+            "JurisdictionCode": "07034",
+            "TaxExemptCode": "2",
+            "RelationshipCode": "O",
+            "PercentDollarBasis": 2000,
+            "TaxHandlingCode": "02",
+            "TaxID": "99990000",
+            "AssignedID": "testAssignedID",
+            "Description": "New products only. Do not reuse packaging"
+          }
+        ]
+      }
+    ],
+    "MonetaryAmounts": [
+      {
+        "MonetaryAmountCode": "SP",
+        "MonetaryAmount": 9.95,
+        "CreditDebitFlag": "C"
+      }
+    ],
+    "QuantityAndWeight": [
+      {
+        "PackingMedium": "SPC",
+        "PackingMaterial": "43",
+        "LadingQuantity": 4100,
+        "LadingDescription": "testLadingDescription",
+        "WeightQualifier": "N",
+        "Weight": 43.44,
+        "WeightUOM": "GR",
+        "Volume": 90.79,
+        "VolumeUOM": "KC",
+        "PalletExchangeCode": "2"
+      }
+    ],
+    "QuantityTotals": [
+      {
+        "QuantityTotalsQualifier": "SQT",
+        "Quantity": 83.52,
+        "QuantityUOM": "DS",
+        "WeightQualifier": "EN",
+        "Weight": 85.62,
+        "WeightUOM": "CW",
+        "Volume": 23.5,
+        "VolumeUOM": "DL",
+        "Description": "New products only. Do not reuse packaging"
+      }
+    ],
+    "RegulatoryCompliances": [
+      {
+        "RegulatoryComplianceQual": "FTR",
+        "YesOrNoResponse": "N",
+        "RegulatoryComplianceID": "testRegulatoryComplianceID",
+        "RegulatoryAgency": "testRegulatoryAgency",
+        "Description": "New products only. Do not reuse packaging"
+      }
+    ]
+  },
+  "LineItem": [
+    {
+      "OrderLine": {
+        "LineSequenceNumber": "08",
+        "ApplicationId": "980023",
+        "BuyerPartNumber": "9999-SPS",
+        "VendorPartNumber": "11155-559999",
+        "ConsumerPackageCode": "093597609541",
+        "EAN": "1234567890123",
+        "GTIN": "12345678901234",
+        "UPCCaseCode": "98765432101",
+        "NatlDrugCode": "51456-299",
+        "InternationalStandardBookNumber": "999-0-555-22222-0",
+        "ProductID": [
+          {
+            "PartNumberQual": "PLU",
+            "PartNumber": "ABC-456789"
+          }
+        ],
+        "OrderQty": 125,
+        "OrderQtyUOM": "Q4",
+        "PurchasePriceType": "QTE",
+        "PurchasePrice": 5.85,
+        "PurchasePriceBasis": "PF",
+        "BuyersCurrency": "testBuyersCurrency",
+        "SellersCurrency": "testSellersCurrency",
+        "ExchangeRate": 1.03157,
+        "ShipDate": "2013-11-05",
+        "ExtendedItemTotal": 50,
+        "ProductSizeCode": "S-800",
+        "ProductSizeDescription": "Small",
+        "ProductColorCode": "C-999",
+        "ProductColorDescription": "Fire Truck Red",
+        "ProductMaterialCode": "F-000",
+        "ProductMaterialDescription": "Faux Fabric",
+        "ProductProcessCode": "testProductProcessCode",
+        "ProductProcessDescription": "testProductProcessDescription",
+        "Department": "026",
+        "DepartmentDescription": "Electronics",
+        "Class": "testClass",
+        "Gender": "Infant Boy/Girl",
+        "SellerDateCode": "testSellerDateCode",
+        "NRFStandardColorAndSize": {
+          "NRFColorCode": "600",
+          "ColorCategoryName": "Red",
+          "ColorPrimaryDescription": "Uncompared Red",
+          "NRFSizeCode": "QUEEN-60685",
+          "SizeCategoryName": "Shirts",
+          "SizePrimaryDescription": "Small",
+          "SizeSecondaryDescription": "Short",
+          "SizeTableName": "testSizeTableName",
+          "SizeHeading1": "testSizeHeading1",
+          "SizeHeading2": "testSizeHeading2",
+          "SizeHeading3": "testSizeHeading3",
+          "SizeHeading4": "testSizeHeading4"
+        }
+      },
+      "LineItemAcknowledgement": [
+        {
+          "LineSequenceNumber": "01",
+          "ItemStatusCode": "IH",
+          "ItemScheduleQty": 75,
+          "ItemScheduleUOM": "MHZ",
+          "ItemScheduleQualifier": "067",
+          "ItemScheduleDate": "2014-01-14",
+          "BuyerPartNumber": "9999-SPS",
+          "VendorPartNumber": "11155-559999",
+          "ConsumerPackageCode": "093597609541",
+          "EAN": "1234567890123",
+          "GTIN": "12345678901234",
+          "UPCCaseCode": "98765432101",
+          "NatlDrugCode": "51456-299",
+          "InternationalStandardBookNumber": "999-0-555-22222-0",
+          "ProductID": [
+            {
+              "PartNumberQual": "ZVP",
+              "PartNumber": "ABC-456789"
+            }
+          ],
+          "PurchasePriceType": "TIP",
+          "PurchasePrice": 5.85,
+          "PurchasePriceBasis": "PD",
+          "BuyersCurrency": "testBuyersCurrency",
+          "SellersCurrency": "testSellersCurrency",
+          "ExchangeRate": 1.03157,
+          "ExtendedItemTotal": 50,
+          "ProductSizeCode": "S-800",
+          "ProductSizeDescription": "Small",
+          "ProductColorCode": "C-999",
+          "ProductColorDescription": "Fire Truck Red",
+          "ProductMaterialCode": "F-000",
+          "ProductMaterialDescription": "Faux Fabric",
+          "ProductProcessCode": "testProductProcessCode",
+          "ProductProcessDescription": "testProductProcessDescription",
+          "Department": "026",
+          "DepartmentDescription": "Electronics",
+          "Class": "testClass",
+          "Gender": "Infant Boy/Girl",
+          "IndustryCode": "testIndustryCode"
+        }
+      ],
+      "Dates": [
+        {
+          "DateTimeQualifier": "372",
+          "Date": "2013-12-21",
+          "Time": "16:13:03-05:00",
+          "DateTimePeriod": "testDateTimePeriod"
+        }
+      ],
+      "Measurements": [
+        {
+          "MeasurementRefIDCode": "testMeasurementRefIDCode",
+          "MeasurementQualifier": "ID",
+          "MeasurementValue": 16.95,
+          "CompositeUOM": "MM",
+          "RangeMinimum": 23.79,
+          "RangeMaximum": 64.7,
+          "MeasurementSignificanceCode": "OU",
+          "MeasurementAttributeCode": "testMeasurementAttributeCode",
+          "SurfaceLayerPositionCode": "testSurfaceLayerPositionCode",
+          "IndustryCodeQualifier": "testIndustryCodeQualifier",
+          "IndustryCode": "testIndustryCode"
+        }
+      ],
+      "PriceInformation": [
+        {
+          "ChangeReasonCode": "EV",
+          "EffectiveDate": "2019-11-01",
+          "PriceTypeIDCode": "TIP",
+          "UnitPrice": 5.48,
+          "UnitPriceBasis": "HT",
+          "UnitPriceBasisMultiplier": 3,
+          "Currency": "testCurrency",
+          "PriceMultiplierQual": "CSR",
+          "PriceMultiplier": 8,
+          "RebateAmount": 39.4,
+          "Quantity": 80.78,
+          "QuantityUOM": "JU",
+          "MultiplePriceQuantity": 3,
+          "ClassOfTradeCode": "DI",
+          "ConditionValue": "testConditionValue",
+          "Description": "New products only. Do not reuse packaging"
+        }
+      ],
+      "ProductOrItemDescription": [
+        {
+          "ProductCharacteristicCode": "AE",
+          "AgencyQualifierCode": "FC",
+          "ProductDescriptionCode": "testProductDescriptionCode",
+          "ProductDescription": "Super comfortable",
+          "SurfaceLayerPositionCode": "testSurfaceLayerPositionCode",
+          "SourceSubqualifier": "testSourceSubqualifier",
+          "YesOrNoResponse": "N",
+          "LanguageCode": "ENG"
+        }
+      ],
+      "MasterItemAttribute": [
+        {
+          "ItemAttribute": [
+            {
+              "ItemAttributeQualifier": "GR",
+              "Value": 9,
+              "ValueUOM": "PA",
+              "Description": "New products only. Do not reuse packaging",
+              "YesOrNoResponse": "N",
+              "Measurements": [
+                {
+                  "MeasurementRefIDCode": "testMeasurementRefIDCode",
+                  "MeasurementQualifier": "CWHT",
+                  "MeasurementValue": 65.1,
+                  "CompositeUOM": "PO",
+                  "RangeMinimum": 54.22,
+                  "RangeMaximum": 61.22,
+                  "MeasurementSignificanceCode": "OU",
+                  "MeasurementAttributeCode": "testMeasurementAttributeCode",
+                  "SurfaceLayerPositionCode": "testSurfaceLayerPositionCode",
+                  "IndustryCodeQualifier": "testIndustryCodeQualifier",
+                  "IndustryCode": "testIndustryCode"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "PhysicalDetails": [
+        {
+          "PackQualifier": "IN",
+          "PackValue": 6,
+          "PackSize": 18,
+          "PackUOM": "PV",
+          "PackingMedium": "ROL",
+          "PackingMaterial": "03",
+          "WeightQualifier": "EN",
+          "PackWeight": 1600,
+          "PackWeightUOM": "TO",
+          "PackVolume": 1728,
+          "PackVolumeUOM": "PV",
+          "PackLength": 12,
+          "PackWidth": 12,
+          "PackHeight": 12,
+          "DimensionUOM": "LM",
+          "Description": "New products only. Do not reuse packaging",
+          "SurfaceLayerPositionCode": "testSurfaceLayerPositionCode",
+          "AssignedID": "testAssignedID"
+        }
+      ],
+      "References": [
+        {
+          "ReferenceQual": "MB",
+          "ReferenceID": "testReferenceID",
+          "Description": "New products only. Do not reuse packaging",
+          "Date": "2013-12-21",
+          "Time": "16:13:03-05:00",
+          "ReferenceIDs": [
+            {
+              "ReferenceQual": "CA",
+              "ReferenceID": "testReferenceID"
+            }
+          ]
+        }
+      ],
+      "Notes": [
+        {
+          "NoteCode": "CCG",
+          "Note": "REPEAT LOGO PREVIOUS ORDER",
+          "LanguageCode": "ENG"
+        }
+      ],
+      "Commodity": [
+        {
+          "CommodityCodeQualifier": "V",
+          "CommodityCode": "P2512"
+        }
+      ],
+      "Address": [
+        {
+          "AddressTypeCode": "PF",
+          "LocationCodeQualifier": "9",
+          "AddressLocationNumber": "11111",
+          "AddressName": "The White House",
+          "AddressAlternateName": "ATTN: Marketing",
+          "AddressAlternateName2": "ATTN: John Doe",
+          "Address1": "1600 Pennsylvania Ave NW",
+          "Address2": "ATTN: The President",
+          "Address3": "333 South Seventh Street Tower",
+          "Address4": "10th Floor",
+          "City": "Washington",
+          "State": "MN",
+          "PostalCode": "55402",
+          "Country": "US",
+          "LocationID": "555555",
+          "CountrySubDivision": "testCountrySubDivision",
+          "AddressTaxIdNumber": "999999",
+          "AddressTaxExemptNumber": "testAddressTaxExemptNumber",
+          "References": [
+            {
+              "ReferenceQual": "CUDN",
+              "ReferenceID": "testReferenceID",
+              "Description": "New products only. Do not reuse packaging",
+              "Date": "2012-10-31",
+              "Time": "16:13:03-05:00",
+              "ReferenceIDs": [
+                {
+                  "ReferenceQual": "Q1",
+                  "ReferenceID": "testReferenceID"
+                }
+              ]
+            }
+          ],
+          "Contacts": [
+            {
+              "ContactTypeCode": "IC",
+              "ContactName": "SPS Commerce",
+              "PrimaryPhone": "866-245-8100",
+              "PrimaryFax": "612-435-9401",
+              "PrimaryEmail": "info@spscommerce.com",
+              "AdditionalContactDetails": [
+                {
+                  "ContactQual": "AU",
+                  "ContactID": "999-999-9999"
+                }
+              ],
+              "ContactReference": "ext: 451"
+            }
+          ],
+          "Dates": [
+            {
+              "DateTimeQualifier": "145",
+              "Date": "2012-10-31",
+              "Time": "16:13:03-05:00",
+              "DateTimePeriod": "testDateTimePeriod"
+            }
+          ]
+        }
+      ],
+      "Subline": [
+        {
+          "SublineItemDetail": {
+            "LineSequenceNumber": "08",
+            "ApplicationId": "980023",
+            "BuyerPartNumber": "9999-SPS",
+            "VendorPartNumber": "11155-559999",
+            "ConsumerPackageCode": "093597609541",
+            "EAN": "1234567890123",
+            "GTIN": "12345678901234",
+            "UPCCaseCode": "98765432101",
+            "NatlDrugCode": "51456-299",
+            "InternationalStandardBookNumber": "999-0-555-22222-0",
+            "ProductID": [
+              {
+                "PartNumberQual": "MG",
+                "PartNumber": "ABC-456789"
+              }
+            ],
+            "ProductSizeCode": "S-800",
+            "ProductSizeDescription": "Small",
+            "ProductColorCode": "C-999",
+            "ProductColorDescription": "Fire Truck Red",
+            "ProductMaterialCode": "F-000",
+            "ProductMaterialDescription": "Faux Fabric",
+            "ProductProcessCode": "testProductProcessCode",
+            "ProductProcessDescription": "testProductProcessDescription",
+            "QtyPer": 5,
+            "QtyPerUOM": "CN",
+            "PurchasePriceType": "CON",
+            "PurchasePrice": 5.85,
+            "PurchasePriceBasis": "HTH",
+            "Gender": "Infant Boy/Girl",
+            "NRFStandardColorAndSize": {
+              "NRFColorCode": "600",
+              "ColorCategoryName": "Red",
+              "ColorPrimaryDescription": "Uncompared Red",
+              "NRFSizeCode": "QUEEN-60685",
+              "SizeCategoryName": "Shirts",
+              "SizePrimaryDescription": "Small",
+              "SizeSecondaryDescription": "Short",
+              "SizeTableName": "testSizeTableName",
+              "SizeHeading1": "testSizeHeading1",
+              "SizeHeading2": "testSizeHeading2",
+              "SizeHeading3": "testSizeHeading3",
+              "SizeHeading4": "testSizeHeading4"
+            }
+          },
+          "Dates": [
+            {
+              "DateTimeQualifier": "015",
+              "Date": "2013-12-21",
+              "Time": "16:13:03-05:00",
+              "DateTimePeriod": "testDateTimePeriod"
+            }
+          ],
+          "PriceInformation": [
+            {
+              "ChangeReasonCode": "AQ",
+              "EffectiveDate": "2019-11-01",
+              "PriceTypeIDCode": "UCP",
+              "UnitPrice": 5.48,
+              "UnitPriceBasis": "PE",
+              "UnitPriceBasisMultiplier": 3,
+              "Currency": "testCurrency",
+              "PriceMultiplierQual": "CSD",
+              "PriceMultiplier": 8,
+              "RebateAmount": 37.83,
+              "Quantity": 75.25,
+              "QuantityUOM": "VO",
+              "MultiplePriceQuantity": 3,
+              "ClassOfTradeCode": "RS",
+              "ConditionValue": "testConditionValue",
+              "Description": "New products only. Do not reuse packaging"
+            }
+          ],
+          "ProductOrItemDescription": [
+            {
+              "ProductCharacteristicCode": "74",
+              "AgencyQualifierCode": "AX",
+              "ProductDescriptionCode": "testProductDescriptionCode",
+              "ProductDescription": "Super comfortable",
+              "SurfaceLayerPositionCode": "testSurfaceLayerPositionCode",
+              "SourceSubqualifier": "testSourceSubqualifier",
+              "YesOrNoResponse": "Y",
+              "LanguageCode": "ENG"
+            }
+          ],
+          "PhysicalDetails": [
+            {
+              "PackQualifier": "IN",
+              "PackValue": 6,
+              "PackSize": 18,
+              "PackUOM": "MM",
+              "PackingMedium": "TBE",
+              "PackingMaterial": "43",
+              "WeightQualifier": "EN",
+              "PackWeight": 1600,
+              "PackWeightUOM": "ME",
+              "PackVolume": 1728,
+              "PackVolumeUOM": "ML",
+              "PackLength": 12,
+              "PackWidth": 12,
+              "PackHeight": 12,
+              "DimensionUOM": "HL",
+              "Description": "New products only. Do not reuse packaging",
+              "SurfaceLayerPositionCode": "testSurfaceLayerPositionCode",
+              "AssignedID": "testAssignedID"
+            }
+          ],
+          "References": [
+            {
+              "ReferenceQual": "19",
+              "ReferenceID": "testReferenceID",
+              "Description": "New products only. Do not reuse packaging",
+              "Date": "2013-12-21",
+              "Time": "16:13:03-05:00",
+              "ReferenceIDs": [
+                {
+                  "ReferenceQual": "PRSH",
+                  "ReferenceID": "testReferenceID"
+                }
+              ]
+            }
+          ],
+          "Notes": [
+            {
+              "NoteCode": "SPE",
+              "Note": "REPEAT LOGO PREVIOUS ORDER",
+              "LanguageCode": "ENG"
+            }
+          ],
+          "Taxes": [
+            {
+              "TaxTypeCode": "LS",
+              "TaxAmount": 1845.08,
+              "TaxPercentQual": "6",
+              "TaxPercent": 8.5,
+              "JurisdictionQual": "MB",
+              "JurisdictionCode": "07034",
+              "TaxExemptCode": "2",
+              "RelationshipCode": "I",
+              "PercentDollarBasis": 2000,
+              "TaxHandlingCode": "01",
+              "TaxID": "99990000",
+              "AssignedID": "testAssignedID",
+              "Description": "New products only. Do not reuse packaging"
+            }
+          ],
+          "ChargesAllowances": [
+            {
+              "AllowChrgIndicator": "A",
+              "AllowChrgCode": "I100",
+              "AllowChrgAgencyCode": "FA",
+              "AllowChrgAgency": "Pending Review",
+              "AllowChrgAmt": 85.02,
+              "AllowChrgPercentQual": "7",
+              "AllowChrgPercent": 5,
+              "PercentDollarBasis": 2000,
+              "AllowChrgRate": 2.43,
+              "AllowChrgQtyUOM": "VI",
+              "AllowChrgQty": 8,
+              "AllowChrgHandlingCode": "09",
+              "ReferenceIdentification": "testReferenceIdentification",
+              "AllowChrgHandlingDescription": "This will cover the cost of shipping",
+              "OptionNumber": "testOptionNumber",
+              "ExceptionNumber": "testExceptionNumber",
+              "AllowChrgQty2": 60.53,
+              "LanguageCode": "ENG",
+              "CalculationSequence": 1,
+              "Taxes": [
+                {
+                  "TaxTypeCode": "VA",
+                  "TaxAmount": 1845.08,
+                  "TaxPercentQual": "5",
+                  "TaxPercent": 8.5,
+                  "JurisdictionQual": "CC",
+                  "JurisdictionCode": "07034",
+                  "TaxExemptCode": "2",
+                  "RelationshipCode": "O",
+                  "PercentDollarBasis": 2000,
+                  "TaxHandlingCode": "03",
+                  "TaxID": "99990000",
+                  "AssignedID": "testAssignedID",
+                  "Description": "New products only. Do not reuse packaging"
+                }
+              ]
+            }
+          ],
+          "Address": [
+            {
+              "AddressTypeCode": "FW",
+              "LocationCodeQualifier": "TPL",
+              "AddressLocationNumber": "11111",
+              "AddressName": "The White House",
+              "AddressAlternateName": "ATTN: Marketing",
+              "AddressAlternateName2": "ATTN: John Doe",
+              "Address1": "1600 Pennsylvania Ave NW",
+              "Address2": "ATTN: The President",
+              "Address3": "333 South Seventh Street Tower",
+              "Address4": "10th Floor",
+              "City": "Washington",
+              "State": "DC",
+              "PostalCode": "20500",
+              "Country": "US",
+              "LocationID": "East Location, next to interstate",
+              "CountrySubDivision": "testCountrySubDivision",
+              "AddressTaxIdNumber": "999999",
+              "AddressTaxExemptNumber": "testAddressTaxExemptNumber",
+              "References": [
+                {
+                  "ReferenceQual": "AI",
+                  "ReferenceID": "testReferenceID",
+                  "Description": "New products only. Do not reuse packaging",
+                  "Date": "2013-12-21",
+                  "Time": "16:13:03-05:00",
+                  "ReferenceIDs": [
+                    {
+                      "ReferenceQual": "CRM",
+                      "ReferenceID": "testReferenceID"
+                    }
+                  ]
+                }
+              ],
+              "Contacts": [
+                {
+                  "ContactTypeCode": "CR",
+                  "ContactName": "SPS Commerce",
+                  "PrimaryPhone": "866-245-8100",
+                  "PrimaryFax": "612-435-9401",
+                  "PrimaryEmail": "info@spscommerce.com",
+                  "AdditionalContactDetails": [
+                    {
+                      "ContactQual": "AU",
+                      "ContactID": "999-999-9999"
+                    }
+                  ],
+                  "ContactReference": "ext: 451"
+                }
+              ],
+              "Dates": [
+                {
+                  "DateTimeQualifier": "619",
+                  "Date": "2013-12-21",
+                  "Time": "16:13:03-05:00",
+                  "DateTimePeriod": "testDateTimePeriod"
+                }
+              ]
+            }
+          ],
+          "Commodity": [
+            {
+              "CommodityCodeQualifier": "N",
+              "CommodityCode": "P2512"
+            }
+          ],
+          "RegulatoryCompliances": [
+            {
+              "RegulatoryComplianceQual": "FHA",
+              "YesOrNoResponse": "N",
+              "RegulatoryComplianceID": "testRegulatoryComplianceID",
+              "RegulatoryAgency": "testRegulatoryAgency",
+              "Description": "New products only. Do not reuse packaging"
+            }
+          ]
+        }
+      ],
+      "QuantitiesSchedulesLocations": [
+        {
+          "QuantityQualifier": "POQ",
+          "TotalQty": 100,
+          "TotalQtyUOM": "BF",
+          "QuantityDescription": "Quantities on hold due to defect",
+          "LocationCodeQualifier": "92",
+          "LocationDescription": "Aisle end cap",
+          "LocationQuantity": [
+            {
+              "Location": "9999",
+              "Qty": 65
+            }
+          ],
+          "Dates": [
+            {
+              "DateTimeQualifier": "097",
+              "Date": "2012-10-31",
+              "Time": "16:13:03-05:00",
+              "DateTimePeriod": "testDateTimePeriod"
+            }
+          ],
+          "AssignedID": "testAssignedID",
+          "LeadTimeCode": "AE",
+          "LeadTimeQuantity": 45,
+          "LeadTimePeriodInterval": "HR",
+          "LeadTimeDate": "2019-11-01"
+        }
+      ],
+      "Taxes": [
+        {
+          "TaxTypeCode": "H780",
+          "TaxAmount": 1845.08,
+          "TaxPercentQual": "2",
+          "TaxPercent": 8.5,
+          "JurisdictionQual": "CC",
+          "JurisdictionCode": "07034",
+          "TaxExemptCode": "1",
+          "RelationshipCode": "I",
+          "PercentDollarBasis": 2000,
+          "TaxHandlingCode": "04",
+          "TaxID": "99990000",
+          "AssignedID": "testAssignedID",
+          "Description": "New products only. Do not reuse packaging"
+        }
+      ],
+      "ChargesAllowances": [
+        {
+          "AllowChrgIndicator": "N",
+          "AllowChrgCode": "LAY",
+          "AllowChrgAgencyCode": "VI",
+          "AllowChrgAgency": "Pending Review",
+          "AllowChrgAmt": 85.02,
+          "AllowChrgPercentQual": "7",
+          "AllowChrgPercent": 5,
+          "PercentDollarBasis": 2000,
+          "AllowChrgRate": 2.43,
+          "AllowChrgQtyUOM": "PD",
+          "AllowChrgQty": 8,
+          "AllowChrgHandlingCode": "06",
+          "ReferenceIdentification": "testReferenceIdentification",
+          "AllowChrgHandlingDescription": "This will cover the cost of shipping",
+          "OptionNumber": "testOptionNumber",
+          "ExceptionNumber": "testExceptionNumber",
+          "AllowChrgQty2": 86.34,
+          "LanguageCode": "ENG",
+          "CalculationSequence": 1,
+          "Taxes": [
+            {
+              "TaxTypeCode": "L",
+              "TaxAmount": 1845.08,
+              "TaxPercentQual": "5",
+              "TaxPercent": 8.5,
+              "JurisdictionQual": "CC",
+              "JurisdictionCode": "07034",
+              "TaxExemptCode": "0",
+              "RelationshipCode": "I",
+              "PercentDollarBasis": 2000,
+              "TaxHandlingCode": "04",
+              "TaxID": "99990000",
+              "AssignedID": "testAssignedID",
+              "Description": "New products only. Do not reuse packaging"
+            }
+          ]
+        }
+      ],
+      "FOBRelatedInstruction": [
+        {
+          "FOBPayCode": "PB",
+          "FOBLocationQualifier": "WH",
+          "FOBLocationDescription": "Minnesota",
+          "FOBTitlePassageCode": "AC",
+          "FOBTitlePassageLocation": "Minneapolis MN",
+          "TransportationTermsType": "02",
+          "TransportationTerms": "testTransportationTerms",
+          "RiskOfLossCode": "FE",
+          "Description": "New products only. Do not reuse packaging"
+        }
+      ],
+      "CarrierInformation": [
+        {
+          "StatusCode": "PR",
+          "CarrierTransMethodCode": "VL",
+          "CarrierAlphaCode": "UPGF",
+          "CarrierRouting": "UPS Ground Freight",
+          "EquipmentDescriptionCode": "TA",
+          "CarrierEquipmentInitial": "FEDX",
+          "CarrierEquipmentNumber": "4806196209",
+          "EquipmentType": "testEquipmentType",
+          "OwnershipCode": "T",
+          "RoutingSequenceCode": "A",
+          "TransitDirectionCode": "SD",
+          "TransitTimeQual": "CD",
+          "TransitTime": 5.21,
+          "ServiceLevelCodes": [
+            {
+              "ServiceLevelCode": "3D"
+            }
+          ],
+          "Address": [
+            {
+              "AddressTypeCode": "BO",
+              "LocationCodeQualifier": "15",
+              "AddressLocationNumber": "11111",
+              "AddressName": "SPS Commerce",
+              "AddressAlternateName": "ATTN: Marketing",
+              "AddressAlternateName2": "ATTN: John Doe",
+              "Address1": "333 South 7th Street",
+              "Address2": "ATTN: The President",
+              "Address3": "333 South Seventh Street Tower",
+              "Address4": "10th Floor",
+              "City": "Washington",
+              "State": "DC",
+              "PostalCode": "55402",
+              "Country": "USA",
+              "LocationID": "East Location, next to interstate",
+              "CountrySubDivision": "testCountrySubDivision",
+              "AddressTaxIdNumber": "999999",
+              "AddressTaxExemptNumber": "testAddressTaxExemptNumber",
+              "Dates": [
+                {
+                  "DateTimeQualifier": "209",
+                  "Date": "2012-10-31",
+                  "Time": "16:13:03-05:00",
+                  "DateTimePeriod": "testDateTimePeriod"
+                }
+              ]
+            }
+          ],
+          "SealNumbers": [
+            {
+              "SealStatusCode": "04",
+              "SealNumber": "AA1111111"
+            }
+          ]
+        }
+      ],
+      "RegulatoryCompliances": [
+        {
+          "RegulatoryComplianceQual": "HECC",
+          "YesOrNoResponse": "N",
+          "RegulatoryComplianceID": "testRegulatoryComplianceID",
+          "RegulatoryAgency": "testRegulatoryAgency",
+          "Description": "New products only. Do not reuse packaging"
+        }
+      ]
+    }
+  ],
+  "Summary": {
+    "TotalAmount": 4058.92,
+    "TotalLineItemNumber": 3
+  }
+}

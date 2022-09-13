@@ -35,8 +35,8 @@ try {
     $file_path = "in/CA584618-1-v7.7-BulkImport.json";
     $file_content = file_get_contents($file_path);
     $header = [
-        'Content-Type' => 'application/octet-stream'
-        'sps-meta-description' => 'Creating new Transaction at specified path'
+        'Content-Type' => 'application/octet-stream',
+        'sps-meta-description' => 'Creating new Transaction at specified path',
     ];
     $result = $api->createTransaction($file_path, $header, $file_content);
     print_r($result)
@@ -61,11 +61,11 @@ Here is a code sample to load a JSON string into the appropriate RSX class:
 require 'vendor/autoload.php';
 
 $jsonString = file_get_contents('sample-files/Orders(850)/PO584616-1-v7.7-DropShip.json');
-$order = \ShipStream\SpsCommerce\RSX\v770\Orders\Order::import(
+$order = \ShipStream\SpsCommerce\RSX\v777\Orders\Order::import(
     json_decode($jsonString)
 );
 
-echo json_encode(\ShipStream\SpsCommerce\RSX\v770\Orders\OrderHeaderAddressItems::export($order->header->address[0]));
+echo json_encode(\ShipStream\SpsCommerce\RSX\v777\Orders\OrderHeaderAddressItems::export($order->header->address[0]));
 ```
 
 ## Development

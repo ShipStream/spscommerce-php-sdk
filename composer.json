@@ -22,5 +22,8 @@
     },
     "autoload-dev": {
         "psr-4": {"ShipStream\\SpsCommerce\\Tests": "test/"}
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     }
 }

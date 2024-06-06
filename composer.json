@@ -23,6 +23,6 @@
         "psr-4": {"ShipStream\\SpsCommerce\\Tests\\": "test/"}
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit ./test"
     }
 }

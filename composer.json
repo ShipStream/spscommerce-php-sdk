@@ -9,19 +9,18 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^6.2.1",
+        "guzzlehttp/guzzle": "^6.2.1|^7.0",
         "ext-json": "*",
         "swaggest/json-schema": "^0.12"
     },
     "require-dev": {
-        "swaggest/json-cli": "^1.9",
         "php-mock/php-mock-phpunit": "^2.1"
     },
     "autoload": {
         "psr-4": {"ShipStream\\SpsCommerce\\": "src/"}
     },
     "autoload-dev": {
-        "psr-4": {"ShipStream\\SpsCommerce\\Tests": "test/"}
+        "psr-4": {"ShipStream\\SpsCommerce\\Tests\\": "test/"}
     },
     "scripts": {
         "test": "vendor/bin/phpunit"

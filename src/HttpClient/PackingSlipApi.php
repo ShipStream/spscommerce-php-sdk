@@ -28,7 +28,7 @@ class PackingSlipApi
     )
     {
         $this->config = $config;
-        $this->client = $client ? $client : $config->getHttpClient();
+        $this->client = $client ?: $config->getHttpClient();
     }
 
 
@@ -50,7 +50,7 @@ class PackingSlipApi
     {
         $payload = null;
         $resourcePath = '/packing-slip/v1/';
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -71,7 +71,7 @@ class PackingSlipApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -91,7 +91,7 @@ class PackingSlipApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return $response->getBody()->getContents();
     }
 
@@ -111,7 +111,7 @@ class PackingSlipApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return $response->getBody()->getContents();
     }
 
@@ -131,7 +131,7 @@ class PackingSlipApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return $response->getBody()->getContents();
     }
 
@@ -158,7 +158,7 @@ class PackingSlipApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return $response->getBody()->getContents();
     }
 
@@ -179,7 +179,7 @@ class PackingSlipApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->post($payload, $resourcePath, $queryParams);
+        $response = $this->client->post($payload, $resourcePath, $queryParams);
         if (isset($queryParams['url']) && $queryParams['url']) {
             return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
         } else {

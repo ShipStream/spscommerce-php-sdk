@@ -26,7 +26,7 @@ class LabelApi
     )
     {
         $this->config = $config;
-        $this->client = $client ?: $config->getHttpClient();
+        $this->client = $client ? $this->config->applyClientHandler($client) : $this->config->getHttpClient();
     }
 
 
@@ -48,7 +48,7 @@ class LabelApi
     {
         $payload = null;
         $resourcePath = '/label/v1/';
-        $response =  $this->client->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 

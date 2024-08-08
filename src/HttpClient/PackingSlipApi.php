@@ -28,7 +28,7 @@ class PackingSlipApi
     )
     {
         $this->config = $config;
-        $this->client = $client ?: $config->getHttpClient();
+        $this->client = $client ? $this->config->applyClientHandler($client) : $this->config->getHttpClient();
     }
 
 

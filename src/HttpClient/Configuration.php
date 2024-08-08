@@ -78,7 +78,7 @@ class Configuration
             throw new RuntimeException("Required configuration values were missing: " . implode(", ", $missingKeys));
         }
 
-        $options = array_merge(
+        $this->options = array_merge(
             $configurationOptions,
             [
                 "url" => self::SPS_COMMERCE_API_BASE_URL,
@@ -93,7 +93,7 @@ class Configuration
         $this->state = $configurationOptions["state"];
         $this->redirectUri = $configurationOptions["redirect_uri"];
 
-        $this->httpClient = new DefaultApi($options);
+        $this->httpClient = new DefaultApi($this->options);
     }
 
     public function getClientId()
@@ -118,5 +118,11 @@ class Configuration
     public function getApiBaseUrl(): string
     {
         return self::SPS_COMMERCE_API_BASE_URL;
+    }
+    public function applyClientHandler($client)
+    {
+        $this->options['http_client']=$client;
+        $this->httpClient = new DefaultApi($this->options);
+        return $this->httpClient;
     }
 }

@@ -8,6 +8,8 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\HandlerStack;
 use PHPUnit\Framework\TestCase;
+use ShipStream\SpsCommerce\HttpClient\Configuration;
+use ShipStream\SpsCommerce\HttpClient\LabelApi;
 
 class LabelApiTest extends TestCase
 {
@@ -22,14 +24,22 @@ class LabelApiTest extends TestCase
         $statusCode = 200;
         $headers  = ['Content-Type' => 'application/json','Content-Length' => 787];
         $response = new Response($statusCode, $headers, file_get_contents(__DIR__ . '/fixtures/shipping_label.json'));
-        $mock = new MockHandler([$response]);
+        $mock = new MockHandler([$response,$response]);
         $handlerStack = HandlerStack::create($mock);
-
         $client = new Client(['handler' => $handlerStack]);
+
+        $config = new Configuration([
+            'client_id'=>'',
+            'client_secret'=>'',
+            'access_token'=>'',
+            'state'=>'',
+            'redirect_uri'=>'',
+        ]);
+        $stub = $this->getMockBuilder(LabelApi::class)->setConstructorArgs([$config,$client])->onlyMethods([])->getMock();
+        $data= $stub->getAllShippingLabels();
 
         $requestResponse = $client->request("GET", '/');
         $this->assertIsObject($requestResponse);
-        $data = json_decode($requestResponse->getBody()->getContents());
         $this->assertEquals(2, $data->total);
         $this->assertEquals("ok", $data->status);
         $this->assertEquals("Sample Label - Bulk Import", $data->templates[0]->name);

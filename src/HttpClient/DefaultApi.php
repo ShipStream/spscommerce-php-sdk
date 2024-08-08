@@ -31,7 +31,7 @@ class DefaultApi
     {
         $this->options = $options;
         $this->timeout = $this->options['timeout'] ?? self::DEFAULT_TIMEOUT;
-        $this->http = new Client([
+        $this->http = $this->options['http_client'] ?? new Client([
             'base_uri' => $this->options['url'],
             'timeout' => $this->timeout,
             'verify' => $this->options['verifySSL'] ?? false,

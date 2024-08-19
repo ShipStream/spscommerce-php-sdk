@@ -26,7 +26,7 @@ class LabelApi
     )
     {
         $this->config = $config;
-        $this->client = $client ?: $config->getHttpClient();
+        $this->client = $client ? $this->config->applyClientHandler($client) : $this->config->getHttpClient();
     }
 
 
@@ -48,7 +48,7 @@ class LabelApi
     {
         $payload = null;
         $resourcePath = '/label/v1/';
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -70,7 +70,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -91,7 +91,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -112,7 +112,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return $response->getBody()->getContents();
     }
 
@@ -133,7 +133,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return $response->getBody()->getContents();
     }
 
@@ -160,7 +160,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return $response->getBody()->getContents();
     }
 
@@ -181,7 +181,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->post($payload, $resourcePath, $queryParams);
+        $response = $this->client->post($payload, $resourcePath, $queryParams);
         if (isset($queryParams['url']) && $queryParams['url']) {
             return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
         } else {
@@ -206,7 +206,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->post($payload, $resourcePath, $queryParams);
+        $response = $this->client->post($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -227,7 +227,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->post($payload, $resourcePath, $queryParams);
+        $response = $this->client->post($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -248,7 +248,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->post($payload, $resourcePath, $queryParams);
+        $response = $this->client->post($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -269,7 +269,7 @@ class LabelApi
             $resourcePath
         );
 
-        $response = $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams);
+        $response = $this->client->get($payload, $resourcePath, $queryParams);
         return json_decode($response->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 }

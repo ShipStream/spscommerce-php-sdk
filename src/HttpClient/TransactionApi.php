@@ -28,7 +28,7 @@ class TransactionApi
     )
     {
         $this->config = $config;
-        $this->client = $client ?: $config->getHttpClient();
+        $this->client = $client ? $this->config->applyClientHandler($client) : $this->config->getHttpClient();
     }
 
 
@@ -149,13 +149,13 @@ class TransactionApi
     {
         switch ($method) {
             case "POST":
-                return $this->config->getHttpClient()->post($payload, $resourcePath, $queryParams, $headers);
+                return $this->client->post($payload, $resourcePath, $queryParams, $headers);
             case "PUT":
-                return $this->config->getHttpClient()->put($payload, $resourcePath, $queryParams, $headers);
+                return $this->client->put($payload, $resourcePath, $queryParams, $headers);
             case "DELETE":
-                return $this->config->getHttpClient()->delete($payload, $resourcePath, $queryParams, $headers);
+                return $this->client->delete($payload, $resourcePath, $queryParams, $headers);
             default:
-                return $this->config->getHttpClient()->get($payload, $resourcePath, $queryParams, $headers);
+                return $this->client->get($payload, $resourcePath, $queryParams, $headers);
         }
     }
 }

@@ -8,6 +8,8 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\HandlerStack;
 use PHPUnit\Framework\TestCase;
+use ShipStream\SpsCommerce\HttpClient\Configuration;
+use ShipStream\SpsCommerce\HttpClient\TransactionApi;
 
 class TransactionApiTest extends TestCase
 {
@@ -22,15 +24,24 @@ class TransactionApiTest extends TestCase
         $statusCode = 200;
         $headers  = ['Content-Type' => 'application/json'];
         $mock = new MockHandler([
+            new Response($statusCode, $headers, file_get_contents(__DIR__ . '/fixtures/transactions.json')),
             new Response($statusCode, $headers, file_get_contents(__DIR__ . '/fixtures/transactions.json'))
         ]);
         $handlerStack = HandlerStack::create($mock);
 
         $client = new Client(['handler' => $handlerStack]);
+        $config = new Configuration([
+            'client_id'=>'',
+            'client_secret'=>'',
+            'access_token'=>'',
+            'state'=>'',
+            'redirect_uri'=>'',
+        ]);
+        $stub = $this->getMockBuilder(TransactionApi::class)->setConstructorArgs([$config,$client])->onlyMethods([])->getMock();
 
         $requestResponse = $client->request("GET", '/');
         $this->assertIsObject($requestResponse);
-        $data = json_decode($requestResponse->getBody()->getContents());
+        $data = json_decode($stub->getTransaction("/out/CA584615-1-v7.7-BulkImport.xml"));
         $this->assertEquals(1000, $data->paging->limit);
         $this->assertEquals("1iV7qUkBbZVTXiHkle", $data->paging->next->cursor);
         $this->assertEquals("/out/CA584615-1-v7.7-BulkImport.xml", $data->results[0]->path);

@@ -5,42 +5,47 @@ namespace ShipStream\SpsCommerce\HttpClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\TransferException;
-use GuzzleHttp\RedirectMiddleware;
+use GuzzleHttp\HandlerStack;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 
 class DefaultApi
 {
+    const API_BASE_URL = 'https://api.spscommerce.com';
+    const API_AUTH_URL = 'https://auth.spscommerce.com';
     const DEFAULT_TIMEOUT = 10;
-    public $options;
 
-    /** @var Client */
-    public $http;
-    /**
-     * Holds GuzzleHttp timeout.
-     *
-     * @var int
-     */
-    private $timeout;
+    private Client $http;
+    private $accessTokenCallback;
 
-    /**
-     * DefaultApi constructor.
-     * @param array $options
-     */
-    public function __construct(array $options)
+    public function __construct($accessToken, array $options = null)
     {
-        $this->options = $options;
-        $this->timeout = $this->options['timeout'] ?? self::DEFAULT_TIMEOUT;
-        $this->http = $this->options['http_client'] ?? new Client([
-            'base_uri' => $this->options['url'],
-            'timeout' => $this->timeout,
-            'verify' => $this->options['verifySSL'] ?? false,
-            'headers' => [
-                'Authorization' => "Bearer {$this->options['accessToken']}"
-            ],
-            'proxy' => $this->options['proxy'] ?? null,
-            'allow_redirects' => $this->options['allow_redirects'] ?? RedirectMiddleware::$defaultSettings,
-        ]);
+        if (is_callable($accessToken)) {
+            $accessTokenCallback = $accessToken;
+        } else {
+            $accessTokenCallback = function () use ($accessToken) {
+                return $accessToken;
+            };
+        }
+        $this->accessTokenCallback = $accessTokenCallback;
+
+        if (isset($options['http_client'])) {
+            if (!$options['http_client'] instanceof Client) {
+                throw new InvalidArgumentException('The "http_client" option must be an instance of GuzzleHttp\Client');
+            }
+            $this->http = $options['http_client'];
+        } else {
+            if (empty($options['handler'])) {
+                $options['handler'] = HandlerStack::create();
+                $options['handler']->remove('allow_redirects');
+                $options['handler']->remove('cookies');
+            }
+            $this->http = new Client(array_merge([
+                'base_uri' => self::API_BASE_URL,
+                'timeout' => self::DEFAULT_TIMEOUT,
+                'verify' => TRUE,
+            ], $options ?: []));
+        }
     }
 
     /**
@@ -116,21 +121,23 @@ class DefaultApi
     private function request($payload, $uriPath, $queryParams, $headers, $method, $timeout = null, bool $stream = false): ResponseInterface
     {
         try {
-            $headerConfigurations = [
-                'Authorization' => "Bearer {$this->options['accessToken']}",
+            $accessTokenCallback = $this->accessTokenCallback;
+            $accessToken = $accessTokenCallback();
+            $headers = array_merge([
+                'Authorization' => "Bearer $accessToken",
                 'Content-Type' => 'application/json'
-            ];
-            $headerConfigurations = array_merge($headerConfigurations, $headers);
-            if( isset($headers['Content-Type'])) {
-                $headerConfigurations['Content-Type'] = $headers['Content-Type'];
-            }
+            ], $headers);
             $options = [
-                'headers' => $headerConfigurations,
+                'headers' => $headers,
                 'query' => $queryParams,
                 'body' => $payload,
-                'stream' => $stream,
-                'timeout' => $timeout ?? $this->timeout
             ];
+            if ($timeout) {
+                $options['timeout'] = $timeout;
+            }
+            if ($stream) {
+                $options['stream'] = true;
+            }
 
             //execute get/post call
             $response = $this->http->requestAsync($method, $uriPath, $options)->wait();

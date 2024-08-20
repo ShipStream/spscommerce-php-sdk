@@ -23,7 +23,7 @@ use ShipStream\SpsCommerce\HttpClient\InternalServerError;
 use InvalidArgumentException;
 
 $client = new DefaultApi(fn() => "MYACCESSTOKEN");
-$api = new TransactionApi($config);
+$api = new TransactionApi($client);
 try {
     $file_path = "in/CA584618-1-v7.7-BulkImport.json";
     $file_content = file_get_contents($file_path);

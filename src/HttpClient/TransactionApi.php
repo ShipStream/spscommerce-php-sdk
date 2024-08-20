@@ -3,41 +3,17 @@
 
 namespace ShipStream\SpsCommerce\HttpClient;
 
-use GuzzleHttp\ClientInterface;
 use JsonException;
 use Psr\Http\Message\ResponseInterface;
 use stdClass;
 
 class TransactionApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-    /**
-     * @var Configuration
-     */
-    protected $config;
+    private DefaultApi $client;
 
-    /**
-     * @param Configuration $config
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null
-    )
+    public function __construct(DefaultApi $client = null)
     {
-        $this->config = $config;
-        $this->client = $client ? $this->config->applyClientHandler($client) : $this->config->getHttpClient();
-    }
-
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig(): Configuration
-    {
-        return $this->config;
+        $this->client = $client;
     }
 
     /**

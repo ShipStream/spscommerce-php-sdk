@@ -9,6 +9,7 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\HandlerStack;
 use PHPUnit\Framework\TestCase;
 use ShipStream\SpsCommerce\HttpClient\Configuration;
+use ShipStream\SpsCommerce\HttpClient\DefaultApi;
 use ShipStream\SpsCommerce\HttpClient\LabelApi;
 
 class LabelApiTest extends TestCase
@@ -22,30 +23,18 @@ class LabelApiTest extends TestCase
     function testGetAllShippingLabels()
     {
         $statusCode = 200;
-        $headers  = ['Content-Type' => 'application/json','Content-Length' => 787];
-        $response = new Response($statusCode, $headers, file_get_contents(__DIR__ . '/fixtures/shipping_label.json'));
-        $mock = new MockHandler([$response,$response]);
+        $headers  = ['Content-Type' => 'application/json', 'Content-Length' => 787];
+        $mock = new MockHandler([
+            new Response($statusCode, $headers, file_get_contents(__DIR__ . '/fixtures/shipping_label.json')),
+        ]);
         $handlerStack = HandlerStack::create($mock);
         $client = new Client(['handler' => $handlerStack]);
-
-        $config = new Configuration([
-            'client_id'=>'',
-            'client_secret'=>'',
-            'access_token'=>'',
-            'state'=>'',
-            'redirect_uri'=>'',
-        ]);
-        $stub = $this->getMockBuilder(LabelApi::class)->setConstructorArgs([$config,$client])->onlyMethods([])->getMock();
+        $spsClient = new DefaultApi('access_token', ['http_client' => $client]);
+        $stub = $this->getMockBuilder(LabelApi::class)->setConstructorArgs([$spsClient])->onlyMethods([])->getMock();
         $data= $stub->getAllShippingLabels();
 
-        $requestResponse = $client->request("GET", '/');
-        $this->assertIsObject($requestResponse);
         $this->assertEquals(2, $data->total);
         $this->assertEquals("ok", $data->status);
         $this->assertEquals("Sample Label - Bulk Import", $data->templates[0]->name);
-        $this->assertEquals([787], $requestResponse->getHeader('Content-Length'));
-        $this->assertInstanceOf('GuzzleHttp\\Psr7\\Response', $requestResponse);
-        $this->assertEquals(200, $requestResponse->getStatusCode());
-
     }
 }

@@ -16,22 +16,15 @@ Here is a code sample to send a REST API request to the SPS Commerce Transaction
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+use ShipStream\SpsCommerce\HttpClient\DefaultApi
 use ShipStream\SpsCommerce\HttpClient\TransactionApi;
 use ShipStream\SpsCommerce\HttpClient\ValidationError;
 use ShipStream\SpsCommerce\HttpClient\InternalServerError;
 use InvalidArgumentException;
 
-$config = new Configuration([
-    "client_id" => "client-id-of-sps-commerce-app",
-    'client_secret' => 'client-secret-of-sps-commerce-app',
-    'redirect_uri' => 'redirect-uri-sps-commerce-app',
-    'state' => 'any-string',
-    'access_token' => 'OCYG22y7T3HQ5C4LtqoVW_RGi6JUX0v3kCXCZAJO_M4ykswDh_tKJkzYhotfq5FFV3L'
-]);
-
-$api = new TransactionApi($config);
+$client = new DefaultApi(fn() => "MYACCESSTOKEN");
+$api = new TransactionApi($client);
 try {
-
     $file_path = "in/CA584618-1-v7.7-BulkImport.json";
     $file_content = file_get_contents($file_path);
     $header = [

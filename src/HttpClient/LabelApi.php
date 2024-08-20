@@ -3,46 +3,23 @@
 
 namespace ShipStream\SpsCommerce\HttpClient;
 
-use GuzzleHttp\ClientInterface;
+use JsonException;
 use stdClass;
 
 class LabelApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-    /**
-     * @var Configuration
-     */
-    protected $config;
+    private DefaultApi $client;
 
-    /**
-     * @param Configuration $config
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null
-    )
+    public function __construct(DefaultApi $client = null)
     {
-        $this->config = $config;
-        $this->client = $client ? $this->config->applyClientHandler($client) : $this->config->getHttpClient();
-    }
-
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig(): Configuration
-    {
-        return $this->config;
+        $this->client = $client;
     }
 
     /**
      * @param null $queryParams
      * @return stdClass
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function getAllShippingLabels($queryParams = null): stdClass
     {
@@ -58,7 +35,7 @@ class LabelApi
      * @param null $queryParams
      * @return stdClass
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function getShippingLabelById(string $label_id, $queryParams = null): stdClass
     {
@@ -79,7 +56,7 @@ class LabelApi
      * @param null $queryParams
      * @return stdClass
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function getShippingLabelSchema(string $label_id, $queryParams = null): stdClass
     {
@@ -100,7 +77,7 @@ class LabelApi
      * @param null $queryParams
      * @return string
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function getShippingLabelSampleJson(string $label_id, $queryParams = null): string
     {
@@ -121,7 +98,7 @@ class LabelApi
      * @param null $queryParams
      * @return string
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function renderShippingLabelSamplePdf(string $label_id, $queryParams = null): string
     {
@@ -143,7 +120,7 @@ class LabelApi
      * @param null $queryParams
      * @return string
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function renderSpecificShippingLabelSamplePdf(string $label_id, string $sample_uid, $queryParams = null): string
     {
@@ -170,7 +147,7 @@ class LabelApi
      * @param null $queryParams
      * @return stdClass|string
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function renderShippingLabelPdf(string $label_id, $payload, $queryParams = null)
     {
@@ -195,7 +172,7 @@ class LabelApi
      * @param null $queryParams
      * @return stdClass
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function renderShippingLabelPdfBatch(string $label_id, $payload, $queryParams = null): stdClass
     {
@@ -216,7 +193,7 @@ class LabelApi
      * @param null $queryParams
      * @return stdClass
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function renderShippingLabelZpl(string $label_id, $payload, $queryParams = null): stdClass
     {
@@ -237,7 +214,7 @@ class LabelApi
      * @param null $queryParams
      * @return stdClass
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function renderShippingLabelZplBatch(string $label_id, $payload, $queryParams = null): stdClass
     {
@@ -257,7 +234,7 @@ class LabelApi
      * @param null $queryParams
      * @return stdClass
      * @throws ApiException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function getBatchStatus(string $batchId, $queryParams = null): stdClass
     {

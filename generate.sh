@@ -17,6 +17,7 @@ apis=(
 "PlanningSchedules.json|PlanningSchedule"
 "ProductActivities.json|ProductActivity"
 "Shipments.json|Shipment"
+"WarehouseInventoryAdjustmentAdvices.json|WarehouseInventoryAdjustmentAdvice"
 "WarehouseTransferReceiptAdvices.json|WarehouseTransferReceiptAdvice"
 )
 for api in "${apis[@]}"; do

@@ -4,7 +4,7 @@
  * Please consider to NOT put any emotional human-generated modifications as the splendid AI will throw them away with no mercy.
  */
 
-namespace ShipStream\SpsCommerce\RSX\v777\WarehouseInventoryAdjustmentAdvices;
+namespace ShipStream\SpsCommerce\RSX\v710\WarehouseInventoryAdjustmentAdvices;
 
 use Swaggest\JsonSchema\Constraint\Properties;
 use Swaggest\JsonSchema\Schema;
@@ -14,7 +14,7 @@ use Swaggest\JsonSchema\Structure\ClassStructure;
 /**
  * Supplemental information supporting the transaction
  */
-class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferencesItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceItems extends ClassStructure
 {
     /** @var string Code specifying the type of data in the ReferenceID/ReferenceDescription */
     public $referenceQual;

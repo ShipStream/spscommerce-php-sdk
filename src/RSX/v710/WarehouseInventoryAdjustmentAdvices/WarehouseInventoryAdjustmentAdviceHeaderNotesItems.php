@@ -4,7 +4,7 @@
  * Please consider to NOT put any emotional human-generated modifications as the splendid AI will throw them away with no mercy.
  */
 
-namespace ShipStream\SpsCommerce\RSX\v777\WarehouseInventoryAdjustmentAdvices;
+namespace ShipStream\SpsCommerce\RSX\v710\WarehouseInventoryAdjustmentAdvices;
 
 use Swaggest\JsonSchema\Constraint\Properties;
 use Swaggest\JsonSchema\Schema;
@@ -39,11 +39,11 @@ class WarehouseInventoryAdjustmentAdviceHeaderNotesItems extends ClassStructure
     /** @var string Code specifying the type of note */
     public $noteCode;
 
-    /** @var string Free-form textual description of the note */
-    public $note;
-
     /** @var string Code designating the language used in text. ISO 639 language code */
     public $languageCode;
+
+    /** @var string Free-form textual description of the note */
+    public $noteInformationField;
 
     /**
      * @param Properties|static $properties
@@ -66,12 +66,12 @@ class WarehouseInventoryAdjustmentAdviceHeaderNotesItems extends ClassStructure
         );
         $properties->noteCode->description = "Code specifying the type of note";
         $ownerSchema->addPropertyMapping('NoteCode', self::names()->noteCode);
-        $properties->note = Schema::string();
-        $properties->note->description = "Free-form textual description of the note";
-        $ownerSchema->addPropertyMapping('Note', self::names()->note);
         $properties->languageCode = Schema::string();
         $properties->languageCode->description = "Code designating the language used in text. ISO 639 language code";
         $ownerSchema->addPropertyMapping('LanguageCode', self::names()->languageCode);
+        $properties->noteInformationField = Schema::string();
+        $properties->noteInformationField->description = "Free-form textual description of the note";
+        $ownerSchema->addPropertyMapping('NoteInformationField', self::names()->noteInformationField);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->additionalProperties = false;
         $ownerSchema->description = "Supplemental text for the transaction";

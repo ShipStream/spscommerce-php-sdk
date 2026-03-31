@@ -4,7 +4,7 @@
  * Please consider to NOT put any emotional human-generated modifications as the splendid AI will throw them away with no mercy.
  */
 
-namespace ShipStream\SpsCommerce\RSX\v777\WarehouseInventoryAdjustmentAdvices;
+namespace ShipStream\SpsCommerce\RSX\v710\WarehouseInventoryAdjustmentAdvices;
 
 use Swaggest\JsonSchema\Constraint\Properties;
 use Swaggest\JsonSchema\Schema;
@@ -19,11 +19,11 @@ class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems extends ClassStru
     /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsItemDetail Contains the commonly used fields in the line item level of the transaction */
     public $itemDetail;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferencesItems[]|array */
-    public $references;
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferenceItems[]|array */
+    public $reference;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDatesItems[]|array */
-    public $dates;
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDateItems[]|array */
+    public $date;
 
     /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems[]|array */
     public $address;
@@ -39,12 +39,12 @@ class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems extends ClassStru
     {
         $properties->itemDetail = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsItemDetail::schema();
         $ownerSchema->addPropertyMapping('ItemDetail', self::names()->itemDetail);
-        $properties->references = Schema::arr();
-        $properties->references->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferencesItems::schema();
-        $ownerSchema->addPropertyMapping('References', self::names()->references);
-        $properties->dates = Schema::arr();
-        $properties->dates->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDatesItems::schema();
-        $ownerSchema->addPropertyMapping('Dates', self::names()->dates);
+        $properties->reference = Schema::arr();
+        $properties->reference->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferenceItems::schema();
+        $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
+        $properties->date = Schema::arr();
+        $properties->date->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDateItems::schema();
+        $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $properties->address = Schema::arr();
         $properties->address->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems::schema();
         $ownerSchema->addPropertyMapping('Address', self::names()->address);

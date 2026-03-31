@@ -4,7 +4,7 @@
  * Please consider to NOT put any emotional human-generated modifications as the splendid AI will throw them away with no mercy.
  */
 
-namespace ShipStream\SpsCommerce\RSX\v777\WarehouseInventoryAdjustmentAdvices;
+namespace ShipStream\SpsCommerce\RSX\v710\WarehouseInventoryAdjustmentAdvices;
 
 use Swaggest\JsonSchema\Constraint\Properties;
 use Swaggest\JsonSchema\Schema;
@@ -14,7 +14,7 @@ use Swaggest\JsonSchema\Structure\ClassStructure;
 /**
  * Represent an entity such as an organizational, physical location, property, or individual
  */
-class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderAddressItems extends ClassStructure
 {
     const CONST_88 = '88';
 
@@ -196,11 +196,14 @@ class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems exten
     /** @var string Unique tax exemption number assigned by the relevant tax authority to identify an entity or organization */
     public $addressTaxExemptNumber;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferencesItems[]|array */
-    public $references;
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactItems[]|array */
+    public $contact;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsDatesItems[]|array */
-    public $dates;
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItemsReferenceItems[]|array */
+    public $reference;
+
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItemsDateItems[]|array */
+    public $date;
 
     /**
      * @param Properties|static $properties
@@ -330,12 +333,15 @@ class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems exten
         $properties->addressTaxExemptNumber = Schema::string();
         $properties->addressTaxExemptNumber->description = "Unique tax exemption number assigned by the relevant tax authority to identify an entity or organization";
         $ownerSchema->addPropertyMapping('AddressTaxExemptNumber', self::names()->addressTaxExemptNumber);
-        $properties->references = Schema::arr();
-        $properties->references->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferencesItems::schema();
-        $ownerSchema->addPropertyMapping('References', self::names()->references);
-        $properties->dates = Schema::arr();
-        $properties->dates->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsDatesItems::schema();
-        $ownerSchema->addPropertyMapping('Dates', self::names()->dates);
+        $properties->contact = Schema::arr();
+        $properties->contact->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactItems::schema();
+        $ownerSchema->addPropertyMapping('Contact', self::names()->contact);
+        $properties->reference = Schema::arr();
+        $properties->reference->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItemsReferenceItems::schema();
+        $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
+        $properties->date = Schema::arr();
+        $properties->date->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItemsDateItems::schema();
+        $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->additionalProperties = false;
         $ownerSchema->description = "Represent an entity such as an organizational, physical location, property, or individual";

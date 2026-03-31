@@ -4,7 +4,7 @@
  * Please consider to NOT put any emotional human-generated modifications as the splendid AI will throw them away with no mercy.
  */
 
-namespace ShipStream\SpsCommerce\RSX\v777\WarehouseInventoryAdjustmentAdvices;
+namespace ShipStream\SpsCommerce\RSX\v710\WarehouseInventoryAdjustmentAdvices;
 
 use Swaggest\JsonSchema\Constraint\Properties;
 use Swaggest\JsonSchema\Schema;
@@ -14,7 +14,7 @@ use Swaggest\JsonSchema\Structure\ClassStructure;
 /**
  * Provides contact information
  */
-class WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactsItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactItems extends ClassStructure
 {
     const AL = 'AL';
 
@@ -61,7 +61,7 @@ class WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactsItems extends 
     /** @var string E-mail address for contact listed */
     public $primaryEmail;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactsItemsAdditionalContactDetailsItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactItemsAdditionalContactDetailsItems[]|array */
     public $additionalContactDetails;
 
     /** @var string Additional field to clarify a contact */
@@ -106,7 +106,7 @@ class WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactsItems extends 
         $properties->primaryEmail->description = "E-mail address for contact listed";
         $ownerSchema->addPropertyMapping('PrimaryEmail', self::names()->primaryEmail);
         $properties->additionalContactDetails = Schema::arr();
-        $properties->additionalContactDetails->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactsItemsAdditionalContactDetailsItems::schema();
+        $properties->additionalContactDetails->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactItemsAdditionalContactDetailsItems::schema();
         $ownerSchema->addPropertyMapping('AdditionalContactDetails', self::names()->additionalContactDetails);
         $properties->contactReference = Schema::string();
         $properties->contactReference->description = "Additional field to clarify a contact";

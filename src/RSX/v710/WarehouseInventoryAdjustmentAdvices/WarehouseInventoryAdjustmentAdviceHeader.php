@@ -4,7 +4,7 @@
  * Please consider to NOT put any emotional human-generated modifications as the splendid AI will throw them away with no mercy.
  */
 
-namespace ShipStream\SpsCommerce\RSX\v777\WarehouseInventoryAdjustmentAdvices;
+namespace ShipStream\SpsCommerce\RSX\v710\WarehouseInventoryAdjustmentAdvices;
 
 use Swaggest\JsonSchema\Constraint\Properties;
 use Swaggest\JsonSchema\Schema;
@@ -19,14 +19,14 @@ class WarehouseInventoryAdjustmentAdviceHeader extends ClassStructure
     /** @var WarehouseInventoryAdjustmentAdviceHeaderHeaderOrder Contains the commonly used fields in the header of the transaction */
     public $headerOrder;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderReferencesItems[]|array */
-    public $references;
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderReferenceItems[]|array */
+    public $reference;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderDatesItems[]|array */
-    public $dates;
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderDateItems[]|array */
+    public $date;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderContactsItems[]|array */
-    public $contacts;
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderContactItems[]|array */
+    public $contact;
 
     /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItems[]|array */
     public $address;
@@ -45,15 +45,15 @@ class WarehouseInventoryAdjustmentAdviceHeader extends ClassStructure
     {
         $properties->headerOrder = WarehouseInventoryAdjustmentAdviceHeaderHeaderOrder::schema();
         $ownerSchema->addPropertyMapping('HeaderOrder', self::names()->headerOrder);
-        $properties->references = Schema::arr();
-        $properties->references->items = WarehouseInventoryAdjustmentAdviceHeaderReferencesItems::schema();
-        $ownerSchema->addPropertyMapping('References', self::names()->references);
-        $properties->dates = Schema::arr();
-        $properties->dates->items = WarehouseInventoryAdjustmentAdviceHeaderDatesItems::schema();
-        $ownerSchema->addPropertyMapping('Dates', self::names()->dates);
-        $properties->contacts = Schema::arr();
-        $properties->contacts->items = WarehouseInventoryAdjustmentAdviceHeaderContactsItems::schema();
-        $ownerSchema->addPropertyMapping('Contacts', self::names()->contacts);
+        $properties->reference = Schema::arr();
+        $properties->reference->items = WarehouseInventoryAdjustmentAdviceHeaderReferenceItems::schema();
+        $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
+        $properties->date = Schema::arr();
+        $properties->date->items = WarehouseInventoryAdjustmentAdviceHeaderDateItems::schema();
+        $ownerSchema->addPropertyMapping('Date', self::names()->date);
+        $properties->contact = Schema::arr();
+        $properties->contact->items = WarehouseInventoryAdjustmentAdviceHeaderContactItems::schema();
+        $ownerSchema->addPropertyMapping('Contact', self::names()->contact);
         $properties->address = Schema::arr();
         $properties->address->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItems::schema();
         $ownerSchema->addPropertyMapping('Address', self::names()->address);

@@ -275,7 +275,7 @@
                                 }
                             }
                         },
-                        "References": {
+                        "Reference": {
                             "type": "array",
                             "items": {
                                 "type": "object",
@@ -444,7 +444,7 @@
                                 }
                             }
                         },
-                        "Dates": {
+                        "Date": {
                             "type": "array",
                             "items": {
                                 "type": "object",
@@ -599,7 +599,7 @@
                                 }
                             }
                         },
-                        "Contacts": {
+                        "Contact": {
                             "type": "array",
                             "items": {
                                 "type": "object",
@@ -1206,7 +1206,7 @@
                                         "description": "Unique tax exemption number assigned by the relevant tax authority to identify an entity or organization",
                                         "type": "string"
                                     },
-                                    "Contacts": {
+                                    "Contact": {
                                         "type": "array",
                                         "items": {
                                             "type": "object",
@@ -1387,7 +1387,7 @@
                                             }
                                         }
                                     },
-                                    "References": {
+                                    "Reference": {
                                         "type": "array",
                                         "items": {
                                             "type": "object",
@@ -1406,7 +1406,7 @@
                                             }
                                         }
                                     },
-                                    "Dates": {
+                                    "Date": {
                                         "type": "array",
                                         "items": {
                                             "type": "object",
@@ -1510,17 +1510,17 @@
                                             }
                                         }
                                     },
-                                    "Note": {
-                                        "description": "Free-form textual description of the note",
-                                        "examples": [
-                                            "REPEAT LOGO PREVIOUS ORDER"
-                                        ],
-                                        "type": "string"
-                                    },
                                     "LanguageCode": {
                                         "description": "Code designating the language used in text. ISO 639 language code",
                                         "examples": [
                                             "ENG"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "NoteInformationField": {
+                                        "description": "Free-form textual description of the note",
+                                        "examples": [
+                                            "REPEAT LOGO PREVIOUS ORDER"
                                         ],
                                         "type": "string"
                                     }
@@ -2336,7 +2336,7 @@
                                             }
                                         }
                                     },
-                                    "References": {
+                                    "Reference": {
                                         "type": "array",
                                         "items": {
                                             "type": "object",
@@ -2505,7 +2505,7 @@
                                             }
                                         }
                                     },
-                                    "Dates": {
+                                    "Date": {
                                         "type": "array",
                                         "items": {
                                             "type": "object",
@@ -3086,7 +3086,7 @@
                                                     "description": "Unique tax exemption number assigned by the relevant tax authority to identify an entity or organization",
                                                     "type": "string"
                                                 },
-                                                "References": {
+                                                "Reference": {
                                                     "type": "array",
                                                     "items": {
                                                         "type": "object",
@@ -3105,7 +3105,7 @@
                                                         }
                                                     }
                                                 },
-                                                "Dates": {
+                                                "Date": {
                                                     "type": "array",
                                                     "items": {
                                                         "type": "object",

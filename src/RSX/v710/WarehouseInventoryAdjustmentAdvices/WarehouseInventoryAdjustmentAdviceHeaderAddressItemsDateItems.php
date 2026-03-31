@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class Summary extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderAddressItemsDateItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -25,20 +25,23 @@ class Summary extends ClassStructure
     /** @var string */
     public $recordType;
 
-    /** @var float */
-    public $totalOrders;
-
-    /** @var float */
-    public $totalWeight;
+    /** @var string */
+    public $dateTimeQualifier1;
 
     /** @var string */
-    public $weightUOM;
-
-    /** @var float */
-    public $totalVolume;
+    public $date1;
 
     /** @var string */
-    public $volumeUOM;
+    public $time1;
+
+    /** @var string */
+    public $timeCode1;
+
+    /** @var string */
+    public $dateTimeFormQualifier1;
+
+    /** @var string */
+    public $dateTimePeriod;
 
     /**
      * @param Properties|static $properties
@@ -56,16 +59,24 @@ class Summary extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->totalOrders = Schema::number();
-        $ownerSchema->addPropertyMapping('TotalOrders', self::names()->totalOrders);
-        $properties->totalWeight = Schema::number();
-        $ownerSchema->addPropertyMapping('TotalWeight', self::names()->totalWeight);
-        $properties->weightUOM = Schema::string();
-        $ownerSchema->addPropertyMapping('WeightUOM', self::names()->weightUOM);
-        $properties->totalVolume = Schema::number();
-        $ownerSchema->addPropertyMapping('TotalVolume', self::names()->totalVolume);
-        $properties->volumeUOM = Schema::string();
-        $ownerSchema->addPropertyMapping('VolumeUOM', self::names()->volumeUOM);
+        $properties->dateTimeQualifier1 = Schema::string();
+        $ownerSchema->addPropertyMapping('DateTimeQualifier1', self::names()->dateTimeQualifier1);
+        $properties->date1 = Schema::string();
+        $properties->date1->format = "date";
+        $ownerSchema->addPropertyMapping('Date1', self::names()->date1);
+        $properties->time1 = Schema::string();
+        $properties->time1->format = "time";
+        $ownerSchema->addPropertyMapping('Time1', self::names()->time1);
+        $properties->timeCode1 = Schema::string();
+        $ownerSchema->addPropertyMapping('TimeCode1', self::names()->timeCode1);
+        $properties->dateTimeFormQualifier1 = Schema::string();
+        $ownerSchema->addPropertyMapping('DateTimeFormQualifier1', self::names()->dateTimeFormQualifier1);
+        $properties->dateTimePeriod = Schema::string();
+        $ownerSchema->addPropertyMapping('DateTimePeriod', self::names()->dateTimePeriod);
         $ownerSchema->type = Schema::OBJECT;
+        $ownerSchema->required = array(
+            'DateTimeQualifier1',
+            'Date1',
+        );
     }
 }

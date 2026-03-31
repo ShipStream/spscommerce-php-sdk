@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class HeaderMiscellaneousItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -26,16 +26,13 @@ class HeaderMiscellaneousItems extends ClassStructure
     public $recordType;
 
     /** @var string */
-    public $qualifier1;
+    public $referenceQual;
 
     /** @var string */
-    public $description1;
+    public $referenceID;
 
     /** @var string */
-    public $qualifier2;
-
-    /** @var string */
-    public $description2;
+    public $description;
 
     /**
      * @param Properties|static $properties
@@ -53,14 +50,12 @@ class HeaderMiscellaneousItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->qualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('Qualifier1', self::names()->qualifier1);
-        $properties->description1 = Schema::string();
-        $ownerSchema->addPropertyMapping('Description1', self::names()->description1);
-        $properties->qualifier2 = Schema::string();
-        $ownerSchema->addPropertyMapping('Qualifier2', self::names()->qualifier2);
-        $properties->description2 = Schema::string();
-        $ownerSchema->addPropertyMapping('Description2', self::names()->description2);
+        $properties->referenceQual = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceQual', self::names()->referenceQual);
+        $properties->referenceID = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceID', self::names()->referenceID);
+        $properties->description = Schema::string();
+        $ownerSchema->addPropertyMapping('Description', self::names()->description);
         $ownerSchema->type = Schema::OBJECT;
     }
 }

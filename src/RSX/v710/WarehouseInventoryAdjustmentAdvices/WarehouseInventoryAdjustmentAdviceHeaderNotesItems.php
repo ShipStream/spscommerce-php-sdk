@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItemsAddressItemsContactItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderNotesItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -26,22 +26,25 @@ class LineItemsLineItemItemsAddressItemsContactItems extends ClassStructure
     public $recordType;
 
     /** @var string */
-    public $contactTypeCode;
+    public $noteCode;
+
+    /** @var string[]|array */
+    public $noteInformationField;
 
     /** @var string */
-    public $contactName;
+    public $printerCarriageControlCode;
 
     /** @var string */
-    public $contactPhone;
+    public $number;
 
     /** @var string */
-    public $contactFax;
+    public $languageCode;
 
     /** @var string */
-    public $contactEmail;
+    public $noteFormatCode;
 
     /** @var string */
-    public $contactReference;
+    public $noteFunctionCode;
 
     /**
      * @param Properties|static $properties
@@ -59,21 +62,22 @@ class LineItemsLineItemItemsAddressItemsContactItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->contactTypeCode = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactTypeCode', self::names()->contactTypeCode);
-        $properties->contactName = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactName', self::names()->contactName);
-        $properties->contactPhone = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactPhone', self::names()->contactPhone);
-        $properties->contactFax = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactFax', self::names()->contactFax);
-        $properties->contactEmail = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactEmail', self::names()->contactEmail);
-        $properties->contactReference = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactReference', self::names()->contactReference);
+        $properties->noteCode = Schema::string();
+        $ownerSchema->addPropertyMapping('NoteCode', self::names()->noteCode);
+        $properties->noteInformationField = Schema::arr();
+        $properties->noteInformationField->items = Schema::string();
+        $properties->noteInformationField->maxItems = 2;
+        $ownerSchema->addPropertyMapping('NoteInformationField', self::names()->noteInformationField);
+        $properties->printerCarriageControlCode = Schema::string();
+        $ownerSchema->addPropertyMapping('PrinterCarriageControlCode', self::names()->printerCarriageControlCode);
+        $properties->number = Schema::string();
+        $ownerSchema->addPropertyMapping('Number', self::names()->number);
+        $properties->languageCode = Schema::string();
+        $ownerSchema->addPropertyMapping('LanguageCode', self::names()->languageCode);
+        $properties->noteFormatCode = Schema::string();
+        $ownerSchema->addPropertyMapping('NoteFormatCode', self::names()->noteFormatCode);
+        $properties->noteFunctionCode = Schema::string();
+        $ownerSchema->addPropertyMapping('NoteFunctionCode', self::names()->noteFunctionCode);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->required = array(
-            'ContactTypeCode',
-        );
     }
 }

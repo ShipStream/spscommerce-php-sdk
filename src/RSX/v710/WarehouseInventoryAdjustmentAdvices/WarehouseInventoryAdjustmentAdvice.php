@@ -12,21 +12,20 @@ use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
 /**
- * WarehouseInventoryAdjustmentAdvice
- * Built from WarehouseInventoryAdjustmentAdvices.json#
+ * Built from WarehouseInventoryAdjustmentAdvices.json#/definitions/WarehouseInventoryAdjustmentAdvice
  */
-class Property01abfc extends ClassStructure
+class WarehouseInventoryAdjustmentAdvice extends ClassStructure
 {
-    /** @var Meta */
+    /** @var WarehouseInventoryAdjustmentAdviceMeta */
     public $meta;
 
-    /** @var Header */
+    /** @var WarehouseInventoryAdjustmentAdviceHeader */
     public $header;
 
-    /** @var LineItems */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItems */
     public $lineItems;
 
-    /** @var Summary */
+    /** @var WarehouseInventoryAdjustmentAdviceSummary */
     public $summary;
 
     /**
@@ -35,22 +34,20 @@ class Property01abfc extends ClassStructure
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
-        $properties->meta = Meta::schema();
+        $properties->meta = WarehouseInventoryAdjustmentAdviceMeta::schema();
         $ownerSchema->addPropertyMapping('Meta', self::names()->meta);
-        $properties->header = Header::schema();
+        $properties->header = WarehouseInventoryAdjustmentAdviceHeader::schema();
         $ownerSchema->addPropertyMapping('Header', self::names()->header);
-        $properties->lineItems = LineItems::schema();
+        $properties->lineItems = WarehouseInventoryAdjustmentAdviceLineItems::schema();
         $ownerSchema->addPropertyMapping('LineItems', self::names()->lineItems);
-        $properties->summary = Summary::schema();
+        $properties->summary = WarehouseInventoryAdjustmentAdviceSummary::schema();
         $ownerSchema->addPropertyMapping('Summary', self::names()->summary);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->schema = "http://json-schema.org/draft-07/schema#";
-        $ownerSchema->title = "WarehouseInventoryAdjustmentAdvice";
         $ownerSchema->required = array(
             'Header',
             'LineItems',
             'Summary',
         );
-        $ownerSchema->setFromRef('WarehouseInventoryAdjustmentAdvices.json#');
+        $ownerSchema->setFromRef('WarehouseInventoryAdjustmentAdvices.json#/definitions/WarehouseInventoryAdjustmentAdvice');
     }
 }

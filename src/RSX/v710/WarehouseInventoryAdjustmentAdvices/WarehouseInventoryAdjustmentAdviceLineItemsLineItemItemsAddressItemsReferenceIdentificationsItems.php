@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItemsAddressItemsDateItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceIdentificationsItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -26,7 +26,13 @@ class LineItemsLineItemItemsAddressItemsDateItems extends ClassStructure
     public $recordType;
 
     /** @var string */
-    public $dateTimeQualifier1;
+    public $referenceQual1;
+
+    /** @var string */
+    public $referenceID1;
+
+    /** @var string */
+    public $description;
 
     /** @var string */
     public $date1;
@@ -38,10 +44,22 @@ class LineItemsLineItemItemsAddressItemsDateItems extends ClassStructure
     public $timeCode1;
 
     /** @var string */
-    public $dateTimeFormQualifier1;
+    public $referenceQual2;
 
     /** @var string */
-    public $dateTimePeriod;
+    public $referenceID2;
+
+    /** @var string */
+    public $referenceQual3;
+
+    /** @var string */
+    public $referenceID3;
+
+    /** @var string */
+    public $referenceQual4;
+
+    /** @var string */
+    public $referenceID4;
 
     /**
      * @param Properties|static $properties
@@ -59,8 +77,12 @@ class LineItemsLineItemItemsAddressItemsDateItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->dateTimeQualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimeQualifier1', self::names()->dateTimeQualifier1);
+        $properties->referenceQual1 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceQual1', self::names()->referenceQual1);
+        $properties->referenceID1 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceID1', self::names()->referenceID1);
+        $properties->description = Schema::string();
+        $ownerSchema->addPropertyMapping('Description', self::names()->description);
         $properties->date1 = Schema::string();
         $properties->date1->format = "date";
         $ownerSchema->addPropertyMapping('Date1', self::names()->date1);
@@ -69,14 +91,21 @@ class LineItemsLineItemItemsAddressItemsDateItems extends ClassStructure
         $ownerSchema->addPropertyMapping('Time1', self::names()->time1);
         $properties->timeCode1 = Schema::string();
         $ownerSchema->addPropertyMapping('TimeCode1', self::names()->timeCode1);
-        $properties->dateTimeFormQualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimeFormQualifier1', self::names()->dateTimeFormQualifier1);
-        $properties->dateTimePeriod = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimePeriod', self::names()->dateTimePeriod);
+        $properties->referenceQual2 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceQual2', self::names()->referenceQual2);
+        $properties->referenceID2 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceID2', self::names()->referenceID2);
+        $properties->referenceQual3 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceQual3', self::names()->referenceQual3);
+        $properties->referenceID3 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceID3', self::names()->referenceID3);
+        $properties->referenceQual4 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceQual4', self::names()->referenceQual4);
+        $properties->referenceID4 = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceID4', self::names()->referenceID4);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
-            'DateTimeQualifier1',
-            'Date1',
+            'ReferenceQual1',
         );
     }
 }

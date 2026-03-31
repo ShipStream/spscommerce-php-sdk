@@ -11,21 +11,21 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems extends ClassStructure
 {
-    /** @var LineItemsLineItemItemsItemDetail */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsItemDetail */
     public $itemDetail;
 
-    /** @var LineItemsLineItemItemsReferenceItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferenceItems[]|array */
     public $reference;
 
-    /** @var LineItemsLineItemItemsDateItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDateItems[]|array */
     public $date;
 
-    /** @var LineItemsLineItemItemsAddressItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems[]|array */
     public $address;
 
-    /** @var LineItemsLineItemItemsMiscellaneousItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsMiscellaneousItems[]|array */
     public $miscellaneous;
 
     /**
@@ -34,22 +34,22 @@ class LineItemsLineItemItems extends ClassStructure
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
-        $properties->itemDetail = LineItemsLineItemItemsItemDetail::schema();
+        $properties->itemDetail = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsItemDetail::schema();
         $ownerSchema->addPropertyMapping('ItemDetail', self::names()->itemDetail);
         $properties->reference = Schema::arr();
-        $properties->reference->items = LineItemsLineItemItemsReferenceItems::schema();
+        $properties->reference->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferenceItems::schema();
         $properties->reference->maxItems = 10;
         $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
         $properties->date = Schema::arr();
-        $properties->date->items = LineItemsLineItemItemsDateItems::schema();
+        $properties->date->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDateItems::schema();
         $properties->date->maxItems = 10;
         $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $properties->address = Schema::arr();
-        $properties->address->items = LineItemsLineItemItemsAddressItems::schema();
+        $properties->address->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems::schema();
         $properties->address->maxItems = 50;
         $ownerSchema->addPropertyMapping('Address', self::names()->address);
         $properties->miscellaneous = Schema::arr();
-        $properties->miscellaneous->items = LineItemsLineItemItemsMiscellaneousItems::schema();
+        $properties->miscellaneous->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsMiscellaneousItems::schema();
         $properties->miscellaneous->maxItems = 20;
         $ownerSchema->addPropertyMapping('Miscellaneous', self::names()->miscellaneous);
         $ownerSchema->type = Schema::OBJECT;

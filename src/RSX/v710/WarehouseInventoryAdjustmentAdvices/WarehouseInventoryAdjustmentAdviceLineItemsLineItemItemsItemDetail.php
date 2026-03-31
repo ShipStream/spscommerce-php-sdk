@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItemsItemDetail extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsItemDetail extends ClassStructure
 {
     const CONST_03 = '03';
 

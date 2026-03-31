@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItemsMiscellaneousItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceSummary extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -25,17 +25,20 @@ class LineItemsLineItemItemsMiscellaneousItems extends ClassStructure
     /** @var string */
     public $recordType;
 
-    /** @var string */
-    public $qualifier1;
+    /** @var float */
+    public $totalOrders;
+
+    /** @var float */
+    public $totalWeight;
 
     /** @var string */
-    public $description1;
+    public $weightUOM;
+
+    /** @var float */
+    public $totalVolume;
 
     /** @var string */
-    public $qualifier2;
-
-    /** @var string */
-    public $description2;
+    public $volumeUOM;
 
     /**
      * @param Properties|static $properties
@@ -53,14 +56,16 @@ class LineItemsLineItemItemsMiscellaneousItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->qualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('Qualifier1', self::names()->qualifier1);
-        $properties->description1 = Schema::string();
-        $ownerSchema->addPropertyMapping('Description1', self::names()->description1);
-        $properties->qualifier2 = Schema::string();
-        $ownerSchema->addPropertyMapping('Qualifier2', self::names()->qualifier2);
-        $properties->description2 = Schema::string();
-        $ownerSchema->addPropertyMapping('Description2', self::names()->description2);
+        $properties->totalOrders = Schema::number();
+        $ownerSchema->addPropertyMapping('TotalOrders', self::names()->totalOrders);
+        $properties->totalWeight = Schema::number();
+        $ownerSchema->addPropertyMapping('TotalWeight', self::names()->totalWeight);
+        $properties->weightUOM = Schema::string();
+        $ownerSchema->addPropertyMapping('WeightUOM', self::names()->weightUOM);
+        $properties->totalVolume = Schema::number();
+        $ownerSchema->addPropertyMapping('TotalVolume', self::names()->totalVolume);
+        $properties->volumeUOM = Schema::string();
+        $ownerSchema->addPropertyMapping('VolumeUOM', self::names()->volumeUOM);
         $ownerSchema->type = Schema::OBJECT;
     }
 }

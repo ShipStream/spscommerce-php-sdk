@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItemsAddressItemsReferenceItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsContactItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -26,13 +26,22 @@ class LineItemsLineItemItemsAddressItemsReferenceItems extends ClassStructure
     public $recordType;
 
     /** @var string */
-    public $referenceQual;
+    public $contactTypeCode;
 
     /** @var string */
-    public $referenceID;
+    public $contactName;
 
     /** @var string */
-    public $description;
+    public $contactPhone;
+
+    /** @var string */
+    public $contactFax;
+
+    /** @var string */
+    public $contactEmail;
+
+    /** @var string */
+    public $contactReference;
 
     /**
      * @param Properties|static $properties
@@ -50,12 +59,21 @@ class LineItemsLineItemItemsAddressItemsReferenceItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->referenceQual = Schema::string();
-        $ownerSchema->addPropertyMapping('ReferenceQual', self::names()->referenceQual);
-        $properties->referenceID = Schema::string();
-        $ownerSchema->addPropertyMapping('ReferenceID', self::names()->referenceID);
-        $properties->description = Schema::string();
-        $ownerSchema->addPropertyMapping('Description', self::names()->description);
+        $properties->contactTypeCode = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactTypeCode', self::names()->contactTypeCode);
+        $properties->contactName = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactName', self::names()->contactName);
+        $properties->contactPhone = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactPhone', self::names()->contactPhone);
+        $properties->contactFax = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactFax', self::names()->contactFax);
+        $properties->contactEmail = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactEmail', self::names()->contactEmail);
+        $properties->contactReference = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactReference', self::names()->contactReference);
         $ownerSchema->type = Schema::OBJECT;
+        $ownerSchema->required = array(
+            'ContactTypeCode',
+        );
     }
 }

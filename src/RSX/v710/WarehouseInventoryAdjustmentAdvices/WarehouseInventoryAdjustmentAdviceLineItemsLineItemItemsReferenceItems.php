@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class HeaderAddressItemsReferenceItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferenceItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;

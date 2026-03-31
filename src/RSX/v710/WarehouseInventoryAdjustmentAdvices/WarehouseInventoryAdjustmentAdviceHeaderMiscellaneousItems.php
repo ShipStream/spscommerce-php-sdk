@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class HeaderContactItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderMiscellaneousItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -26,22 +26,16 @@ class HeaderContactItems extends ClassStructure
     public $recordType;
 
     /** @var string */
-    public $contactTypeCode;
+    public $qualifier1;
 
     /** @var string */
-    public $contactName;
+    public $description1;
 
     /** @var string */
-    public $contactPhone;
+    public $qualifier2;
 
     /** @var string */
-    public $contactFax;
-
-    /** @var string */
-    public $contactEmail;
-
-    /** @var string */
-    public $contactReference;
+    public $description2;
 
     /**
      * @param Properties|static $properties
@@ -59,21 +53,14 @@ class HeaderContactItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->contactTypeCode = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactTypeCode', self::names()->contactTypeCode);
-        $properties->contactName = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactName', self::names()->contactName);
-        $properties->contactPhone = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactPhone', self::names()->contactPhone);
-        $properties->contactFax = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactFax', self::names()->contactFax);
-        $properties->contactEmail = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactEmail', self::names()->contactEmail);
-        $properties->contactReference = Schema::string();
-        $ownerSchema->addPropertyMapping('ContactReference', self::names()->contactReference);
+        $properties->qualifier1 = Schema::string();
+        $ownerSchema->addPropertyMapping('Qualifier1', self::names()->qualifier1);
+        $properties->description1 = Schema::string();
+        $ownerSchema->addPropertyMapping('Description1', self::names()->description1);
+        $properties->qualifier2 = Schema::string();
+        $ownerSchema->addPropertyMapping('Qualifier2', self::names()->qualifier2);
+        $properties->description2 = Schema::string();
+        $ownerSchema->addPropertyMapping('Description2', self::names()->description2);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->required = array(
-            'ContactTypeCode',
-        );
     }
 }

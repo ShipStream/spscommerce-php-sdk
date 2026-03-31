@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class HeaderNotesItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderAddressItemsReferenceItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -26,25 +26,13 @@ class HeaderNotesItems extends ClassStructure
     public $recordType;
 
     /** @var string */
-    public $noteCode;
-
-    /** @var string[]|array */
-    public $noteInformationField;
+    public $referenceQual;
 
     /** @var string */
-    public $printerCarriageControlCode;
+    public $referenceID;
 
     /** @var string */
-    public $number;
-
-    /** @var string */
-    public $languageCode;
-
-    /** @var string */
-    public $noteFormatCode;
-
-    /** @var string */
-    public $noteFunctionCode;
+    public $description;
 
     /**
      * @param Properties|static $properties
@@ -62,22 +50,12 @@ class HeaderNotesItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->noteCode = Schema::string();
-        $ownerSchema->addPropertyMapping('NoteCode', self::names()->noteCode);
-        $properties->noteInformationField = Schema::arr();
-        $properties->noteInformationField->items = Schema::string();
-        $properties->noteInformationField->maxItems = 2;
-        $ownerSchema->addPropertyMapping('NoteInformationField', self::names()->noteInformationField);
-        $properties->printerCarriageControlCode = Schema::string();
-        $ownerSchema->addPropertyMapping('PrinterCarriageControlCode', self::names()->printerCarriageControlCode);
-        $properties->number = Schema::string();
-        $ownerSchema->addPropertyMapping('Number', self::names()->number);
-        $properties->languageCode = Schema::string();
-        $ownerSchema->addPropertyMapping('LanguageCode', self::names()->languageCode);
-        $properties->noteFormatCode = Schema::string();
-        $ownerSchema->addPropertyMapping('NoteFormatCode', self::names()->noteFormatCode);
-        $properties->noteFunctionCode = Schema::string();
-        $ownerSchema->addPropertyMapping('NoteFunctionCode', self::names()->noteFunctionCode);
+        $properties->referenceQual = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceQual', self::names()->referenceQual);
+        $properties->referenceID = Schema::string();
+        $ownerSchema->addPropertyMapping('ReferenceID', self::names()->referenceID);
+        $properties->description = Schema::string();
+        $ownerSchema->addPropertyMapping('Description', self::names()->description);
         $ownerSchema->type = Schema::OBJECT;
     }
 }

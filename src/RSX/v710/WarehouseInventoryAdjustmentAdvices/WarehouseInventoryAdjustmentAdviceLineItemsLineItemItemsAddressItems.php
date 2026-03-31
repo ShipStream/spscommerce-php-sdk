@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItemsAddressItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -91,16 +91,16 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
     /** @var string */
     public $addressAlternateName2;
 
-    /** @var LineItemsLineItemItemsAddressItemsReferenceIdentificationsItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceIdentificationsItems[]|array */
     public $referenceIdentifications;
 
-    /** @var LineItemsLineItemItemsAddressItemsReferenceItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceItems[]|array */
     public $reference;
 
-    /** @var LineItemsLineItemItemsAddressItemsContactItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsContactItems[]|array */
     public $contact;
 
-    /** @var LineItemsLineItemItemsAddressItemsDateItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsDateItems[]|array */
     public $date;
 
     /**
@@ -164,16 +164,16 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
         $properties->addressAlternateName2 = Schema::string();
         $ownerSchema->addPropertyMapping('AddressAlternateName2', self::names()->addressAlternateName2);
         $properties->referenceIdentifications = Schema::arr();
-        $properties->referenceIdentifications->items = LineItemsLineItemItemsAddressItemsReferenceIdentificationsItems::schema();
+        $properties->referenceIdentifications->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceIdentificationsItems::schema();
         $ownerSchema->addPropertyMapping('ReferenceIdentifications', self::names()->referenceIdentifications);
         $properties->reference = Schema::arr();
-        $properties->reference->items = LineItemsLineItemItemsAddressItemsReferenceItems::schema();
+        $properties->reference->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceItems::schema();
         $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
         $properties->contact = Schema::arr();
-        $properties->contact->items = LineItemsLineItemItemsAddressItemsContactItems::schema();
+        $properties->contact->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsContactItems::schema();
         $ownerSchema->addPropertyMapping('Contact', self::names()->contact);
         $properties->date = Schema::arr();
-        $properties->date->items = LineItemsLineItemItemsAddressItemsDateItems::schema();
+        $properties->date->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsDateItems::schema();
         $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(

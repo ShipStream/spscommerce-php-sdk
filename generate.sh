@@ -29,13 +29,20 @@ for version in "${versions[@]}"; do
     echo "Generating $class classes for $version/$file schema"
     mkdir -p src/RSX/$version/$name
     if [[ "$version" == "v710" ]]; then
+      # Older schema format without definitions block — use a patch to wrap it
+      patch=$(mktemp -p .)
+      cat > "$patch" <<PATCH
+[{"op":"add","path":"/definitions","value":{"$class":{"type":"object"}}},{"op":"copy","from":"/properties","path":"/definitions/$class/properties"},{"op":"copy","from":"/required","path":"/definitions/$class/required"}]
+PATCH
       docker run --rm -v $PWD:/app --workdir /app \
         swaggest/json-cli \
         json-cli gen-php "json-schema/$version/$file" \
-          --ptr-in-schema "#" \
-          --root-name $class \
+          --patches "$patch" \
+          --ptr-in-schema "#/definitions/$class" \
+          --def-ptr "#/definitions" \
           --ns ShipStream\\SpsCommerce\\RSX\\$version\\$name \
           --ns-path src/RSX/$version/$name/
+      rm -f "$patch"
     else
       docker run --rm -v $PWD:/app --workdir /app \
         swaggest/json-cli \

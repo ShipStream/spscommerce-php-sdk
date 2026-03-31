@@ -11,27 +11,27 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class Header extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeader extends ClassStructure
 {
-    /** @var HeaderHeaderOrder */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderHeaderOrder */
     public $headerOrder;
 
-    /** @var HeaderReferenceItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderReferenceItems[]|array */
     public $reference;
 
-    /** @var HeaderDateItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderDateItems[]|array */
     public $date;
 
-    /** @var HeaderContactItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderContactItems[]|array */
     public $contact;
 
-    /** @var HeaderAddressItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItems[]|array */
     public $address;
 
-    /** @var HeaderNotesItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderNotesItems[]|array */
     public $notes;
 
-    /** @var HeaderMiscellaneousItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceHeaderMiscellaneousItems[]|array */
     public $miscellaneous;
 
     /**
@@ -40,30 +40,30 @@ class Header extends ClassStructure
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
-        $properties->headerOrder = HeaderHeaderOrder::schema();
+        $properties->headerOrder = WarehouseInventoryAdjustmentAdviceHeaderHeaderOrder::schema();
         $ownerSchema->addPropertyMapping('HeaderOrder', self::names()->headerOrder);
         $properties->reference = Schema::arr();
-        $properties->reference->items = HeaderReferenceItems::schema();
+        $properties->reference->items = WarehouseInventoryAdjustmentAdviceHeaderReferenceItems::schema();
         $properties->reference->maxItems = 10;
         $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
         $properties->date = Schema::arr();
-        $properties->date->items = HeaderDateItems::schema();
+        $properties->date->items = WarehouseInventoryAdjustmentAdviceHeaderDateItems::schema();
         $properties->date->maxItems = 5;
         $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $properties->contact = Schema::arr();
-        $properties->contact->items = HeaderContactItems::schema();
+        $properties->contact->items = WarehouseInventoryAdjustmentAdviceHeaderContactItems::schema();
         $properties->contact->maxItems = 3;
         $ownerSchema->addPropertyMapping('Contact', self::names()->contact);
         $properties->address = Schema::arr();
-        $properties->address->items = HeaderAddressItems::schema();
+        $properties->address->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItems::schema();
         $properties->address->maxItems = 100;
         $ownerSchema->addPropertyMapping('Address', self::names()->address);
         $properties->notes = Schema::arr();
-        $properties->notes->items = HeaderNotesItems::schema();
+        $properties->notes->items = WarehouseInventoryAdjustmentAdviceHeaderNotesItems::schema();
         $properties->notes->maxItems = 20;
         $ownerSchema->addPropertyMapping('Notes', self::names()->notes);
         $properties->miscellaneous = Schema::arr();
-        $properties->miscellaneous->items = HeaderMiscellaneousItems::schema();
+        $properties->miscellaneous->items = WarehouseInventoryAdjustmentAdviceHeaderMiscellaneousItems::schema();
         $ownerSchema->addPropertyMapping('Miscellaneous', self::names()->miscellaneous);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(

@@ -11,9 +11,9 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceLineItems extends ClassStructure
 {
-    /** @var LineItemsLineItemItems[]|array */
+    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems[]|array */
     public $lineItem;
 
     /**
@@ -23,7 +23,7 @@ class LineItems extends ClassStructure
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
         $properties->lineItem = Schema::arr();
-        $properties->lineItem->items = LineItemsLineItemItems::schema();
+        $properties->lineItem->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems::schema();
         $ownerSchema->addPropertyMapping('LineItem', self::names()->lineItem);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(

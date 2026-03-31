@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class HeaderDateItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderHeaderOrder extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -20,28 +20,28 @@ class HeaderDateItems extends ClassStructure
     public $documentId;
 
     /** @var string */
-    public $purchaseOrderNumber;
-
-    /** @var string */
     public $recordType;
-
-    /** @var string */
-    public $dateTimeQualifier1;
 
     /** @var string */
     public $date1;
 
     /** @var string */
-    public $time1;
+    public $adjustmentNumber1;
 
     /** @var string */
-    public $timeCode1;
+    public $adjustmentNumber2;
 
     /** @var string */
-    public $dateTimeFormQualifier1;
+    public $tsetPurposeCode;
 
     /** @var string */
-    public $dateTimePeriod;
+    public $purchaseOrderNumber;
+
+    /** @var string */
+    public $transactionTypeCode;
+
+    /** @var string */
+    public $actionCode;
 
     /**
      * @param Properties|static $properties
@@ -54,28 +54,28 @@ class HeaderDateItems extends ClassStructure
         $properties->documentId = Schema::string();
         $properties->documentId->maxLength = 30;
         $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
-        $properties->purchaseOrderNumber = Schema::string();
-        $properties->purchaseOrderNumber->maxLength = 30;
-        $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->dateTimeQualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimeQualifier1', self::names()->dateTimeQualifier1);
         $properties->date1 = Schema::string();
         $properties->date1->format = "date";
         $ownerSchema->addPropertyMapping('Date1', self::names()->date1);
-        $properties->time1 = Schema::string();
-        $properties->time1->format = "time";
-        $ownerSchema->addPropertyMapping('Time1', self::names()->time1);
-        $properties->timeCode1 = Schema::string();
-        $ownerSchema->addPropertyMapping('TimeCode1', self::names()->timeCode1);
-        $properties->dateTimeFormQualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimeFormQualifier1', self::names()->dateTimeFormQualifier1);
-        $properties->dateTimePeriod = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimePeriod', self::names()->dateTimePeriod);
+        $properties->adjustmentNumber1 = Schema::string();
+        $ownerSchema->addPropertyMapping('AdjustmentNumber1', self::names()->adjustmentNumber1);
+        $properties->adjustmentNumber2 = Schema::string();
+        $ownerSchema->addPropertyMapping('AdjustmentNumber2', self::names()->adjustmentNumber2);
+        $properties->tsetPurposeCode = Schema::string();
+        $ownerSchema->addPropertyMapping('TsetPurposeCode', self::names()->tsetPurposeCode);
+        $properties->purchaseOrderNumber = Schema::string();
+        $properties->purchaseOrderNumber->maxLength = 30;
+        $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
+        $properties->transactionTypeCode = Schema::string();
+        $ownerSchema->addPropertyMapping('TransactionTypeCode', self::names()->transactionTypeCode);
+        $properties->actionCode = Schema::string();
+        $ownerSchema->addPropertyMapping('ActionCode', self::names()->actionCode);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
-            'DateTimeQualifier1',
+            'TradingPartnerId',
+            'DocumentId',
             'Date1',
         );
     }

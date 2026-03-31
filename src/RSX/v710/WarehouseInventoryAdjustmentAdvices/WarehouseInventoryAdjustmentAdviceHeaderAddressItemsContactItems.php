@@ -11,7 +11,7 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-class LineItemsLineItemItemsDateItems extends ClassStructure
+class WarehouseInventoryAdjustmentAdviceHeaderAddressItemsContactItems extends ClassStructure
 {
     /** @var string */
     public $tradingPartnerId;
@@ -26,22 +26,22 @@ class LineItemsLineItemItemsDateItems extends ClassStructure
     public $recordType;
 
     /** @var string */
-    public $dateTimeQualifier1;
+    public $contactTypeCode;
 
     /** @var string */
-    public $date1;
+    public $contactName;
 
     /** @var string */
-    public $time1;
+    public $contactPhone;
 
     /** @var string */
-    public $timeCode1;
+    public $contactFax;
 
     /** @var string */
-    public $dateTimeFormQualifier1;
+    public $contactEmail;
 
     /** @var string */
-    public $dateTimePeriod;
+    public $contactReference;
 
     /**
      * @param Properties|static $properties
@@ -59,24 +59,21 @@ class LineItemsLineItemItemsDateItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
-        $properties->dateTimeQualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimeQualifier1', self::names()->dateTimeQualifier1);
-        $properties->date1 = Schema::string();
-        $properties->date1->format = "date";
-        $ownerSchema->addPropertyMapping('Date1', self::names()->date1);
-        $properties->time1 = Schema::string();
-        $properties->time1->format = "time";
-        $ownerSchema->addPropertyMapping('Time1', self::names()->time1);
-        $properties->timeCode1 = Schema::string();
-        $ownerSchema->addPropertyMapping('TimeCode1', self::names()->timeCode1);
-        $properties->dateTimeFormQualifier1 = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimeFormQualifier1', self::names()->dateTimeFormQualifier1);
-        $properties->dateTimePeriod = Schema::string();
-        $ownerSchema->addPropertyMapping('DateTimePeriod', self::names()->dateTimePeriod);
+        $properties->contactTypeCode = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactTypeCode', self::names()->contactTypeCode);
+        $properties->contactName = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactName', self::names()->contactName);
+        $properties->contactPhone = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactPhone', self::names()->contactPhone);
+        $properties->contactFax = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactFax', self::names()->contactFax);
+        $properties->contactEmail = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactEmail', self::names()->contactEmail);
+        $properties->contactReference = Schema::string();
+        $ownerSchema->addPropertyMapping('ContactReference', self::names()->contactReference);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
-            'DateTimeQualifier1',
-            'Date1',
+            'ContactTypeCode',
         );
     }
 }

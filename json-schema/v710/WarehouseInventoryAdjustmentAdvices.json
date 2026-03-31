@@ -730,13 +730,27 @@
                                         "type": "string"
                                     },
                                     "AdjReasonCode": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "enum": [
+                                            "03", "04", "05", "06", "07", "08",
+                                            "51", "52", "53", "54", "55", "56",
+                                            "88",
+                                            "AA", "AB", "AC", "AD", "AE", "AF",
+                                            "AG", "AH", "AI", "AJ", "AK", "AL",
+                                            "AM", "AN", "AP", "AQ", "AR", "AS",
+                                            "AT", "AU", "AV", "AW", "AX", "AY",
+                                            "BA", "BD", "BK", "BM", "BN", "BR",
+                                            "BS", "BT",
+                                            "CD", "CO", "CR", "CS",
+                                            "PC", "TC", "UD"
+                                        ]
                                     },
                                     "QtyAdjusted": {
                                         "type": "number"
                                     },
                                     "QtyAdjustedUOM": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "enum": ["EA", "CA"]
                                     },
                                     "WarehouseLotID": {
                                         "type": "string"

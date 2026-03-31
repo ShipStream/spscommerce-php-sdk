@@ -13,6 +13,114 @@ use Swaggest\JsonSchema\Structure\ClassStructure;
 
 class LineItemsLineItemItemsItemDetail extends ClassStructure
 {
+    const CONST_03 = '03';
+
+    const CONST_04 = '04';
+
+    const CONST_05 = '05';
+
+    const CONST_06 = '06';
+
+    const CONST_07 = '07';
+
+    const CONST_08 = '08';
+
+    const CONST_51 = '51';
+
+    const CONST_52 = '52';
+
+    const CONST_53 = '53';
+
+    const CONST_54 = '54';
+
+    const CONST_55 = '55';
+
+    const CONST_56 = '56';
+
+    const CONST_88 = '88';
+
+    const AA = 'AA';
+
+    const AB = 'AB';
+
+    const AC = 'AC';
+
+    const AD = 'AD';
+
+    const AE = 'AE';
+
+    const AF = 'AF';
+
+    const AG = 'AG';
+
+    const AH = 'AH';
+
+    const AI = 'AI';
+
+    const AJ = 'AJ';
+
+    const AK = 'AK';
+
+    const AL = 'AL';
+
+    const AM = 'AM';
+
+    const AN = 'AN';
+
+    const AP = 'AP';
+
+    const AQ = 'AQ';
+
+    const AR = 'AR';
+
+    const _AS = 'AS';
+
+    const AT = 'AT';
+
+    const AU = 'AU';
+
+    const AV = 'AV';
+
+    const AW = 'AW';
+
+    const AX = 'AX';
+
+    const AY = 'AY';
+
+    const BA = 'BA';
+
+    const BD = 'BD';
+
+    const BK = 'BK';
+
+    const BM = 'BM';
+
+    const BN = 'BN';
+
+    const BR = 'BR';
+
+    const BS = 'BS';
+
+    const BT = 'BT';
+
+    const CD = 'CD';
+
+    const CO = 'CO';
+
+    const CR = 'CR';
+
+    const CS = 'CS';
+
+    const PC = 'PC';
+
+    const TC = 'TC';
+
+    const UD = 'UD';
+
+    const EA = 'EA';
+
+    const CA = 'CA';
+
     /** @var string */
     public $tradingPartnerId;
 
@@ -228,10 +336,68 @@ class LineItemsLineItemItemsItemDetail extends ClassStructure
         $properties->partDescription2 = Schema::string();
         $ownerSchema->addPropertyMapping('PartDescription2', self::names()->partDescription2);
         $properties->adjReasonCode = Schema::string();
+        $properties->adjReasonCode->enum = array(
+            self::CONST_03,
+            self::CONST_04,
+            self::CONST_05,
+            self::CONST_06,
+            self::CONST_07,
+            self::CONST_08,
+            self::CONST_51,
+            self::CONST_52,
+            self::CONST_53,
+            self::CONST_54,
+            self::CONST_55,
+            self::CONST_56,
+            self::CONST_88,
+            self::AA,
+            self::AB,
+            self::AC,
+            self::AD,
+            self::AE,
+            self::AF,
+            self::AG,
+            self::AH,
+            self::AI,
+            self::AJ,
+            self::AK,
+            self::AL,
+            self::AM,
+            self::AN,
+            self::AP,
+            self::AQ,
+            self::AR,
+            self::_AS,
+            self::AT,
+            self::AU,
+            self::AV,
+            self::AW,
+            self::AX,
+            self::AY,
+            self::BA,
+            self::BD,
+            self::BK,
+            self::BM,
+            self::BN,
+            self::BR,
+            self::BS,
+            self::BT,
+            self::CD,
+            self::CO,
+            self::CR,
+            self::CS,
+            self::PC,
+            self::TC,
+            self::UD,
+        );
         $ownerSchema->addPropertyMapping('AdjReasonCode', self::names()->adjReasonCode);
         $properties->qtyAdjusted = Schema::number();
         $ownerSchema->addPropertyMapping('QtyAdjusted', self::names()->qtyAdjusted);
         $properties->qtyAdjustedUOM = Schema::string();
+        $properties->qtyAdjustedUOM->enum = array(
+            self::EA,
+            self::CA,
+        );
         $ownerSchema->addPropertyMapping('QtyAdjustedUOM', self::names()->qtyAdjustedUOM);
         $properties->warehouseLotID = Schema::string();
         $ownerSchema->addPropertyMapping('WarehouseLotID', self::names()->warehouseLotID);

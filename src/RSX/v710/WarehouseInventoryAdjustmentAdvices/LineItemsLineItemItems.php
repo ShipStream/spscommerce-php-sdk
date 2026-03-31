@@ -11,24 +11,21 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-/**
- * Encloses all document line item elements
- */
-class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems extends ClassStructure
+class LineItemsLineItemItems extends ClassStructure
 {
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsItemDetail Contains the commonly used fields in the line item level of the transaction */
+    /** @var LineItemsLineItemItemsItemDetail */
     public $itemDetail;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferenceItems[]|array */
+    /** @var LineItemsLineItemItemsReferenceItems[]|array */
     public $reference;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDateItems[]|array */
+    /** @var LineItemsLineItemItemsDateItems[]|array */
     public $date;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems[]|array */
+    /** @var LineItemsLineItemItemsAddressItems[]|array */
     public $address;
 
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsMiscellaneousItems[]|array */
+    /** @var LineItemsLineItemItemsMiscellaneousItems[]|array */
     public $miscellaneous;
 
     /**
@@ -37,25 +34,27 @@ class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems extends ClassStru
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
-        $properties->itemDetail = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsItemDetail::schema();
+        $properties->itemDetail = LineItemsLineItemItemsItemDetail::schema();
         $ownerSchema->addPropertyMapping('ItemDetail', self::names()->itemDetail);
         $properties->reference = Schema::arr();
-        $properties->reference->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsReferenceItems::schema();
+        $properties->reference->items = LineItemsLineItemItemsReferenceItems::schema();
         $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
         $properties->date = Schema::arr();
-        $properties->date->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsDateItems::schema();
+        $properties->date->items = LineItemsLineItemItemsDateItems::schema();
         $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $properties->address = Schema::arr();
-        $properties->address->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItems::schema();
+        $properties->address->items = LineItemsLineItemItemsAddressItems::schema();
         $ownerSchema->addPropertyMapping('Address', self::names()->address);
         $properties->miscellaneous = Schema::arr();
-        $properties->miscellaneous->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsMiscellaneousItems::schema();
+        $properties->miscellaneous->items = LineItemsLineItemItemsMiscellaneousItems::schema();
         $ownerSchema->addPropertyMapping('Miscellaneous', self::names()->miscellaneous);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->additionalProperties = false;
-        $ownerSchema->description = "Encloses all document line item elements";
         $ownerSchema->required = array(
             'ItemDetail',
+            'Reference',
+            'Date',
+            'Address',
+            'Miscellaneous',
         );
     }
 }

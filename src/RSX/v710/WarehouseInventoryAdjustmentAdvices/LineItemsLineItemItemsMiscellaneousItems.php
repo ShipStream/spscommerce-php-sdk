@@ -11,21 +11,27 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-/**
- * Provides additional miscellaneous information
- */
-class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsMiscellaneousItems extends ClassStructure
+class LineItemsLineItemItemsMiscellaneousItems extends ClassStructure
 {
-    /** @var string Code qualifying the miscellaneous data element */
+    /** @var string */
+    public $tradingPartnerId;
+
+    /** @var string */
+    public $documentId;
+
+    /** @var string */
+    public $recordType;
+
+    /** @var string */
     public $qualifier1;
 
-    /** @var string Free-form description of the miscellaneous element */
+    /** @var string */
     public $description1;
 
-    /** @var string Code qualifying the miscellaneous data element */
+    /** @var string */
     public $qualifier2;
 
-    /** @var string Free-form description of the miscellaneous element */
+    /** @var string */
     public $description2;
 
     /**
@@ -34,22 +40,29 @@ class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsMiscellaneousItems
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
+        $properties->tradingPartnerId = Schema::string();
+        $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
+        $properties->documentId = Schema::string();
+        $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
+        $properties->recordType = Schema::string();
+        $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->qualifier1 = Schema::string();
-        $properties->qualifier1->description = "Code qualifying the miscellaneous data element";
         $ownerSchema->addPropertyMapping('Qualifier1', self::names()->qualifier1);
         $properties->description1 = Schema::string();
-        $properties->description1->description = "Free-form description of the miscellaneous element";
         $ownerSchema->addPropertyMapping('Description1', self::names()->description1);
         $properties->qualifier2 = Schema::string();
-        $properties->qualifier2->description = "Code qualifying the miscellaneous data element";
         $ownerSchema->addPropertyMapping('Qualifier2', self::names()->qualifier2);
         $properties->description2 = Schema::string();
-        $properties->description2->description = "Free-form description of the miscellaneous element";
         $ownerSchema->addPropertyMapping('Description2', self::names()->description2);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->additionalProperties = false;
-        $ownerSchema->description = "Provides additional miscellaneous information";
         $ownerSchema->required = array(
+            'TradingPartnerId',
+            'DocumentId',
+            'RecordType',
+            'Qualifier1',
+            'Description1',
+            'Qualifier2',
+            'Description2',
         );
     }
 }

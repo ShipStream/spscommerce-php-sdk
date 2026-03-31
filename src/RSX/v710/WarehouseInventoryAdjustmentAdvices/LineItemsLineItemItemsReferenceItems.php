@@ -11,16 +11,25 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-/**
- * Supplemental information supporting the transaction
- */
-class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsReferenceItems extends ClassStructure
+class LineItemsLineItemItemsReferenceItems extends ClassStructure
 {
-    /** @var string Code specifying the type of data in the ReferenceID/ReferenceDescription */
+    /** @var string */
+    public $tradingPartnerId;
+
+    /** @var string */
+    public $documentId;
+
+    /** @var string */
+    public $recordType;
+
+    /** @var string */
     public $referenceQual;
 
-    /** @var string Value as defined by the ReferenceQual */
+    /** @var string */
     public $referenceID;
+
+    /** @var string */
+    public $description;
 
     /**
      * @param Properties|static $properties
@@ -28,16 +37,26 @@ class WarehouseInventoryAdjustmentAdviceLineItemsLineItemItemsAddressItemsRefere
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
+        $properties->tradingPartnerId = Schema::string();
+        $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
+        $properties->documentId = Schema::string();
+        $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
+        $properties->recordType = Schema::string();
+        $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->referenceQual = Schema::string();
-        $properties->referenceQual->description = "Code specifying the type of data in the ReferenceID/ReferenceDescription";
         $ownerSchema->addPropertyMapping('ReferenceQual', self::names()->referenceQual);
         $properties->referenceID = Schema::string();
-        $properties->referenceID->description = "Value as defined by the ReferenceQual";
         $ownerSchema->addPropertyMapping('ReferenceID', self::names()->referenceID);
+        $properties->description = Schema::string();
+        $ownerSchema->addPropertyMapping('Description', self::names()->description);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->additionalProperties = false;
-        $ownerSchema->description = "Supplemental information supporting the transaction";
         $ownerSchema->required = array(
+            'TradingPartnerId',
+            'DocumentId',
+            'RecordType',
+            'ReferenceQual',
+            'ReferenceID',
+            'Description',
         );
     }
 }

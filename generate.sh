@@ -28,12 +28,22 @@ for version in "${versions[@]}"; do
     [ ! -f "json-schema/$version/$file" ] && continue
     echo "Generating $class classes for $version/$file schema"
     mkdir -p src/RSX/$version/$name
-    docker run --rm -v $PWD:/app --workdir /app \
-      swaggest/json-cli \
-      json-cli gen-php "json-schema/$version/$file" \
-        --ptr-in-schema "#/definitions/$class" \
-        --def-ptr "#/definitions" \
-        --ns ShipStream\\SpsCommerce\\RSX\\$version\\$name \
-        --ns-path src/RSX/$version/$name/
+    if [[ "$version" == "v710" ]]; then
+      docker run --rm -v $PWD:/app --workdir /app \
+        swaggest/json-cli \
+        json-cli gen-php "json-schema/$version/$file" \
+          --ptr-in-schema "#" \
+          --root-name $class \
+          --ns ShipStream\\SpsCommerce\\RSX\\$version\\$name \
+          --ns-path src/RSX/$version/$name/
+    else
+      docker run --rm -v $PWD:/app --workdir /app \
+        swaggest/json-cli \
+        json-cli gen-php "json-schema/$version/$file" \
+          --ptr-in-schema "#/definitions/$class" \
+          --def-ptr "#/definitions" \
+          --ns ShipStream\\SpsCommerce\\RSX\\$version\\$name \
+          --ns-path src/RSX/$version/$name/
+    fi
   done
 done

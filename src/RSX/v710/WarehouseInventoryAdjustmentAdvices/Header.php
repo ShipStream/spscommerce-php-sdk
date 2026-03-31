@@ -11,30 +11,27 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-/**
- * Encloses all document header elements
- */
-class WarehouseInventoryAdjustmentAdviceHeader extends ClassStructure
+class Header extends ClassStructure
 {
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderHeaderOrder Contains the commonly used fields in the header of the transaction */
+    /** @var HeaderHeaderOrder */
     public $headerOrder;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderReferenceItems[]|array */
+    /** @var HeaderReferenceItems[]|array */
     public $reference;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderDateItems[]|array */
+    /** @var HeaderDateItems[]|array */
     public $date;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderContactItems[]|array */
+    /** @var HeaderContactItems[]|array */
     public $contact;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderAddressItems[]|array */
+    /** @var HeaderAddressItems[]|array */
     public $address;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderNotesItems[]|array */
+    /** @var HeaderNotesItems[]|array */
     public $notes;
 
-    /** @var WarehouseInventoryAdjustmentAdviceHeaderMiscellaneousItems[]|array */
+    /** @var HeaderMiscellaneousItems[]|array */
     public $miscellaneous;
 
     /**
@@ -43,31 +40,35 @@ class WarehouseInventoryAdjustmentAdviceHeader extends ClassStructure
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
-        $properties->headerOrder = WarehouseInventoryAdjustmentAdviceHeaderHeaderOrder::schema();
+        $properties->headerOrder = HeaderHeaderOrder::schema();
         $ownerSchema->addPropertyMapping('HeaderOrder', self::names()->headerOrder);
         $properties->reference = Schema::arr();
-        $properties->reference->items = WarehouseInventoryAdjustmentAdviceHeaderReferenceItems::schema();
+        $properties->reference->items = HeaderReferenceItems::schema();
         $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
         $properties->date = Schema::arr();
-        $properties->date->items = WarehouseInventoryAdjustmentAdviceHeaderDateItems::schema();
+        $properties->date->items = HeaderDateItems::schema();
         $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $properties->contact = Schema::arr();
-        $properties->contact->items = WarehouseInventoryAdjustmentAdviceHeaderContactItems::schema();
+        $properties->contact->items = HeaderContactItems::schema();
         $ownerSchema->addPropertyMapping('Contact', self::names()->contact);
         $properties->address = Schema::arr();
-        $properties->address->items = WarehouseInventoryAdjustmentAdviceHeaderAddressItems::schema();
+        $properties->address->items = HeaderAddressItems::schema();
         $ownerSchema->addPropertyMapping('Address', self::names()->address);
         $properties->notes = Schema::arr();
-        $properties->notes->items = WarehouseInventoryAdjustmentAdviceHeaderNotesItems::schema();
+        $properties->notes->items = HeaderNotesItems::schema();
         $ownerSchema->addPropertyMapping('Notes', self::names()->notes);
         $properties->miscellaneous = Schema::arr();
-        $properties->miscellaneous->items = WarehouseInventoryAdjustmentAdviceHeaderMiscellaneousItems::schema();
+        $properties->miscellaneous->items = HeaderMiscellaneousItems::schema();
         $ownerSchema->addPropertyMapping('Miscellaneous', self::names()->miscellaneous);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->additionalProperties = false;
-        $ownerSchema->description = "Encloses all document header elements";
         $ownerSchema->required = array(
             'HeaderOrder',
+            'Reference',
+            'Date',
+            'Contact',
+            'Address',
+            'Notes',
+            'Miscellaneous',
         );
     }
 }

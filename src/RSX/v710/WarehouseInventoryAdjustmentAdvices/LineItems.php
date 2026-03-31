@@ -11,12 +11,9 @@ use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
-/**
- * Encloses all document line item elements
- */
-class WarehouseInventoryAdjustmentAdviceLineItems extends ClassStructure
+class LineItems extends ClassStructure
 {
-    /** @var WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems[]|array */
+    /** @var LineItemsLineItemItems[]|array */
     public $lineItem;
 
     /**
@@ -26,11 +23,9 @@ class WarehouseInventoryAdjustmentAdviceLineItems extends ClassStructure
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
         $properties->lineItem = Schema::arr();
-        $properties->lineItem->items = WarehouseInventoryAdjustmentAdviceLineItemsLineItemItems::schema();
+        $properties->lineItem->items = LineItemsLineItemItems::schema();
         $ownerSchema->addPropertyMapping('LineItem', self::names()->lineItem);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->additionalProperties = false;
-        $ownerSchema->description = "Encloses all document line item elements";
         $ownerSchema->required = array(
             'LineItem',
         );

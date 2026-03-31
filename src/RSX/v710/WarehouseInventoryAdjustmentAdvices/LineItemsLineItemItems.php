@@ -38,23 +38,23 @@ class LineItemsLineItemItems extends ClassStructure
         $ownerSchema->addPropertyMapping('ItemDetail', self::names()->itemDetail);
         $properties->reference = Schema::arr();
         $properties->reference->items = LineItemsLineItemItemsReferenceItems::schema();
+        $properties->reference->maxItems = 10;
         $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
         $properties->date = Schema::arr();
         $properties->date->items = LineItemsLineItemItemsDateItems::schema();
+        $properties->date->maxItems = 10;
         $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $properties->address = Schema::arr();
         $properties->address->items = LineItemsLineItemItemsAddressItems::schema();
+        $properties->address->maxItems = 50;
         $ownerSchema->addPropertyMapping('Address', self::names()->address);
         $properties->miscellaneous = Schema::arr();
         $properties->miscellaneous->items = LineItemsLineItemItemsMiscellaneousItems::schema();
+        $properties->miscellaneous->maxItems = 20;
         $ownerSchema->addPropertyMapping('Miscellaneous', self::names()->miscellaneous);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
             'ItemDetail',
-            'Reference',
-            'Date',
-            'Address',
-            'Miscellaneous',
         );
     }
 }

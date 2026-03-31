@@ -20,6 +20,9 @@ class LineItemsLineItemItemsMiscellaneousItems extends ClassStructure
     public $documentId;
 
     /** @var string */
+    public $purchaseOrderNumber;
+
+    /** @var string */
     public $recordType;
 
     /** @var string */
@@ -43,7 +46,11 @@ class LineItemsLineItemItemsMiscellaneousItems extends ClassStructure
         $properties->tradingPartnerId = Schema::string();
         $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
         $properties->documentId = Schema::string();
+        $properties->documentId->maxLength = 30;
         $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
+        $properties->purchaseOrderNumber = Schema::string();
+        $properties->purchaseOrderNumber->maxLength = 30;
+        $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->qualifier1 = Schema::string();
@@ -55,14 +62,5 @@ class LineItemsLineItemItemsMiscellaneousItems extends ClassStructure
         $properties->description2 = Schema::string();
         $ownerSchema->addPropertyMapping('Description2', self::names()->description2);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->required = array(
-            'TradingPartnerId',
-            'DocumentId',
-            'RecordType',
-            'Qualifier1',
-            'Description1',
-            'Qualifier2',
-            'Description2',
-        );
     }
 }

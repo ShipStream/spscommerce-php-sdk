@@ -20,6 +20,9 @@ class LineItemsLineItemItemsReferenceItems extends ClassStructure
     public $documentId;
 
     /** @var string */
+    public $purchaseOrderNumber;
+
+    /** @var string */
     public $recordType;
 
     /** @var string */
@@ -40,7 +43,11 @@ class LineItemsLineItemItemsReferenceItems extends ClassStructure
         $properties->tradingPartnerId = Schema::string();
         $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
         $properties->documentId = Schema::string();
+        $properties->documentId->maxLength = 30;
         $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
+        $properties->purchaseOrderNumber = Schema::string();
+        $properties->purchaseOrderNumber->maxLength = 30;
+        $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->referenceQual = Schema::string();
@@ -50,13 +57,5 @@ class LineItemsLineItemItemsReferenceItems extends ClassStructure
         $properties->description = Schema::string();
         $ownerSchema->addPropertyMapping('Description', self::names()->description);
         $ownerSchema->type = Schema::OBJECT;
-        $ownerSchema->required = array(
-            'TradingPartnerId',
-            'DocumentId',
-            'RecordType',
-            'ReferenceQual',
-            'ReferenceID',
-            'Description',
-        );
     }
 }

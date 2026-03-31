@@ -12,11 +12,14 @@ use Swaggest\JsonSchema\Structure\ClassStructure;
 
 
 /**
- * Generated schema for Root
+ * WarehouseInventoryAdjustmentAdvice
  * Built from WarehouseInventoryAdjustmentAdvices.json#
  */
 class Property01abfc extends ClassStructure
 {
+    /** @var Meta */
+    public $meta;
+
     /** @var Header */
     public $header;
 
@@ -32,6 +35,8 @@ class Property01abfc extends ClassStructure
      */
     public static function setUpProperties($properties, Schema $ownerSchema)
     {
+        $properties->meta = Meta::schema();
+        $ownerSchema->addPropertyMapping('Meta', self::names()->meta);
         $properties->header = Header::schema();
         $ownerSchema->addPropertyMapping('Header', self::names()->header);
         $properties->lineItems = LineItems::schema();
@@ -40,7 +45,7 @@ class Property01abfc extends ClassStructure
         $ownerSchema->addPropertyMapping('Summary', self::names()->summary);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->schema = "http://json-schema.org/draft-07/schema#";
-        $ownerSchema->title = "Generated schema for Root";
+        $ownerSchema->title = "WarehouseInventoryAdjustmentAdvice";
         $ownerSchema->required = array(
             'Header',
             'LineItems',

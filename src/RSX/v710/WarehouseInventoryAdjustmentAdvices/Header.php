@@ -44,18 +44,23 @@ class Header extends ClassStructure
         $ownerSchema->addPropertyMapping('HeaderOrder', self::names()->headerOrder);
         $properties->reference = Schema::arr();
         $properties->reference->items = HeaderReferenceItems::schema();
+        $properties->reference->maxItems = 10;
         $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
         $properties->date = Schema::arr();
         $properties->date->items = HeaderDateItems::schema();
+        $properties->date->maxItems = 5;
         $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $properties->contact = Schema::arr();
         $properties->contact->items = HeaderContactItems::schema();
+        $properties->contact->maxItems = 3;
         $ownerSchema->addPropertyMapping('Contact', self::names()->contact);
         $properties->address = Schema::arr();
         $properties->address->items = HeaderAddressItems::schema();
+        $properties->address->maxItems = 100;
         $ownerSchema->addPropertyMapping('Address', self::names()->address);
         $properties->notes = Schema::arr();
         $properties->notes->items = HeaderNotesItems::schema();
+        $properties->notes->maxItems = 20;
         $ownerSchema->addPropertyMapping('Notes', self::names()->notes);
         $properties->miscellaneous = Schema::arr();
         $properties->miscellaneous->items = HeaderMiscellaneousItems::schema();
@@ -63,12 +68,7 @@ class Header extends ClassStructure
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
             'HeaderOrder',
-            'Reference',
-            'Date',
-            'Contact',
             'Address',
-            'Notes',
-            'Miscellaneous',
         );
     }
 }

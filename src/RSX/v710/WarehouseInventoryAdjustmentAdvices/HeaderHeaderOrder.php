@@ -52,10 +52,12 @@ class HeaderHeaderOrder extends ClassStructure
         $properties->tradingPartnerId = Schema::string();
         $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
         $properties->documentId = Schema::string();
+        $properties->documentId->maxLength = 30;
         $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->date1 = Schema::string();
+        $properties->date1->format = "date";
         $ownerSchema->addPropertyMapping('Date1', self::names()->date1);
         $properties->adjustmentNumber1 = Schema::string();
         $ownerSchema->addPropertyMapping('AdjustmentNumber1', self::names()->adjustmentNumber1);
@@ -64,6 +66,7 @@ class HeaderHeaderOrder extends ClassStructure
         $properties->tsetPurposeCode = Schema::string();
         $ownerSchema->addPropertyMapping('TsetPurposeCode', self::names()->tsetPurposeCode);
         $properties->purchaseOrderNumber = Schema::string();
+        $properties->purchaseOrderNumber->maxLength = 30;
         $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->transactionTypeCode = Schema::string();
         $ownerSchema->addPropertyMapping('TransactionTypeCode', self::names()->transactionTypeCode);
@@ -73,14 +76,7 @@ class HeaderHeaderOrder extends ClassStructure
         $ownerSchema->required = array(
             'TradingPartnerId',
             'DocumentId',
-            'RecordType',
             'Date1',
-            'AdjustmentNumber1',
-            'AdjustmentNumber2',
-            'TsetPurposeCode',
-            'PurchaseOrderNumber',
-            'TransactionTypeCode',
-            'ActionCode',
         );
     }
 }

@@ -20,6 +20,9 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
     public $documentId;
 
     /** @var string */
+    public $purchaseOrderNumber;
+
+    /** @var string */
     public $recordType;
 
     /** @var string */
@@ -62,6 +65,12 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
     public $country;
 
     /** @var string */
+    public $locationID;
+
+    /** @var string */
+    public $countrySubDivision;
+
+    /** @var string */
     public $contactName;
 
     /** @var string */
@@ -82,6 +91,18 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
     /** @var string */
     public $addressAlternateName2;
 
+    /** @var LineItemsLineItemItemsAddressItemsReferenceIdentificationsItems[]|array */
+    public $referenceIdentifications;
+
+    /** @var LineItemsLineItemItemsAddressItemsReferenceItems[]|array */
+    public $reference;
+
+    /** @var LineItemsLineItemItemsAddressItemsContactItems[]|array */
+    public $contact;
+
+    /** @var LineItemsLineItemItemsAddressItemsDateItems[]|array */
+    public $date;
+
     /**
      * @param Properties|static $properties
      * @param Schema $ownerSchema
@@ -91,7 +112,11 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
         $properties->tradingPartnerId = Schema::string();
         $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
         $properties->documentId = Schema::string();
+        $properties->documentId->maxLength = 30;
         $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
+        $properties->purchaseOrderNumber = Schema::string();
+        $properties->purchaseOrderNumber->maxLength = 30;
+        $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->addressTypeCode = Schema::string();
@@ -120,6 +145,10 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
         $ownerSchema->addPropertyMapping('PostalCode', self::names()->postalCode);
         $properties->country = Schema::string();
         $ownerSchema->addPropertyMapping('Country', self::names()->country);
+        $properties->locationID = Schema::string();
+        $ownerSchema->addPropertyMapping('LocationID', self::names()->locationID);
+        $properties->countrySubDivision = Schema::string();
+        $ownerSchema->addPropertyMapping('CountrySubDivision', self::names()->countrySubDivision);
         $properties->contactName = Schema::string();
         $ownerSchema->addPropertyMapping('ContactName', self::names()->contactName);
         $properties->contactPhone = Schema::string();
@@ -134,31 +163,21 @@ class LineItemsLineItemItemsAddressItems extends ClassStructure
         $ownerSchema->addPropertyMapping('AddressTaxExemptNumber', self::names()->addressTaxExemptNumber);
         $properties->addressAlternateName2 = Schema::string();
         $ownerSchema->addPropertyMapping('AddressAlternateName2', self::names()->addressAlternateName2);
+        $properties->referenceIdentifications = Schema::arr();
+        $properties->referenceIdentifications->items = LineItemsLineItemItemsAddressItemsReferenceIdentificationsItems::schema();
+        $ownerSchema->addPropertyMapping('ReferenceIdentifications', self::names()->referenceIdentifications);
+        $properties->reference = Schema::arr();
+        $properties->reference->items = LineItemsLineItemItemsAddressItemsReferenceItems::schema();
+        $ownerSchema->addPropertyMapping('Reference', self::names()->reference);
+        $properties->contact = Schema::arr();
+        $properties->contact->items = LineItemsLineItemItemsAddressItemsContactItems::schema();
+        $ownerSchema->addPropertyMapping('Contact', self::names()->contact);
+        $properties->date = Schema::arr();
+        $properties->date->items = LineItemsLineItemItemsAddressItemsDateItems::schema();
+        $ownerSchema->addPropertyMapping('Date', self::names()->date);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
-            'TradingPartnerId',
-            'DocumentId',
-            'RecordType',
             'AddressTypeCode',
-            'LocationCodeQualifier',
-            'AddressLocationNumber',
-            'AddressName',
-            'AddressAlternateName',
-            'Address1',
-            'Address2',
-            'Address3',
-            'Address4',
-            'City',
-            'State',
-            'PostalCode',
-            'Country',
-            'ContactName',
-            'ContactPhone',
-            'ContactFax',
-            'ContactEmail',
-            'AddressTaxIdNumber',
-            'AddressTaxExemptNumber',
-            'AddressAlternateName2',
         );
     }
 }

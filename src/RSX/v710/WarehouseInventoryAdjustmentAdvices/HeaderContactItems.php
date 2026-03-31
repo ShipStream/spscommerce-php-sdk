@@ -20,6 +20,9 @@ class HeaderContactItems extends ClassStructure
     public $documentId;
 
     /** @var string */
+    public $purchaseOrderNumber;
+
+    /** @var string */
     public $recordType;
 
     /** @var string */
@@ -49,7 +52,11 @@ class HeaderContactItems extends ClassStructure
         $properties->tradingPartnerId = Schema::string();
         $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
         $properties->documentId = Schema::string();
+        $properties->documentId->maxLength = 30;
         $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
+        $properties->purchaseOrderNumber = Schema::string();
+        $properties->purchaseOrderNumber->maxLength = 30;
+        $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->contactTypeCode = Schema::string();
@@ -66,15 +73,7 @@ class HeaderContactItems extends ClassStructure
         $ownerSchema->addPropertyMapping('ContactReference', self::names()->contactReference);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
-            'TradingPartnerId',
-            'DocumentId',
-            'RecordType',
             'ContactTypeCode',
-            'ContactName',
-            'ContactPhone',
-            'ContactFax',
-            'ContactEmail',
-            'ContactReference',
         );
     }
 }

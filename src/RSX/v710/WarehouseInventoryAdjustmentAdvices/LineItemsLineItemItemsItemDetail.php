@@ -20,10 +20,16 @@ class LineItemsLineItemItemsItemDetail extends ClassStructure
     public $documentId;
 
     /** @var string */
+    public $purchaseOrderNumber;
+
+    /** @var string */
     public $recordType;
 
     /** @var string */
     public $lineSequenceNumber;
+
+    /** @var string */
+    public $applicationId;
 
     /** @var string */
     public $buyerPartNumber;
@@ -66,6 +72,42 @@ class LineItemsLineItemItemsItemDetail extends ClassStructure
 
     /** @var string */
     public $partNumber4;
+
+    /** @var string */
+    public $partNumberQualifier5;
+
+    /** @var string */
+    public $partNumber5;
+
+    /** @var string */
+    public $partNumberQualifier6;
+
+    /** @var string */
+    public $partNumber6;
+
+    /** @var string */
+    public $partNumberQualifier7;
+
+    /** @var string */
+    public $partNumber7;
+
+    /** @var string */
+    public $partNumberQualifier8;
+
+    /** @var string */
+    public $partNumber8;
+
+    /** @var string */
+    public $partNumberQualifier9;
+
+    /** @var string */
+    public $partNumber9;
+
+    /** @var string */
+    public $partNumberQualifier10;
+
+    /** @var string */
+    public $partNumber10;
 
     /** @var string */
     public $partDescription1;
@@ -118,11 +160,17 @@ class LineItemsLineItemItemsItemDetail extends ClassStructure
         $properties->tradingPartnerId = Schema::string();
         $ownerSchema->addPropertyMapping('TradingPartnerId', self::names()->tradingPartnerId);
         $properties->documentId = Schema::string();
+        $properties->documentId->maxLength = 30;
         $ownerSchema->addPropertyMapping('DocumentId', self::names()->documentId);
+        $properties->purchaseOrderNumber = Schema::string();
+        $properties->purchaseOrderNumber->maxLength = 30;
+        $ownerSchema->addPropertyMapping('PurchaseOrderNumber', self::names()->purchaseOrderNumber);
         $properties->recordType = Schema::string();
         $ownerSchema->addPropertyMapping('RecordType', self::names()->recordType);
         $properties->lineSequenceNumber = Schema::string();
         $ownerSchema->addPropertyMapping('LineSequenceNumber', self::names()->lineSequenceNumber);
+        $properties->applicationId = Schema::string();
+        $ownerSchema->addPropertyMapping('ApplicationId', self::names()->applicationId);
         $properties->buyerPartNumber = Schema::string();
         $ownerSchema->addPropertyMapping('BuyerPartNumber', self::names()->buyerPartNumber);
         $properties->vendorPartNumber = Schema::string();
@@ -151,6 +199,30 @@ class LineItemsLineItemItemsItemDetail extends ClassStructure
         $ownerSchema->addPropertyMapping('PartNumberQualifier4', self::names()->partNumberQualifier4);
         $properties->partNumber4 = Schema::string();
         $ownerSchema->addPropertyMapping('PartNumber4', self::names()->partNumber4);
+        $properties->partNumberQualifier5 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumberQualifier5', self::names()->partNumberQualifier5);
+        $properties->partNumber5 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumber5', self::names()->partNumber5);
+        $properties->partNumberQualifier6 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumberQualifier6', self::names()->partNumberQualifier6);
+        $properties->partNumber6 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumber6', self::names()->partNumber6);
+        $properties->partNumberQualifier7 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumberQualifier7', self::names()->partNumberQualifier7);
+        $properties->partNumber7 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumber7', self::names()->partNumber7);
+        $properties->partNumberQualifier8 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumberQualifier8', self::names()->partNumberQualifier8);
+        $properties->partNumber8 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumber8', self::names()->partNumber8);
+        $properties->partNumberQualifier9 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumberQualifier9', self::names()->partNumberQualifier9);
+        $properties->partNumber9 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumber9', self::names()->partNumber9);
+        $properties->partNumberQualifier10 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumberQualifier10', self::names()->partNumberQualifier10);
+        $properties->partNumber10 = Schema::string();
+        $ownerSchema->addPropertyMapping('PartNumber10', self::names()->partNumber10);
         $properties->partDescription1 = Schema::string();
         $ownerSchema->addPropertyMapping('PartDescription1', self::names()->partDescription1);
         $properties->partDescription2 = Schema::string();
@@ -181,38 +253,9 @@ class LineItemsLineItemItemsItemDetail extends ClassStructure
         $ownerSchema->addPropertyMapping('ExtendedItemTotal', self::names()->extendedItemTotal);
         $ownerSchema->type = Schema::OBJECT;
         $ownerSchema->required = array(
-            'TradingPartnerId',
-            'DocumentId',
-            'RecordType',
-            'LineSequenceNumber',
-            'BuyerPartNumber',
-            'VendorPartNumber',
-            'ConsumerPackageCode',
-            'GTIN',
-            'UPCCaseCode',
-            'NatlDrugCode',
-            'PartNumberQualifier1',
-            'PartNumber1',
-            'PartNumberQualifier2',
-            'PartNumber2',
-            'PartNumberQualifier3',
-            'PartNumber3',
-            'PartNumberQualifier4',
-            'PartNumber4',
-            'PartDescription1',
-            'PartDescription2',
             'AdjReasonCode',
             'QtyAdjusted',
             'QtyAdjustedUOM',
-            'WarehouseLotID',
-            'Weight1',
-            'WeightQualifier1',
-            'WeightUOM1',
-            'Weight2',
-            'WeightQualifier2',
-            'WeightUOM2',
-            'InventoryTransaction',
-            'ExtendedItemTotal',
         );
     }
 }

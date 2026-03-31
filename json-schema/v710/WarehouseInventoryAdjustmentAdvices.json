@@ -1,8 +1,87 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Generated schema for Root",
+    "title": "WarehouseInventoryAdjustmentAdvice",
     "type": "object",
     "properties": {
+        "Meta": {
+            "type": "object",
+            "properties": {
+                "TradingPartnerId": {
+                    "type": "string"
+                },
+                "DocumentId": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "PurchaseOrderNumber": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "RecordType": {
+                    "type": "string"
+                },
+                "SenderUniqueID": {
+                    "type": "integer"
+                },
+                "SenderCompanyName": {
+                    "type": "string"
+                },
+                "ReceiverUniqueID": {
+                    "type": "integer"
+                },
+                "ReceiverCompanyName": {
+                    "type": "string"
+                },
+                "IsDropShip": {
+                    "type": "boolean"
+                },
+                "InterchangeControlNumber": {
+                    "type": "string"
+                },
+                "GroupControlIdentifier": {
+                    "type": "string"
+                },
+                "GroupControlNumber": {
+                    "type": "string"
+                },
+                "DocumentControlIdentifier": {
+                    "type": "string"
+                },
+                "DocumentControlNumber": {
+                    "type": "string"
+                },
+                "InterchangeSenderID": {
+                    "type": "string"
+                },
+                "InterchangeReceiverID": {
+                    "type": "string"
+                },
+                "GroupSenderID": {
+                    "type": "string"
+                },
+                "GroupReceiverID": {
+                    "type": "string"
+                },
+                "BatchPart": {
+                    "type": "integer"
+                },
+                "BatchTotal": {
+                    "type": "integer"
+                },
+                "BatchID": {
+                    "type": "string"
+                },
+                "Comments": {
+                    "type": "string"
+                },
+                "Validation": {
+                    "type": "string"
+                },
+                "OrderManagement": {
+                    "type": "string"
+                }
+            }
+        },
         "Header": {
             "type": "object",
             "properties": {
@@ -13,13 +92,15 @@
                             "type": "string"
                         },
                         "DocumentId": {
-                            "type": "string"
+                            "type": "string",
+                            "maxLength": 30
                         },
                         "RecordType": {
                             "type": "string"
                         },
                         "Date1": {
-                            "type": "string"
+                            "type": "string",
+                            "format": "date"
                         },
                         "AdjustmentNumber1": {
                             "type": "string"
@@ -31,7 +112,8 @@
                             "type": "string"
                         },
                         "PurchaseOrderNumber": {
-                            "type": "string"
+                            "type": "string",
+                            "maxLength": 30
                         },
                         "TransactionTypeCode": {
                             "type": "string"
@@ -43,14 +125,7 @@
                     "required": [
                         "TradingPartnerId",
                         "DocumentId",
-                        "RecordType",
-                        "Date1",
-                        "AdjustmentNumber1",
-                        "AdjustmentNumber2",
-                        "TsetPurposeCode",
-                        "PurchaseOrderNumber",
-                        "TransactionTypeCode",
-                        "ActionCode"
+                        "Date1"
                     ]
                 },
                 "Reference": {
@@ -62,7 +137,12 @@
                                 "type": "string"
                             },
                             "DocumentId": {
-                                "type": "string"
+                                "type": "string",
+                                "maxLength": 30
+                            },
+                            "PurchaseOrderNumber": {
+                                "type": "string",
+                                "maxLength": 30
                             },
                             "RecordType": {
                                 "type": "string"
@@ -76,16 +156,9 @@
                             "Description": {
                                 "type": "string"
                             }
-                        },
-                        "required": [
-                            "TradingPartnerId",
-                            "DocumentId",
-                            "RecordType",
-                            "ReferenceQual",
-                            "ReferenceID",
-                            "Description"
-                        ]
-                    }
+                        }
+                    },
+                    "maxItems": 10
                 },
                 "Date": {
                     "type": "array",
@@ -96,7 +169,12 @@
                                 "type": "string"
                             },
                             "DocumentId": {
-                                "type": "string"
+                                "type": "string",
+                                "maxLength": 30
+                            },
+                            "PurchaseOrderNumber": {
+                                "type": "string",
+                                "maxLength": 30
                             },
                             "RecordType": {
                                 "type": "string"
@@ -105,29 +183,29 @@
                                 "type": "string"
                             },
                             "Date1": {
-                                "type": "string"
+                                "type": "string",
+                                "format": "date"
                             },
                             "Time1": {
-                                "type": "string"
+                                "type": "string",
+                                "format": "time"
                             },
                             "TimeCode1": {
                                 "type": "string"
                             },
                             "DateTimeFormQualifier1": {
                                 "type": "string"
+                            },
+                            "DateTimePeriod": {
+                                "type": "string"
                             }
                         },
                         "required": [
-                            "TradingPartnerId",
-                            "DocumentId",
-                            "RecordType",
                             "DateTimeQualifier1",
-                            "Date1",
-                            "Time1",
-                            "TimeCode1",
-                            "DateTimeFormQualifier1"
+                            "Date1"
                         ]
-                    }
+                    },
+                    "maxItems": 5
                 },
                 "Contact": {
                     "type": "array",
@@ -138,7 +216,12 @@
                                 "type": "string"
                             },
                             "DocumentId": {
-                                "type": "string"
+                                "type": "string",
+                                "maxLength": 30
+                            },
+                            "PurchaseOrderNumber": {
+                                "type": "string",
+                                "maxLength": 30
                             },
                             "RecordType": {
                                 "type": "string"
@@ -163,17 +246,10 @@
                             }
                         },
                         "required": [
-                            "TradingPartnerId",
-                            "DocumentId",
-                            "RecordType",
-                            "ContactTypeCode",
-                            "ContactName",
-                            "ContactPhone",
-                            "ContactFax",
-                            "ContactEmail",
-                            "ContactReference"
+                            "ContactTypeCode"
                         ]
-                    }
+                    },
+                    "maxItems": 3
                 },
                 "Address": {
                     "type": "array",
@@ -184,7 +260,12 @@
                                 "type": "string"
                             },
                             "DocumentId": {
-                                "type": "string"
+                                "type": "string",
+                                "maxLength": 30
+                            },
+                            "PurchaseOrderNumber": {
+                                "type": "string",
+                                "maxLength": 30
                             },
                             "RecordType": {
                                 "type": "string"
@@ -228,6 +309,12 @@
                             "Country": {
                                 "type": "string"
                             },
+                            "LocationID": {
+                                "type": "string"
+                            },
+                            "CountrySubDivision": {
+                                "type": "string"
+                            },
                             "ContactName": {
                                 "type": "string"
                             },
@@ -248,34 +335,196 @@
                             },
                             "AddressAlternateName2": {
                                 "type": "string"
+                            },
+                            "ReferenceIdentifications": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "TradingPartnerId": {
+                                            "type": "string"
+                                        },
+                                        "DocumentId": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "RecordType": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceQual1": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceID1": {
+                                            "type": "string"
+                                        },
+                                        "Description": {
+                                            "type": "string"
+                                        },
+                                        "Date1": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "Time1": {
+                                            "type": "string",
+                                            "format": "time"
+                                        },
+                                        "TimeCode1": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceQual2": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceID2": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceQual3": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceID3": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceQual4": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceID4": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "ReferenceQual1"
+                                    ]
+                                }
+                            },
+                            "Reference": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "TradingPartnerId": {
+                                            "type": "string"
+                                        },
+                                        "DocumentId": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "RecordType": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceQual": {
+                                            "type": "string"
+                                        },
+                                        "ReferenceID": {
+                                            "type": "string"
+                                        },
+                                        "Description": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "Contact": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "TradingPartnerId": {
+                                            "type": "string"
+                                        },
+                                        "DocumentId": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "RecordType": {
+                                            "type": "string"
+                                        },
+                                        "ContactTypeCode": {
+                                            "type": "string"
+                                        },
+                                        "ContactName": {
+                                            "type": "string"
+                                        },
+                                        "ContactPhone": {
+                                            "type": "string"
+                                        },
+                                        "ContactFax": {
+                                            "type": "string"
+                                        },
+                                        "ContactEmail": {
+                                            "type": "string"
+                                        },
+                                        "ContactReference": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "ContactTypeCode"
+                                    ]
+                                }
+                            },
+                            "Date": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "TradingPartnerId": {
+                                            "type": "string"
+                                        },
+                                        "DocumentId": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "RecordType": {
+                                            "type": "string"
+                                        },
+                                        "DateTimeQualifier1": {
+                                            "type": "string"
+                                        },
+                                        "Date1": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "Time1": {
+                                            "type": "string",
+                                            "format": "time"
+                                        },
+                                        "TimeCode1": {
+                                            "type": "string"
+                                        },
+                                        "DateTimeFormQualifier1": {
+                                            "type": "string"
+                                        },
+                                        "DateTimePeriod": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "DateTimeQualifier1",
+                                        "Date1"
+                                    ]
+                                }
                             }
                         },
                         "required": [
-                            "TradingPartnerId",
-                            "DocumentId",
-                            "RecordType",
-                            "AddressTypeCode",
-                            "LocationCodeQualifier",
-                            "AddressLocationNumber",
-                            "AddressName",
-                            "AddressAlternateName",
-                            "Address1",
-                            "Address2",
-                            "Address3",
-                            "Address4",
-                            "City",
-                            "State",
-                            "PostalCode",
-                            "Country",
-                            "ContactName",
-                            "ContactPhone",
-                            "ContactFax",
-                            "ContactEmail",
-                            "AddressTaxIdNumber",
-                            "AddressTaxExemptNumber",
-                            "AddressAlternateName2"
+                            "AddressTypeCode"
                         ]
-                    }
+                    },
+                    "maxItems": 100
                 },
                 "Notes": {
                     "type": "array",
@@ -286,22 +535,44 @@
                                 "type": "string"
                             },
                             "DocumentId": {
-                                "type": "string"
+                                "type": "string",
+                                "maxLength": 30
+                            },
+                            "PurchaseOrderNumber": {
+                                "type": "string",
+                                "maxLength": 30
                             },
                             "RecordType": {
                                 "type": "string"
                             },
+                            "NoteCode": {
+                                "type": "string"
+                            },
                             "NoteInformationField": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "maxItems": 2
+                            },
+                            "PrinterCarriageControlCode": {
+                                "type": "string"
+                            },
+                            "Number": {
+                                "type": "string"
+                            },
+                            "LanguageCode": {
+                                "type": "string"
+                            },
+                            "NoteFormatCode": {
+                                "type": "string"
+                            },
+                            "NoteFunctionCode": {
                                 "type": "string"
                             }
-                        },
-                        "required": [
-                            "TradingPartnerId",
-                            "DocumentId",
-                            "RecordType",
-                            "NoteInformationField"
-                        ]
-                    }
+                        }
+                    },
+                    "maxItems": 20
                 },
                 "Miscellaneous": {
                     "type": "array",
@@ -312,7 +583,12 @@
                                 "type": "string"
                             },
                             "DocumentId": {
-                                "type": "string"
+                                "type": "string",
+                                "maxLength": 30
+                            },
+                            "PurchaseOrderNumber": {
+                                "type": "string",
+                                "maxLength": 30
                             },
                             "RecordType": {
                                 "type": "string"
@@ -329,27 +605,13 @@
                             "Description2": {
                                 "type": "string"
                             }
-                        },
-                        "required": [
-                            "TradingPartnerId",
-                            "DocumentId",
-                            "RecordType",
-                            "Qualifier1",
-                            "Description1",
-                            "Qualifier2",
-                            "Description2"
-                        ]
+                        }
                     }
                 }
             },
             "required": [
                 "HeaderOrder",
-                "Reference",
-                "Date",
-                "Contact",
-                "Address",
-                "Notes",
-                "Miscellaneous"
+                "Address"
             ]
         },
         "LineItems": {
@@ -367,12 +629,20 @@
                                         "type": "string"
                                     },
                                     "DocumentId": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "maxLength": 30
+                                    },
+                                    "PurchaseOrderNumber": {
+                                        "type": "string",
+                                        "maxLength": 30
                                     },
                                     "RecordType": {
                                         "type": "string"
                                     },
                                     "LineSequenceNumber": {
+                                        "type": "string"
+                                    },
+                                    "ApplicationId": {
                                         "type": "string"
                                     },
                                     "BuyerPartNumber": {
@@ -415,6 +685,42 @@
                                         "type": "string"
                                     },
                                     "PartNumber4": {
+                                        "type": "string"
+                                    },
+                                    "PartNumberQualifier5": {
+                                        "type": "string"
+                                    },
+                                    "PartNumber5": {
+                                        "type": "string"
+                                    },
+                                    "PartNumberQualifier6": {
+                                        "type": "string"
+                                    },
+                                    "PartNumber6": {
+                                        "type": "string"
+                                    },
+                                    "PartNumberQualifier7": {
+                                        "type": "string"
+                                    },
+                                    "PartNumber7": {
+                                        "type": "string"
+                                    },
+                                    "PartNumberQualifier8": {
+                                        "type": "string"
+                                    },
+                                    "PartNumber8": {
+                                        "type": "string"
+                                    },
+                                    "PartNumberQualifier9": {
+                                        "type": "string"
+                                    },
+                                    "PartNumber9": {
+                                        "type": "string"
+                                    },
+                                    "PartNumberQualifier10": {
+                                        "type": "string"
+                                    },
+                                    "PartNumber10": {
                                         "type": "string"
                                     },
                                     "PartDescription1": {
@@ -461,38 +767,9 @@
                                     }
                                 },
                                 "required": [
-                                    "TradingPartnerId",
-                                    "DocumentId",
-                                    "RecordType",
-                                    "LineSequenceNumber",
-                                    "BuyerPartNumber",
-                                    "VendorPartNumber",
-                                    "ConsumerPackageCode",
-                                    "GTIN",
-                                    "UPCCaseCode",
-                                    "NatlDrugCode",
-                                    "PartNumberQualifier1",
-                                    "PartNumber1",
-                                    "PartNumberQualifier2",
-                                    "PartNumber2",
-                                    "PartNumberQualifier3",
-                                    "PartNumber3",
-                                    "PartNumberQualifier4",
-                                    "PartNumber4",
-                                    "PartDescription1",
-                                    "PartDescription2",
                                     "AdjReasonCode",
                                     "QtyAdjusted",
-                                    "QtyAdjustedUOM",
-                                    "WarehouseLotID",
-                                    "Weight1",
-                                    "WeightQualifier1",
-                                    "WeightUOM1",
-                                    "Weight2",
-                                    "WeightQualifier2",
-                                    "WeightUOM2",
-                                    "InventoryTransaction",
-                                    "ExtendedItemTotal"
+                                    "QtyAdjustedUOM"
                                 ]
                             },
                             "Reference": {
@@ -504,7 +781,12 @@
                                             "type": "string"
                                         },
                                         "DocumentId": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
                                         },
                                         "RecordType": {
                                             "type": "string"
@@ -518,16 +800,9 @@
                                         "Description": {
                                             "type": "string"
                                         }
-                                    },
-                                    "required": [
-                                        "TradingPartnerId",
-                                        "DocumentId",
-                                        "RecordType",
-                                        "ReferenceQual",
-                                        "ReferenceID",
-                                        "Description"
-                                    ]
-                                }
+                                    }
+                                },
+                                "maxItems": 10
                             },
                             "Date": {
                                 "type": "array",
@@ -538,7 +813,12 @@
                                             "type": "string"
                                         },
                                         "DocumentId": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
                                         },
                                         "RecordType": {
                                             "type": "string"
@@ -547,29 +827,29 @@
                                             "type": "string"
                                         },
                                         "Date1": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "format": "date"
                                         },
                                         "Time1": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "format": "time"
                                         },
                                         "TimeCode1": {
                                             "type": "string"
                                         },
                                         "DateTimeFormQualifier1": {
                                             "type": "string"
+                                        },
+                                        "DateTimePeriod": {
+                                            "type": "string"
                                         }
                                     },
                                     "required": [
-                                        "TradingPartnerId",
-                                        "DocumentId",
-                                        "RecordType",
                                         "DateTimeQualifier1",
-                                        "Date1",
-                                        "Time1",
-                                        "TimeCode1",
-                                        "DateTimeFormQualifier1"
+                                        "Date1"
                                     ]
-                                }
+                                },
+                                "maxItems": 10
                             },
                             "Address": {
                                 "type": "array",
@@ -580,7 +860,12 @@
                                             "type": "string"
                                         },
                                         "DocumentId": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
                                         },
                                         "RecordType": {
                                             "type": "string"
@@ -624,6 +909,12 @@
                                         "Country": {
                                             "type": "string"
                                         },
+                                        "LocationID": {
+                                            "type": "string"
+                                        },
+                                        "CountrySubDivision": {
+                                            "type": "string"
+                                        },
                                         "ContactName": {
                                             "type": "string"
                                         },
@@ -644,34 +935,196 @@
                                         },
                                         "AddressAlternateName2": {
                                             "type": "string"
+                                        },
+                                        "ReferenceIdentifications": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TradingPartnerId": {
+                                                        "type": "string"
+                                                    },
+                                                    "DocumentId": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "PurchaseOrderNumber": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "RecordType": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceQual1": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceID1": {
+                                                        "type": "string"
+                                                    },
+                                                    "Description": {
+                                                        "type": "string"
+                                                    },
+                                                    "Date1": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "Time1": {
+                                                        "type": "string",
+                                                        "format": "time"
+                                                    },
+                                                    "TimeCode1": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceQual2": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceID2": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceQual3": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceID3": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceQual4": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceID4": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "ReferenceQual1"
+                                                ]
+                                            }
+                                        },
+                                        "Reference": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TradingPartnerId": {
+                                                        "type": "string"
+                                                    },
+                                                    "DocumentId": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "PurchaseOrderNumber": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "RecordType": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceQual": {
+                                                        "type": "string"
+                                                    },
+                                                    "ReferenceID": {
+                                                        "type": "string"
+                                                    },
+                                                    "Description": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "Contact": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TradingPartnerId": {
+                                                        "type": "string"
+                                                    },
+                                                    "DocumentId": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "PurchaseOrderNumber": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "RecordType": {
+                                                        "type": "string"
+                                                    },
+                                                    "ContactTypeCode": {
+                                                        "type": "string"
+                                                    },
+                                                    "ContactName": {
+                                                        "type": "string"
+                                                    },
+                                                    "ContactPhone": {
+                                                        "type": "string"
+                                                    },
+                                                    "ContactFax": {
+                                                        "type": "string"
+                                                    },
+                                                    "ContactEmail": {
+                                                        "type": "string"
+                                                    },
+                                                    "ContactReference": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "ContactTypeCode"
+                                                ]
+                                            }
+                                        },
+                                        "Date": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TradingPartnerId": {
+                                                        "type": "string"
+                                                    },
+                                                    "DocumentId": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "PurchaseOrderNumber": {
+                                                        "type": "string",
+                                                        "maxLength": 30
+                                                    },
+                                                    "RecordType": {
+                                                        "type": "string"
+                                                    },
+                                                    "DateTimeQualifier1": {
+                                                        "type": "string"
+                                                    },
+                                                    "Date1": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "Time1": {
+                                                        "type": "string",
+                                                        "format": "time"
+                                                    },
+                                                    "TimeCode1": {
+                                                        "type": "string"
+                                                    },
+                                                    "DateTimeFormQualifier1": {
+                                                        "type": "string"
+                                                    },
+                                                    "DateTimePeriod": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "DateTimeQualifier1",
+                                                    "Date1"
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
-                                        "TradingPartnerId",
-                                        "DocumentId",
-                                        "RecordType",
-                                        "AddressTypeCode",
-                                        "LocationCodeQualifier",
-                                        "AddressLocationNumber",
-                                        "AddressName",
-                                        "AddressAlternateName",
-                                        "Address1",
-                                        "Address2",
-                                        "Address3",
-                                        "Address4",
-                                        "City",
-                                        "State",
-                                        "PostalCode",
-                                        "Country",
-                                        "ContactName",
-                                        "ContactPhone",
-                                        "ContactFax",
-                                        "ContactEmail",
-                                        "AddressTaxIdNumber",
-                                        "AddressTaxExemptNumber",
-                                        "AddressAlternateName2"
+                                        "AddressTypeCode"
                                     ]
-                                }
+                                },
+                                "maxItems": 50
                             },
                             "Miscellaneous": {
                                 "type": "array",
@@ -682,7 +1135,12 @@
                                             "type": "string"
                                         },
                                         "DocumentId": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "maxLength": 30
+                                        },
+                                        "PurchaseOrderNumber": {
+                                            "type": "string",
+                                            "maxLength": 30
                                         },
                                         "RecordType": {
                                             "type": "string"
@@ -699,25 +1157,13 @@
                                         "Description2": {
                                             "type": "string"
                                         }
-                                    },
-                                    "required": [
-                                        "TradingPartnerId",
-                                        "DocumentId",
-                                        "RecordType",
-                                        "Qualifier1",
-                                        "Description1",
-                                        "Qualifier2",
-                                        "Description2"
-                                    ]
-                                }
+                                    }
+                                },
+                                "maxItems": 20
                             }
                         },
                         "required": [
-                            "ItemDetail",
-                            "Reference",
-                            "Date",
-                            "Address",
-                            "Miscellaneous"
+                            "ItemDetail"
                         ]
                     }
                 }
@@ -733,7 +1179,12 @@
                     "type": "string"
                 },
                 "DocumentId": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "PurchaseOrderNumber": {
+                    "type": "string",
+                    "maxLength": 30
                 },
                 "RecordType": {
                     "type": "string"
@@ -753,17 +1204,7 @@
                 "VolumeUOM": {
                     "type": "string"
                 }
-            },
-            "required": [
-                "TradingPartnerId",
-                "DocumentId",
-                "RecordType",
-                "TotalOrders",
-                "TotalWeight",
-                "WeightUOM",
-                "TotalVolume",
-                "VolumeUOM"
-            ]
+            }
         }
     },
     "required": [
